@@ -1,0 +1,15 @@
+﻿body
+{
+    font-family: arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.text-beta{color: #CC0000;}
+#footer{color: #909090; text-align:center;}
+#header
+{
+padding:3px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #B0CAFF;
+}
