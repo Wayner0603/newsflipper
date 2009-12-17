@@ -13,13 +13,13 @@ using System.Drawing.Imaging;
 
 namespace newsflippers {
     public class NewsManager {
-        public static void InsertImage(int newsId, string imageName, string title) {
+        public static void InsertImage(int newsId, string imageName, string title, string url) {
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@NMG_NPR_ID", newsId);
             cmd.Parameters.AddWithValue("@NMG_SEC_ID", 0);
             cmd.Parameters.AddWithValue("@NMG_ADDEDDATE", DateTime.Now);
             cmd.Parameters.AddWithValue("@NMG_DATE", DateTime.Now.ToString("MMddyyyy"));
-            cmd.Parameters.AddWithValue("@NMG_URL", "http://www.google.com");
+            cmd.Parameters.AddWithValue("@NMG_URL", url);
             cmd.Parameters.AddWithValue("@NMG_IMAGENAME", imageName);
             cmd.Parameters.AddWithValue("@NMG_TITLE", title);
             Infonex.Data.Database db = new Infonex.Data.Database();
@@ -95,6 +95,7 @@ namespace newsflippers {
 
         public static List<CaptureWebPage> GetCaptureWebPages() {
             SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@DATEREF", DateTime.Now.ToDateRef());
             Infonex.Data.Database db = new Infonex.Data.Database();
             IDataReader rdr = db.ExecuteReader("USP_NEWSPAPER_IMAGES_GETALL", cmd);
             List<CaptureWebPage> childSources = new List<CaptureWebPage>();

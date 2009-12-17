@@ -179,8 +179,6 @@ jQuery(document).ready(function() {
     <form id="form1" runat="server">
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
     <div id="container">
-    <span id="title">title</span><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <br /><br />
    <div id="mycarousel" class="jcarousel-skin-ie7"> 
     <ul> 
       <!-- The content will be dynamically loaded in here --> 
