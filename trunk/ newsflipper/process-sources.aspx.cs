@@ -42,7 +42,7 @@ namespace newsflippers {
                     string imageName = Guid.NewGuid().ToString() + ".gif";
                     string fullImageName = path + string.Format("\\pages\\{0}\\{1}", DateTime.Now.ToNewsDateTimeFull(), imageName);
                     _WebsitesScreenshot.SaveImage(fullImageName);
-                    NewsManager.InsertImage(Convert.ToInt32("1"), imageName, "");
+                    NewsManager.InsertImage(Convert.ToInt32("1"), imageName, "", FormatURL(s.Url.ToString()));
                     count++;
                 }
                 _WebsitesScreenshot.Dispose();
