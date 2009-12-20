@@ -5,6 +5,8 @@
  
  #container {
     text-align:center;
+    margin:0px;
+    padding:0px;
  }
 .jcarousel-container {
     position: relative;

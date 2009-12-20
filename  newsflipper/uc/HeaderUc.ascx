@@ -1,3 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderUc.ascx.cs" Inherits="newsflippers.uc.HeaderUc" %>
 <div id="header">
- <img src= "../images/fast_flip_logo.gif" style="vertical-align:middle" />&nbsp;-&nbsp;Home</div>
+    <asp:Image ID="Image1" runat="server" ImageUrl="~/images/new-logo.png" />
+</div><div id="header-bottom">
+<asp:Label 
+        ID="Label1" runat="server" CssClass="text-beta" Text="Initial Preview Release"></asp:Label>
+</div>

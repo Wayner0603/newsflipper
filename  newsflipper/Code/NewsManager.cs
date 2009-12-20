@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
@@ -95,7 +95,7 @@ namespace newsflippers {
 
         public static List<CaptureWebPage> GetCaptureWebPages() {
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@DATEREF", DateTime.Now.ToDateRef());
+            cmd.Parameters.AddWithValue("@DATEREF", Extensions.ToDateRef(DateTime.Now));
             Infonex.Data.Database db = new Infonex.Data.Database();
             IDataReader rdr = db.ExecuteReader("USP_NEWSPAPER_IMAGES_GETALL", cmd);
             List<CaptureWebPage> childSources = new List<CaptureWebPage>();
@@ -110,6 +110,20 @@ namespace newsflippers {
             return childSources;
         }
 
+        public static bool IsImageExists(string imageName) {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@NMG_IMAGENAME", imageName);
+            Infonex.Data.Database db = new Infonex.Data.Database();
+            IDataReader rdr = db.ExecuteReader("USP_NEWSPAPER_IMAGES_RECORDEXISTS", cmd);
+            bool imageExist = false;
+            while (rdr.Read()) {
+                imageExist = true;  
+            }
+            rdr.Close();
+            return imageExist;
+        }
+
+        
         public static List<Source> GetSources() {
             SqlCommand cmd = new SqlCommand();
             Infonex.Data.Database db = new Infonex.Data.Database();
