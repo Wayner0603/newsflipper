@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,7 +18,7 @@ namespace newsflippers {
 
                 string baseUrl = GetBaseURL();
                 foreach (CaptureWebPage  cp in capturedWebPages) {
-                    cp.ImageName = string.Format("<a href='{1}' target=\"_blank\"><img border=\"0\" src=\"{0}\"   alt=\"test\" /></a>", string.Format("{0}pages/{1}/{2}", baseUrl, DateTime.Now.ToNewsDateTimeFull(), cp.ImageName), cp.Url);
+                    cp.ImageName = string.Format("<a href='{1}' target=\"_blank\"><img border=\"0\" src=\"{0}\"   alt=\"test\" /></a>", string.Format("{0}pages/{1}/{2}", baseUrl, Extensions.ToNewsDateTimeFull(DateTime.Now), cp.ImageName), cp.Url);
                 }
 
                 //foreach (DataRow row in ds.Tables[0].Rows) {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,7 +17,7 @@ namespace newsflippers {
 
         protected void Button1_Click(object sender, EventArgs e) {
 
-            string dateTimeText = DateTime.Now.ToNewsDateTime();
+            string dateTimeText = Extensions.ToNewsDateTime( DateTime.Now);
 
             List<Source> sourceList = NewsManager.GetChildSources(this.SourceControlUC1.SelectedSource);
 
@@ -40,7 +40,7 @@ namespace newsflippers {
                 _Result = _WebsitesScreenshot.CaptureWebpage(FormatURL(s.Url.ToString()));
                 if (_Result == WebsitesScreenshot.WebsitesScreenshot.Result.Captured) {
                     string imageName = Guid.NewGuid().ToString() + ".gif";
-                    string fullImageName = path + string.Format("\\pages\\{0}\\{1}", DateTime.Now.ToNewsDateTimeFull(), imageName);
+                    string fullImageName = path + string.Format("\\pages\\{0}\\{1}", Extensions.ToNewsDateTimeFull(DateTime.Now), imageName);
                     _WebsitesScreenshot.SaveImage(fullImageName);
                     NewsManager.InsertImage(Convert.ToInt32("1"), imageName, "", FormatURL(s.Url.ToString()));
                     count++;
@@ -51,21 +51,23 @@ namespace newsflippers {
         }
 
         private void CreateDirectory() {
-            if (!Directory.Exists(Server.MapPath(string.Format("~/pages/{0}", DateTime.Now.ToYear())))) {
-                Directory.CreateDirectory(Server.MapPath(string.Format("~/pages/{0}", DateTime.Now.ToYear())));
+            if (!Directory.Exists(Server.MapPath(string.Format("~/pages/{0}", Extensions.ToYear(DateTime.Now))))) {
+                Directory.CreateDirectory(Server.MapPath(string.Format("~/pages/{0}", Extensions.ToYear(DateTime.Now))));
             }
 
-            if (!Directory.Exists(Server.MapPath(string.Format("~/pages/{0}/{1}", DateTime.Now.ToYear(), DateTime.Now.ToMonth())))) {
-                Directory.CreateDirectory(Server.MapPath(string.Format("~/pages/{0}/{1}", DateTime.Now.ToYear(), DateTime.Now.ToMonth())));
+            if (!Directory.Exists(Server.MapPath(string.Format("~/pages/{0}/{1}", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now)))))
+            {
+                Directory.CreateDirectory(Server.MapPath(string.Format("~/pages/{0}/{1}", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now))));
             }
 
-            if (!Directory.Exists(Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", DateTime.Now.ToYear(), DateTime.Now.ToMonth(), DateTime.Now.ToDay())))) {
-                Directory.CreateDirectory(Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", DateTime.Now.ToYear(), DateTime.Now.ToMonth(), DateTime.Now.ToDay())));
+            if (!Directory.Exists(Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now), Extensions.ToDay(DateTime.Now)))))
+            {
+                Directory.CreateDirectory(Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now), Extensions.ToDay(DateTime.Now))));
             }
         }
 
         private string FormatURL(string url) {
-            string dateTimeText = DateTime.Now.ToNewsDateTimeFull();
+            string dateTimeText = Extensions.ToNewsDateTimeFull(DateTime.Now);
             if (url.Contains(DATE)) {
                 url = url.Replace(DATE, dateTimeText);
                 return url;

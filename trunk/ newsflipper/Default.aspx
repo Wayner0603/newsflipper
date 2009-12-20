@@ -17,7 +17,7 @@
 }
  
 #mycarousel .jcarousel-clip-horizontal {
-    border: 1px solid #808080;
+    border: 1px solid #ccc;
     width: 1000px;
     height: 800px;
 }
@@ -44,12 +44,12 @@
  
 #mycarousel .jcarousel-next {
     top: 150px;
-    right: 5px;
+    right: -15px;
 }
  
 #mycarousel .jcarousel-prev {
     top: 150px;
-    left: 5px;
+    left: 0px;
 }
  
 #mycarousel form {
@@ -91,9 +91,11 @@ function mycarousel_itemLoadCallback(carousel, state) {
         return;
     }
     if (totalcount == c) {
+        c = c - 1;
         carousel.prev();
         return;
     }
+    
     jQuery.get("getimage.aspx?r=" + c, function(response) {
         carousel.add(response.split(';')[0], response.split(';')[1]);
         totalcount = response.split(';')[2];
@@ -163,7 +165,7 @@ function jsonFlickrFeed(o)
 jQuery(document).ready(function() {
     jQuery('#mycarousel').jcarousel({
         scroll: 1,
-        animation: 100,
+        animation: 200,
         initCallback: mycarousel_initCallback,
         itemLoadCallback: mycarousel_itemLoadCallback
     });
@@ -188,5 +190,14 @@ jQuery(document).ready(function() {
   </div> </div>
     <uc2:FooterUc ID="FooterUc1" runat="server" />
     </form>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-254993-16");
+        pageTracker._trackPageview();
+    } catch (err) { }</script>
 </body>
 </html>
