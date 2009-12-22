@@ -17,8 +17,8 @@ namespace newsflippers {
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@NMG_NPR_ID", newsId);
             cmd.Parameters.AddWithValue("@NMG_SEC_ID", 0);
-            cmd.Parameters.AddWithValue("@NMG_ADDEDDATE", DateTime.Now);
-            cmd.Parameters.AddWithValue("@NMG_DATE", DateTime.Now.ToString("MMddyyyy"));
+            cmd.Parameters.AddWithValue("@NMG_ADDEDDATE", Utility.LocalDate());
+            cmd.Parameters.AddWithValue("@NMG_DATE", Utility.LocalDate().ToString("MMddyyyy"));
             cmd.Parameters.AddWithValue("@NMG_URL", url);
             cmd.Parameters.AddWithValue("@NMG_IMAGENAME", imageName);
             cmd.Parameters.AddWithValue("@NMG_TITLE", title);
@@ -26,27 +26,42 @@ namespace newsflippers {
             db.ExecuteNonQuery("USP_NEWSPAPER_IMAGES_CREATE", cmd);
         }
 
-        public static Stream GetPhoto(int photoid) {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString)) {
-                using (SqlCommand command = new SqlCommand("USP_NEWSPAPER_GETIMAGE", connection)) {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@NMG_ID", photoid));
-                    connection.Open();
-                    object result = command.ExecuteScalar();
-                    try {
-                        return new MemoryStream((byte[])result);
-                    } catch {
-                        return null;
-                    }
-                }
-            }
+        private static string GetConnectionString() {
+            return ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         }
 
+        //public static Stream GetPhoto(int photoid) {
+        //    using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString)) {
+        //        using (SqlCommand command = new SqlCommand("USP_NEWSPAPER_GETIMAGE", connection)) {
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            command.Parameters.Add(new SqlParameter("@NMG_ID", photoid));
+        //            connection.Open();
+        //            object result = command.ExecuteScalar();
+        //            try {
+        //                return new MemoryStream((byte[])result);
+        //            } catch {
+        //                return null;
+        //            }
+        //        }
+        //    }
+        //}
+
+        private static SqlDataReader ExecuteReader(string spName, SqlCommand cmd) {
+            SqlConnection cnn = new SqlConnection(GetConnectionString());
+            cmd.CommandText = spName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+            cnn.Open();
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        }
+
+
         public static Source GetSource(int id) {
-            SqlCommand cmd = new SqlCommand();
             Infonex.Data.Database db = new Infonex.Data.Database();
+            SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@SRC_ID", id);
-            IDataReader rdr = db.ExecuteReader("USP_SOURCE_GETBYID", cmd);
+            SqlDataReader rdr = ExecuteReader("USP_SOURCE_GETBYID", cmd);
+            
             List<Source> sourceList = new List<Source>();
             while (rdr.Read()) {
                 sourceList.Add(new Source() {
@@ -65,7 +80,7 @@ namespace newsflippers {
             SqlCommand cmd = new SqlCommand();
             Infonex.Data.Database db = new Infonex.Data.Database();
             cmd.Parameters.AddWithValue("@NPR_PARENT_ID", source.ID);
-            IDataReader rdr = db.ExecuteReader("USP_SOURCES_GETCHILDSOURCES", cmd);
+            IDataReader rdr = ExecuteReader("USP_SOURCES_GETCHILDSOURCES", cmd);
             List<Source> sourceList = new List<Source>();
             sourceList.Add(source);
             while (rdr.Read()) {
@@ -93,11 +108,17 @@ namespace newsflippers {
             return db.ExecuteDataSet("USP_NEWSPAPER_IMAGES_GETALL", cmd);
         }
 
-        public static List<CaptureWebPage> GetCaptureWebPages() {
+        public static List<CaptureWebPage> GetCaptureWebPages()
+        {
+            return GetCaptureWebPages(Extensions.ToDateRef(Utility.LocalDate()));
+        }
+
+        public static List<CaptureWebPage> GetCaptureWebPages(string dt)
+        {
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@DATEREF", Extensions.ToDateRef(DateTime.Now));
+            cmd.Parameters.AddWithValue("@DATEREF", dt);
             Infonex.Data.Database db = new Infonex.Data.Database();
-            IDataReader rdr = db.ExecuteReader("USP_NEWSPAPER_IMAGES_GETALL", cmd);
+            IDataReader rdr = ExecuteReader("USP_NEWSPAPER_IMAGES_GETALL", cmd);
             List<CaptureWebPage> childSources = new List<CaptureWebPage>();
             while (rdr.Read()) {
                 childSources.Add(new CaptureWebPage() {
@@ -113,8 +134,9 @@ namespace newsflippers {
         public static bool IsImageExists(string imageName) {
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@NMG_IMAGENAME", imageName);
+            cmd.Parameters.AddWithValue("@NMG_DATE", imageName);
             Infonex.Data.Database db = new Infonex.Data.Database();
-            IDataReader rdr = db.ExecuteReader("USP_NEWSPAPER_IMAGES_RECORDEXISTS", cmd);
+            IDataReader rdr = ExecuteReader("USP_NEWSPAPER_IMAGES_RECORDEXISTS", cmd);
             bool imageExist = false;
             while (rdr.Read()) {
                 imageExist = true;  
@@ -127,11 +149,33 @@ namespace newsflippers {
         public static List<Source> GetSources() {
             SqlCommand cmd = new SqlCommand();
             Infonex.Data.Database db = new Infonex.Data.Database();
-            IDataReader rdr = db.ExecuteReader("USP_SOURCES_GETALL", cmd);
+            IDataReader rdr = ExecuteReader("USP_SOURCES_GETALL", cmd);
             List<Source> sourceList = new List<Source>();
             while (rdr.Read()) {
                 sourceList.Add(new Source() {
                     ID = Convert.ToInt32(rdr["NPR_ID"]),
+                    Title = rdr["NPR_TITLE"].ToString(),
+                    Desc = rdr["NPR_DESC"].ToString(),
+                    Url = rdr["NPR_URL"].ToString(),
+                    Active = Convert.ToBoolean(rdr["NPR_ACTIVE"])
+                });
+            }
+            rdr.Close();
+            return sourceList;
+        }
+
+        public static List<Source> GetAllSources()
+        {
+            SqlCommand cmd = new SqlCommand();
+            Infonex.Data.Database db = new Infonex.Data.Database();
+            IDataReader rdr = ExecuteReader("USP_NEWSPAPERS_GETALL", cmd);
+            List<Source> sourceList = new List<Source>();
+            while (rdr.Read())
+            {
+                sourceList.Add(new Source()
+                {
+                    ID = Convert.ToInt32(rdr["NPR_ID"]),
+                    ParentID = Convert.ToInt32(rdr["NPR_PARENT_ID"]),
                     Title = rdr["NPR_TITLE"].ToString(),
                     Desc = rdr["NPR_DESC"].ToString(),
                     Url = rdr["NPR_URL"].ToString(),

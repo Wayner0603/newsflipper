@@ -16,10 +16,11 @@ namespace newsflippers
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string todayFolder = HttpContext.Current.Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now), Extensions.ToDay(DateTime.Now)));
-            string dateTimeText = Extensions.ToNewsDateTime(DateTime.Now);
+            string todayFolder = HttpContext.Current.Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", Extensions.ToYear(Extensions.ToLocalDateTime()), Extensions.ToMonth(Extensions.ToLocalDateTime()), Extensions.ToDay(Extensions.ToLocalDateTime())));
+           //string todayFolder = HttpContext.Current.Server.MapPath("~/pages/2009/12/21");//, Extensions.ToYear(Extensions.ToLocalDateTime()), Extensions.ToMonth(Extensions.ToLocalDateTime()), Extensions.ToDay(Extensions.ToLocalDateTime())));
+           string dateTimeText = Extensions.ToNewsDateTime(Extensions.ToLocalDateTime());
             List<Source> sources = NewsManager.GetSources();
-
+            this.Label2.Text = dateTimeText + "<br>" + todayFolder;
             int count = 0;
             foreach (Source s in sources)
             {
@@ -42,7 +43,8 @@ namespace newsflippers
         }
 
         private bool IsImageExists(string imageName) {
-            string todayFolder = HttpContext.Current.Server.MapPath(string.Format("~/pages/{0}/{1}/{2}/", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now), Extensions.ToDay(DateTime.Now)));
+            string todayFolder = HttpContext.Current.Server.MapPath(string.Format("~/pages/{0}/{1}/{2}/", Extensions.ToYear(Extensions.ToLocalDateTime()), Extensions.ToMonth(Extensions.ToLocalDateTime()), Extensions.ToDay(Extensions.ToLocalDateTime())));
+            //string todayFolder = HttpContext.Current.Server.MapPath("~/pages/{0/{1}/{2}/");//, Extensions.ToYear(Extensions.ToLocalDateTime()), Extensions.ToMonth(Extensions.ToLocalDateTime()), Extensions.ToDay(Extensions.ToLocalDateTime())));
             return File.Exists(todayFolder + imageName + ".gif");
         }
     }

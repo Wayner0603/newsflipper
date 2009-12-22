@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Configuration;
 using System.Web;
 
 namespace newsflippers
@@ -11,33 +11,33 @@ namespace newsflippers
 
         public static string ToNewsDateTime(DateTime dt)
         {
-            return DateTime.Now.ToString("yyyyMMdd");
+            return dt.ToString("yyyyMMdd");
         }
 
         public static string ToNewsDateTimeFull(DateTime dt)
         {
-            return DateTime.Now.ToString("yyyy/MM/dd");
+            return dt.ToString("yyyy/MM/dd");
         }
 
         public static string ToYear(DateTime dt)
         {
-            return DateTime.Now.ToString("yyyy");
+            return dt.ToString("yyyy");
         }
 
         public static string ToMonth(DateTime dt)
         {
-            return DateTime.Now.ToString("MM");
+            return dt.ToString("MM");
         }
 
         public static string ToDateRef(DateTime dt)
         {
-            return DateTime.Now.ToString("MMddyyyy");
+            return dt.ToString("MMddyyyy");
         }
 
 
         public static string ToDay( DateTime dt)
         {
-            return DateTime.Now.ToString("dd");
+            return dt.ToString("dd");
         }
 
         public static string ToImageString(string url) {
@@ -54,6 +54,20 @@ namespace newsflippers
                 return url;
             }
             return url;
+        }
+
+        public static DateTime ToLocalDateTime() {
+            return ToLocalDateTime(DateTime.UtcNow);
+        }
+
+        public static DateTime ToLocalDateTime(DateTime dt) { 
+            string timespanstr = ConfigurationSettings.AppSettings["LocalTime"];
+            char[] c= {':'};
+            string hr = timespanstr.Split(c)[0];
+            string min = timespanstr.Split(c)[1];
+
+            TimeSpan s = new TimeSpan(Convert.ToInt32(hr), Convert.ToInt32(min), 0);
+            return dt.Add(s);
         }
     }
 }
