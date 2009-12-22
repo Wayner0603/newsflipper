@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Text;
 
 namespace newsflippers
 {
@@ -20,24 +21,28 @@ namespace newsflippers
             {
                 string path = Server.MapPath("~/pages/Sources.txt");
 
-                string todayFolder = HttpContext.Current.Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", Extensions.ToYear(DateTime.Now), Extensions.ToMonth(DateTime.Now), Extensions.ToDay(DateTime.Now)));
-                string dateTimeText = Extensions.ToNewsDateTime(DateTime.Now);
+                string todayFolder = HttpContext.Current.Server.MapPath(string.Format("~/pages/{0}/{1}/{2}", Extensions.ToYear(Extensions.ToLocalDateTime()), Extensions.ToMonth(Extensions.ToLocalDateTime()), Extensions.ToDay(Extensions.ToLocalDateTime())));
+                string dateTimeText = Extensions.ToNewsDateTime(Extensions.ToLocalDateTime());
                 List<Source> sources = NewsManager.GetSources();
-
-                if (File.Exists(path))
-                {
-                    System.IO.StreamWriter StreamWriter1 = new System.IO.StreamWriter(path);
+                StringBuilder b = new StringBuilder();
+                //if (File.Exists(path))
+                //{
+                    //System.IO.StreamWriter StreamWriter1 = new System.IO.StreamWriter(path);
                     foreach (Source s in sources)
                     {
                         List<Source> childSourceList = NewsManager.GetChildSources(s);
                         foreach (Source ChildSource in childSourceList)
                         {
-                            StreamWriter1.WriteLine(Extensions.FormatURL(ChildSource.Url));
+                            b.AppendFormat("{0}<br>", Extensions.FormatURL(ChildSource.Url));
+                            //StreamWriter1.WriteLine(Extensions.FormatURL(ChildSource.Url));
 
                         }
                     }
-                    StreamWriter1.Close();
-                }
+                    this.Label2.Text = b.ToString();
+
+                    
+                    //StreamWriter1.Close();
+                //}
             }
             catch (Exception ex)
             {

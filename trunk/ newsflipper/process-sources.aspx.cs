@@ -17,7 +17,7 @@ namespace newsflippers {
 
         protected void Button1_Click(object sender, EventArgs e) {
 
-            string dateTimeText = Extensions.ToNewsDateTime( DateTime.Now);
+            string dateTimeText = Extensions.ToNewsDateTime(Extensions.ToLocalDateTime());
 
             List<Source> sourceList = NewsManager.GetChildSources(this.SourceControlUC1.SelectedSource);
 
