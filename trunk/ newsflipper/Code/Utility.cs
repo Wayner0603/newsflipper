@@ -25,6 +25,11 @@ namespace newsflippers
             return string.Format("links_{0}", LocalDate().ToString(DATE_SHORT_FORMAT));
         }
 
+        public static string GetPreviousCacheKey()
+        {
+            return string.Format("links_{0}", LocalDate().AddDays(-1).ToString(DATE_SHORT_FORMAT));
+        }
+
         public static string GetImageFolder() {
             return string.Format("~/pages/{0}/{1}/{2}/", Extensions.ToYear(Utility.LocalDate()), Extensions.ToMonth(Utility.LocalDate()), Extensions.ToDay(Utility.LocalDate()));
         }

@@ -4,7 +4,7 @@
  */
  
  #container {
-    text-align:center;
+    text-align:left;
     margin:0px;
     padding:0px;
  }
@@ -35,7 +35,7 @@
     float: left;
     list-style: none;
     /* We set the width/height explicitly. No width/height causes infinite loops. */
-    width: 75px;
+    width: 65px;
     height: 75px;
 }
 

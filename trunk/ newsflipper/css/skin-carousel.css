@@ -6,7 +6,7 @@
 
 .jcarousel-skin-ie7 .jcarousel-container-horizontal {
     width: 845px;
-    padding: 20px 85px;
+    padding: 10px 50px;
 }
 
 .jcarousel-skin-ie7 .jcarousel-clip-horizontal {
@@ -15,7 +15,7 @@
 }
 
 .jcarousel-skin-ie7 .jcarousel-item {
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -29,7 +29,7 @@
     width: 100px;
     height: 600px;
     cursor: pointer;
-    background: transparent url(../images/right2.png) no-repeat 0 0;
+    background: transparent url(../images/next.gif) no-repeat 0 0;
 }
 
 .jcarousel-skin-ie7 .jcarousel-next-horizontal:hover {
@@ -46,7 +46,7 @@
     width: 200px;
     height: 600px;
     cursor: pointer;
-    background: transparent url(../images/left2.png) no-repeat 0 0;
+    background: transparent url(../images/prev.gif) no-repeat 0 0;
 }
 
 .jcarousel-skin-ie7 .jcarousel-prev-horizontal:hover {

@@ -6,12 +6,12 @@
 }
 
 .text-beta{color: #CC0000;}
-#footer{color: #909090; text-align:center;}
+#footer{color: #909090; text-align:center;padding:10px;}
 #header
 {
     padding:8px;
     border-bottom-style: solid;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-color: #B0CAFF;
 }
 #header-bottom
@@ -19,3 +19,52 @@
     background-color: #ECF2FF;
     padding: 4px;
 }
+
+#leftmenu
+{
+margin-right:10px;
+    padding: 10px;
+    top: 40px;
+    float: left;
+    width:150px;
+    height:350px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #BFD5FF;
+}
+#middlecontent {
+padding:10px;
+top:40px;
+}
+
+.link {
+    margin:10px;
+    padding:4px;
+}
+
+/* Custom Button */
+html:not([lang*=""]) button.btn {margin:0 -3px;}
+* html .btn span {padding-top:0;}
+* html button.btn {padding-bottom:1px;}
+.btn {text-shadow: white 1px 1px 0px;display:inline-block;background:none;margin:0;padding:3px 0;border-width:0;overflow:visible;font:12px Arial,Sans-serif;text-decoration:none;color:#333;}
+.btn span {background:#ddd url('../../images/bg-button.gif') repeat-x 0 0;margin:0;padding:3px 0;border-left:1px solid #939393;border-right:1px solid #939393;}
+.btn span span {position:relative;padding:3px .4em;border-width:0;border-top:1px solid #939393;border-bottom:1px solid #939393;}
+.btn:hover span, .btn:hover span span, .btn:focus span, .btn:focus span span {border-color:#666666 !important;color:#000;cursor:default;}
+.btn:active span {background-position:0 -400px;background:none;background-color:#ddd;outline:none;cursor:default;border-color:#939393}
+.btn:focus, .btn:active {outline:none; cursor:default;border-color:#939393}
+
+.textbox {
+    border: 1px inset #BEBEBE;
+}
+
+.footer-border
+{
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #D5D5FF;
+}
+
+.error {
+    color:Red;
+}
+.success {color:Green;}
