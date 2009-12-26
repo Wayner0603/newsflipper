@@ -58,7 +58,6 @@
     <Content Include="App_Themes\Default\style.css" />
     <Content Include="css\carousel.css" />
     <Content Include="css\skin-carousel.css" />
-    <Content Include="default.aspx" />
     <Content Include="getimage.aspx" />
     <Content Include="js\jCarousel.js" />
     <Content Include="js\jquery-1-3-2.js" />
@@ -103,8 +102,8 @@
     <Compile Include="Code\Source.cs" />
     <Compile Include="Code\Utility.cs" />
     <Compile Include="default.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -144,6 +143,7 @@
     <Content Include="about\submit-issue.aspx" />
     <Content Include="admin\admin.Master" />
     <Content Include="admin\default.aspx" />
+    <Content Include="default.aspx" />
     <Content Include="images\bg-button.gif" />
     <Content Include="images\loading.gif" />
     <Content Include="images\logo.png" />
