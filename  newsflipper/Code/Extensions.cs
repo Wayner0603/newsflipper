@@ -47,7 +47,7 @@ namespace newsflippers
 
         public static string FormatURL(string url)
         {
-            string dateTimeText = Extensions.ToNewsDateTimeFull(DateTime.Now);
+            string dateTimeText = Extensions.ToNewsDateTimeFull(Utility.LocalDate());
             if (url.Contains(DATE))
             {
                 url = url.Replace(DATE, dateTimeText);

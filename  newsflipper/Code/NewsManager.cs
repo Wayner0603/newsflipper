@@ -130,6 +130,17 @@ namespace newsflippers {
             rdr.Close();
             return childSources;
         }
+            
+        public static void InsertIssue(string issueText) {
+            SqlConnection cnn = new SqlConnection(GetConnectionString());
+            SqlCommand cmd = new SqlCommand("USP_ISSUES_INSERT", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ISS_TEXT", issueText);
+            cmd.Parameters.AddWithValue("@ISS_DATE", DateTime.UtcNow);
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
 
         public static bool IsImageExists(string imageName) {
             SqlCommand cmd = new SqlCommand();
