@@ -68,6 +68,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="about\about.Master.cs">
+      <DependentUpon>about.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\about.Master.designer.cs">
+      <DependentUpon>about.Master</DependentUpon>
+    </Compile>
     <Compile Include="about\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -81,6 +88,13 @@
     </Compile>
     <Compile Include="about\submit-issue.aspx.designer.cs">
       <DependentUpon>submit-issue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about\whats-new.aspx.cs">
+      <DependentUpon>whats-new.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\whats-new.aspx.designer.cs">
+      <DependentUpon>whats-new.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\admin.Master.cs">
       <DependentUpon>admin.Master</DependentUpon>
@@ -139,7 +153,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="about\default.aspx" />
     <Content Include="about\submit-issue.aspx" />
     <Content Include="admin\admin.Master" />
     <Content Include="admin\default.aspx" />
@@ -149,7 +162,13 @@
     <Content Include="images\logo.png" />
     <Content Include="images\next.gif" />
     <Content Include="images\prev.gif" />
+    <Content Include="js\global_js.min.js" />
     <Content Include="js\jquery.hotkeys-0.7.9.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about\about.Master" />
+    <Content Include="about\default.aspx" />
+    <Content Include="about\whats-new.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
