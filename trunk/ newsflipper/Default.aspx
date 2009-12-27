@@ -11,8 +11,6 @@
 <script type="text/javascript" src="js/jquery-1-3-2.js"></script>
 <script type="text/javascript" src="js/jCarousel.js"></script>
 <script type="text/javascript" src="js/global_js.min.js"></script>
-<link href="css/carousel.css" rel="stylesheet" type="text/css" />
-<link href="css/skin-carousel.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <form id="form1" runat="server">

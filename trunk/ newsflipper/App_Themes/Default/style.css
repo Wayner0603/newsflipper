@@ -68,3 +68,165 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
     color:Red;
 }
 .success {color:Green;}
+
+#mycarousel.jcarousel-container-horizontal {
+    width: 900px;
+    height: 800px;
+}
+ 
+#mycarousel .jcarousel-clip-horizontal {
+    border: 1px solid #ccc;
+    width: 900px;
+    height: 800px;
+}
+ 
+#mycarousel .jcarousel-item,
+#mycarousel .jcarousel-item-placeholder {
+    width: 900px;
+    height: 800px;
+}
+ 
+#mycarousel .jcarousel-item-horizontal img {
+}
+ 
+#mycarousel .jcarousel-item-horizontal p {
+    margin: 5px;
+    text-align: left;
+    clear: both;
+    white-space: wrap;
+}
+ 
+#mycarousel .jcarousel-item-placeholder {
+    background: transparent url(../images/loading.gif) 50% 50% no-repeat;
+}
+ 
+#mycarousel .jcarousel-next {
+    top: 150px;
+    right: -55px;
+}
+ 
+#mycarousel .jcarousel-prev {
+    top: 150px;
+    left: 10px;
+}
+ 
+#mycarousel form {
+    margin-top: 10px;
+}
+ 
+#mycarousel form label,
+#mycarousel form small {
+    display: block;
+}
+
+/**
+ * This <div> element is wrapped by jCarousel around the list
+ * and has the classname "jcarousel-container".
+ */
+ 
+ #container {
+    text-align:left;
+    margin:0px;
+    padding:0px;
+ }
+.jcarousel-container {
+    position: relative;
+}
+
+.jcarousel-clip {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.jcarousel-list {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list li,
+.jcarousel-item {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 65px;
+    height: 75px;
+}
+
+/**
+ * The buttons are added dynamically by jCarousel before
+ * the <ul> list (inside the <div> described above) and
+ * have the classnames "jcarousel-next" and "jcarousel-prev".
+ */
+.jcarousel-next {
+    z-index: 3;
+    display: none;
+}
+
+.jcarousel-prev {
+    z-index: 3;
+    display: none;
+}    
+    
+    
+.jcarousel-skin-ie7 .jcarousel-container
+{
+    width:1024px;
+    height:768px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+    width: 845px;
+    padding: 10px 50px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+    width:  845px;
+    height: 77px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item {
+    text-align: left;
+}
+
+
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+    position: absolute;
+    top: 20px;
+    width: 100px;
+    height: 600px;
+    cursor: pointer;
+    background: transparent url(../../images/next.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-next-horizontal:hover {
+}
+
+.jcarousel-skin-ie7 .jcarousel-next-horizontal:active {
+
+}
+
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    height: 600px;
+    cursor: pointer;
+    background: transparent url(../../images/prev.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal:hover {
+}
+
