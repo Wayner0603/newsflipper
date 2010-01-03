@@ -12,5 +12,20 @@ namespace newsflippers.about
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NewsManager.InsertIssue(this.TextBox1.Text);
+                this.lblMsg.Text = "Thanks!";
+                this.lblMsg.CssClass = "success";
+            }
+            catch (Exception ex)
+            {
+                this.lblMsg.Text = "Error Occured! Please try again later.";
+                this.lblMsg.CssClass = "error";
+            }
+        }
     }
 }

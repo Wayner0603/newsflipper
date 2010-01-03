@@ -11,17 +11,17 @@ namespace newsflippers.about
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.Expires = -1;
-
-            if (Request["issue"] == null && string.IsNullOrEmpty(Request["issue"])) return;
+            string request = "";
+            if (Request["issue"] != null && !string.IsNullOrEmpty(Request["issue"])) { request = Request["issue"]; }
             string content = string.Empty;
             try
             {
                 NewsManager.InsertIssue("issue");
-                content = "success";
+                content = "Thank you for your submission.";
             }
             catch (Exception ex)
             {
-                content = "success";
+                content = "Unable to process the request.";
             }
 
             Response.ContentType = "text/plain";
