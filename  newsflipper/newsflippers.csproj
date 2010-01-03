@@ -169,6 +169,8 @@
     <Content Include="about\about.Master" />
     <Content Include="about\default.aspx" />
     <Content Include="about\whats-new.aspx" />
+    <Content Include="images\keyboard.gif" />
+    <Content Include="images\new_logo.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

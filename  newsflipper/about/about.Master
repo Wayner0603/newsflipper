@@ -15,7 +15,7 @@
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
     <div id="leftmenu">
         <asp:HyperLink CssClass="link" ID="HyperLink3" runat="server" 
-            NavigateUrl="~/about/whats-new.aspx" ForeColor="#CC0000">What&#39;s News</asp:HyperLink>
+            NavigateUrl="~/about/whats-new.aspx" ForeColor="#CC0000">New Features</asp:HyperLink>
         <br />
         <br />
         <asp:HyperLink CssClass="link" ID="HyperLink2" runat="server" 

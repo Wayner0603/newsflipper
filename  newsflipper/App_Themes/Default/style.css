@@ -97,7 +97,7 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
 }
  
 #mycarousel .jcarousel-item-placeholder {
-    background: transparent url(../images/loading.gif) 50% 50% no-repeat;
+    background: transparent url(../../images/loading.gif) 50% 30% no-repeat;
 }
  
 #mycarousel .jcarousel-next {
@@ -230,3 +230,65 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
 .jcarousel-skin-ie7 .jcarousel-prev-horizontal:hover {
 }
 
+.text-launched
+{
+    font-size: 10px;
+    color:Red;
+    
+}
+
+.userlogin {
+    margin:4px;
+    padding:5px;
+    float:right;
+    font-size: 12px;
+    color:Red;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a.userlogin:visited {
+    margin:4px;
+    padding:5px;
+    float:right;
+    font-size: 12px;
+    color:Red;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a.userlogin:hover {
+    margin:4px;
+    padding:5px;
+    float:right;
+    font-size: 12px;
+    color:Red;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a.userlogin:active {
+    margin:4px;
+    padding:5px;
+    float:right;
+    font-size: 12px;
+    color:Red;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a:visited {
+    color:blue      ;
+}
+
+a:link {
+    color:blue      ;
+}
+
+a:hover {
+    color:blue      ;
+}
+
+a:active{
+    color:blue      ;
+}
