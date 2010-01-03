@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="about.master.cs" Inherits="newsflippers.about.about" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register src="../uc/HeaderUc.ascx" tagname="HeaderUc" tagprefix="uc1" %>
+
+<%@ Register src="../uc/FooterUc.ascx" tagname="FooterUc" tagprefix="uc2" %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <uc1:HeaderUc ID="HeaderUc1" runat="server" />
+    <div id="leftmenu">
+        <asp:HyperLink CssClass="link" ID="HyperLink3" runat="server" 
+            NavigateUrl="~/about/whats-new.aspx" ForeColor="#CC0000">New Features</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink CssClass="link" ID="HyperLink2" runat="server" 
+            NavigateUrl="~/about/default.aspx">About Newsflippers</asp:HyperLink><br />
+        <asp:HyperLink CssClass="link" ID="HyperLink1" runat="server" 
+            NavigateUrl="~/about/default.aspx">Report an Issue</asp:HyperLink><br />
+    </div><div id="middlecontent">
+    
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div><br /><br /><br /><br /><div class="footer-border">
+    <uc2:FooterUc ID="FooterUc1" runat="server" />
+    </div></form>
+</body>
+</html>

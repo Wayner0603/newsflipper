@@ -1,0 +1,10 @@
+D:\Projects\Library\newsflippers\bin\newsflippers.dll
+D:\Projects\Library\newsflippers\bin\newsflippers.pdb
+D:\Projects\Library\newsflippers\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Library\newsflippers\obj\Debug\newsflippers.dll
+D:\Projects\Library\newsflippers\obj\Debug\newsflippers.pdb
+D:\Projects\Library\newsflippers\bin\Infonex.dll
+D:\Projects\Library\newsflippers\bin\WebsitesScreenshot.dll
+D:\Projects\Library\newsflippers\bin\log4net.dll
+D:\Projects\Library\newsflippers\bin\WebsitesScreenshot.xml
+D:\Projects\Library\newsflippers\bin\Infonex.pdb
