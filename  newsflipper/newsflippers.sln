@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newsflippers", "newsflippers.csproj", "{4F189D9C-F4FA-4DB9-93A0-AA7873D9669A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infonex.NF.Facade", "..\Infonex.NF.Facade\Infonex.NF.Facade.csproj", "{7C51ABA1-4F0F-4341-B7C7-96A9FE3A552F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infonex.NF.Core", "..\Infonex.NF.Core\Infonex.NF.Core.csproj", "{EBB77F68-08E5-42B1-973C-CCD495AE395B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{4F189D9C-F4FA-4DB9-93A0-AA7873D9669A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F189D9C-F4FA-4DB9-93A0-AA7873D9669A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F189D9C-F4FA-4DB9-93A0-AA7873D9669A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C51ABA1-4F0F-4341-B7C7-96A9FE3A552F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C51ABA1-4F0F-4341-B7C7-96A9FE3A552F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C51ABA1-4F0F-4341-B7C7-96A9FE3A552F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C51ABA1-4F0F-4341-B7C7-96A9FE3A552F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB77F68-08E5-42B1-973C-CCD495AE395B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB77F68-08E5-42B1-973C-CCD495AE395B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB77F68-08E5-42B1-973C-CCD495AE395B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB77F68-08E5-42B1-973C-CCD495AE395B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

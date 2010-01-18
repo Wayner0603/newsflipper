@@ -82,6 +82,13 @@
     <Compile Include="about\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="about\sources.aspx.cs">
+      <DependentUpon>sources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\sources.aspx.designer.cs">
+      <DependentUpon>sources.aspx</DependentUpon>
+    </Compile>
     <Compile Include="about\submit-issue.aspx.cs">
       <DependentUpon>submit-issue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,8 +175,11 @@
   <ItemGroup>
     <Content Include="about\about.Master" />
     <Content Include="about\default.aspx" />
+    <Content Include="about\sources.aspx" />
     <Content Include="about\whats-new.aspx" />
     <Content Include="images\keyboard.gif" />
+    <Content Include="images\logo4.gif" />
+    <Content Include="images\logo5.gif" />
     <Content Include="images\new_logo.gif" />
   </ItemGroup>
   <ItemGroup>

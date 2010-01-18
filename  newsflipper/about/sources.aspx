@@ -1,14 +1,15 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="about.master.cs" Inherits="newsflippers.about.about" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sources.aspx.cs" Inherits="newsflippers.about.sources" %>
+<%@ OutputCache Duration="690" VaryByParam="none" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register src="../uc/HeaderUc.ascx" tagname="HeaderUc" tagprefix="uc1" %>
 
 <%@ Register src="../uc/FooterUc.ascx" tagname="FooterUc" tagprefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+<head id="Head1" runat="server">
+    <title>Sources - newsflippers.com</title>
+   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,10 +26,14 @@
             <asp:HyperLink CssClass="link" ID="HyperLink4" runat="server" 
             NavigateUrl="~/about/sources.aspx">News sources</asp:HyperLink><br />
     </div><div id="middlecontent">
-    
-     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <div class="text-header">News Sources</div><br />
+    Currently there are only few news source has been added to the system. But we're imporving constantly. Please <a href="mailto:news@newsflippers.com">let us know</a> if you have any other news sources.<br /><br />
+    <a href="http://www.divaina.com" target="_blank">Divaina</a><br />
+    <a href="http://www.dailymirror.lk" target="_blank">Daily Mirror</a><br />
+    <a href="http://www.infolanka.com" target="_blank">Info Lanka</a><br />
+    <a href="http://www.rivira.lk" target="_blank">Rivira</a><br />
+    <a href="http://www.lankadeepa.lk" target="_blank">Lankadeepa</a><br />
+    <a href="http://www.lakbima.lk" target="_blank">Lakbima</a><br />
     </div><br /><br /><br /><br /><div class="footer-border">
     <uc2:FooterUc ID="FooterUc1" runat="server" />
     </div></form>
