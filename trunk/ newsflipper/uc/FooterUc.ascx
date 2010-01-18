@@ -3,5 +3,5 @@
     <asp:HyperLink ID="HyperLink2" runat="server" 
         NavigateUrl="~/about">About Newsflippers</asp:HyperLink>
  - <asp:HyperLink ID="HyperLink1" runat="server" 
-        NavigateUrl="~/about">Report an Issue</asp:HyperLink>
+        NavigateUrl="~/about">Suggest a feature</asp:HyperLink>
 </div> 

@@ -32,7 +32,7 @@
     them accordingly. Currently it&#39;s supporting only selected news sources.&nbsp;
     <br />
     <br />
-    Report an Issue or suggest a new feature<br />
+    Suggest a new feature or Report an Issue<br />
     <asp:TextBox CssClass="textbox" ID="TextBox1" runat="server" Height="71px" TextMode="MultiLine"
         Width="558px"></asp:TextBox>
     <br />
