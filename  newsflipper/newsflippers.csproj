@@ -129,6 +129,13 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="default_old.aspx.cs">
+      <DependentUpon>default_old.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default_old.aspx.designer.cs">
+      <DependentUpon>default_old.aspx</DependentUpon>
+    </Compile>
     <Compile Include="getimage.aspx.cs">
       <DependentUpon>getimage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,7 +170,7 @@
     <Content Include="about\submit-issue.aspx" />
     <Content Include="admin\admin.Master" />
     <Content Include="admin\default.aspx" />
-    <Content Include="default.aspx" />
+    <Content Include="default_old.aspx" />
     <Content Include="images\bg-button.gif" />
     <Content Include="images\loading.gif" />
     <Content Include="images\logo.png" />
@@ -177,10 +184,18 @@
     <Content Include="about\default.aspx" />
     <Content Include="about\sources.aspx" />
     <Content Include="about\whats-new.aspx" />
+    <Content Include="default.aspx" />
     <Content Include="images\keyboard.gif" />
     <Content Include="images\logo4.gif" />
     <Content Include="images\logo5.gif" />
     <Content Include="images\new_logo.gif" />
+    <Content Include="images\new_logo.png" />
+    <Content Include="images\top-bar.gif" />
+    <Content Include="images\topbackground.gif" />
+    <Content Include="js\excanvas.js" />
+    <Content Include="js\jquery-1.3.2.js" />
+    <Content Include="js\liquid-canvas-plugins.js" />
+    <Content Include="js\liquid-canvas.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

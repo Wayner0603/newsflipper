@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 namespace newsflippers
 {
-    public partial class default_new : System.Web.UI.Page
+    public partial class _default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

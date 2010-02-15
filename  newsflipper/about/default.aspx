@@ -6,8 +6,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script language="javascript" src="../js/jquery-1-3-2.js"></script>
-
     <script language="javascript">
         function submit_issue() {
             jQuery.get("submit-issue.aspx?request=test", function(response) {
