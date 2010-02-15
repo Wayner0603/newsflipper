@@ -11,6 +11,8 @@
 &nbsp;
     <asp:Button ID="Button2" runat="server" onclick="Button2_Click" 
         Text="Generate Links" />
+    &nbsp;<asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
+        Text="Create Folders" />
     <br />
     <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
     <br />

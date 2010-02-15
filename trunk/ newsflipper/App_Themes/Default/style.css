@@ -1,18 +1,42 @@
 ﻿body
 {
+    margin: 0;
     font-family: arial, Helvetica, sans-serif;
     font-size: 12px;
-    margin:0px;
+    background-color: #d8dce0;
+    background-image: url('../../images/topbackground.gif');
+    background-repeat: repeat-x;
+    padding:10px;
+    padding-top:0px;
 }
 
+#browser_msg
+{
+    margin-top:3px;
+    position: absolute;
+    left: 300px;
+    padding:2px;
+    top: 0px;
+    font-family: arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #FFCC00;
+    color: #000;
+    border-right-style: solid;
+    border-right-width: 10px;
+    border-right-color: #FFCC00;
+    border-left-style: solid;
+    border-left-width: 10px;
+    border-left-color: #FFCC00;
+}
+
+
+#logo {
+    padding:5px;
+}
 .text-beta{color: #CC0000;}
 #footer{color: #909090; text-align:center;padding:10px;}
 #header
 {
-    padding:8px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: #B0CAFF;
 }
 #header-bottom
 {
@@ -24,17 +48,13 @@
 {
 margin-right:10px;
     padding: 10px;
-    top: 40px;
     float: left;
     width:150px;
     height:350px;
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-right-color: #BFD5FF;
+    vertical-align:top;
 }
 #middlecontent {
 padding:10px;
-top:40px;
 }
 
 .link {
@@ -75,7 +95,6 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
 }
  
 #mycarousel .jcarousel-clip-horizontal {
-    border: 1px solid #ccc;
     width: 900px;
     height: 800px;
 }
@@ -193,7 +212,7 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
 }
 
 .jcarousel-skin-ie7 .jcarousel-item {
-    text-align: left;
+    text-align: center;
 }
 
 
@@ -242,6 +261,7 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
     padding:5px;
     float:right;
     font-size: 12px;
+    font-weight:normal;
     color:Red;
     font-weight:bold;
     text-decoration:none;
@@ -295,4 +315,22 @@ a:active{
 .text-header {
     font-size:18px;
     font-weight:bold;
+}
+
+/* Version 1.1 */
+#header_style
+{
+    background-color: Green;
+    margin: 3px;
+    padding: 5px;
+    background: url(../../images/top-bar.gif) repeat-x;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    color: #FFFFFF;
+}
+
+#news {
+    padding:10px;
 }
