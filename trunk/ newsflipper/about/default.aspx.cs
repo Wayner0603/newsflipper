@@ -6,26 +6,13 @@ using System.Web.UI.WebControls;
 
 namespace newsflippers.about
 {
-    public partial class _default : System.Web.UI.Page
+    public partial class _default1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                NewsManager.InsertIssue(this.TextBox1.Text);
-                this.lblMsg.Text = "Thanks!";
-                this.lblMsg.CssClass = "success";
-            }
-            catch (Exception ex)
-            {
-                this.lblMsg.Text = "Error Occured! Please try again later.";
-                this.lblMsg.CssClass = "error";
-            }
-        }
+
     }
 }

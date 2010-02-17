@@ -8,54 +8,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace newsflippers.about {
+namespace newsflippers.uc {
     
     
-    public partial class _default1 {
+    public partial class BugFeatureRequestUc {
         
         /// <summary>
-        /// Head1 control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// form1 control.
+        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
-        /// HeaderUc1 control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.HeaderUc HeaderUc1;
-        
-        /// <summary>
-        /// FooterUc1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::newsflippers.uc.FooterUc FooterUc1;
-        
-        /// <summary>
-        /// BugFeatureRequestUc1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::newsflippers.uc.BugFeatureRequestUc BugFeatureRequestUc1;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }
