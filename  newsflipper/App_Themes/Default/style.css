@@ -6,7 +6,6 @@
     background-color: #d8dce0;
     background-image: url('../../images/topbackground.gif');
     background-repeat: repeat-x;
-    padding:10px;
     padding-top:0px;
 }
 
@@ -14,7 +13,7 @@
 {
     margin-top:3px;
     position: absolute;
-    left: 300px;
+    left: 380px;
     padding:2px;
     top: 0px;
     font-family: arial, Helvetica, sans-serif;
@@ -31,7 +30,6 @@
 
 
 #logo {
-    padding:5px;
 }
 .text-beta{color: #CC0000;}
 #footer{color: #909090; text-align:center;padding:10px;}
@@ -90,18 +88,18 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
 .success {color:Green;}
 
 #mycarousel.jcarousel-container-horizontal {
-    width: 900px;
+    width: 880px;
     height: 800px;
 }
  
 #mycarousel .jcarousel-clip-horizontal {
-    width: 900px;
+    width: 880px;
     height: 800px;
 }
  
 #mycarousel .jcarousel-item,
 #mycarousel .jcarousel-item-placeholder {
-    width: 900px;
+    width: 880px; 
     height: 800px;
 }
  
@@ -121,12 +119,12 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
  
 #mycarousel .jcarousel-next {
     top: 150px;
-    right: -55px;
+    right: -65px;
 }
  
 #mycarousel .jcarousel-prev {
     top: 150px;
-    left: 10px;
+    left: 0px;
 }
  
 #mycarousel form {
@@ -199,16 +197,21 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
 {
     width:1024px;
     height:768px;
+   
 }
 
 .jcarousel-skin-ie7 .jcarousel-container-horizontal {
     width: 845px;
     padding: 10px 50px;
+    
 }
 
 .jcarousel-skin-ie7 .jcarousel-clip-horizontal {
     width:  845px;
     height: 77px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #D5D5FF;
 }
 
 .jcarousel-skin-ie7 .jcarousel-item {
@@ -256,6 +259,12 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
     
 }
 
+.top_menu {
+margin:4px;
+    padding:5px;
+    float:right;
+}
+
 .userlogin {
     margin:4px;
     padding:5px;
@@ -263,7 +272,6 @@ html:not([lang*=""]) button.btn {margin:0 -3px;}
     font-size: 12px;
     font-weight:normal;
     color:Red;
-    font-weight:bold;
     text-decoration:none;
 }
 
@@ -273,7 +281,6 @@ a.userlogin:visited {
     float:right;
     font-size: 12px;
     color:Red;
-    font-weight:bold;
     text-decoration:none;
 }
 
@@ -333,4 +340,85 @@ a:active{
 
 #news {
     padding:10px;
+}
+
+#sub_page_content {
+    padding:15px;
+}
+
+#page {
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Popup Control*/
+.overlay_div {
+    top:0px;
+    left:0px;
+    position: absolute;
+    filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+.larger-text {
+    font-size:48px;
+}
+#userlogin_div {
+    position:absolute;
+    top:10px;
+    display:none;  
+    width:500px;
+    z-index:4;
+}
+
+#help_div {
+    position:absolute;
+    top:10px;
+   display:none;  
+    width:500px;
+    z-index:4;
+}
+
+.popup_close {
+    float:right;
+    cursor:pointer;
+}
+
+.popup_outer
+{
+    padding: 0px;
+    border: 1px solid #336699;
+    position: absolute;
+}
+
+.popup_container
+{
+    border: 9px solid #BFD5FF;
+}
+
+.popup_header
+{
+    font-size:18px;
+    font-weight:bold;
+    padding:8px;
+    background-color:#EAF0FF;
+}
+
+.popup_footer {
+    padding:8px;
+    background-color:#EAF0FF;
+}
+
+.popup_content {
+    padding:8px;
+    background-color:#fff;
+}
+
+
+h3 {
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:5px;
 }
