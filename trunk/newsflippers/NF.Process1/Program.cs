@@ -115,7 +115,7 @@ namespace NF.Process1 {
 
         public static List<Source> GetAllSources()
         {
-            SqlConnection cnn = new SqlConnection(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF_0_5;Data Source=LUDMAL-PC");
+            SqlConnection cnn = new SqlConnection(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF;Data Source=LUDMAL_PC");
             SqlCommand cmd = new SqlCommand("USP_NEWSPAPERS_GETALL", cnn);
             cnn.Open();
             SqlDataReader rdr = cmd.ExecuteReader();
