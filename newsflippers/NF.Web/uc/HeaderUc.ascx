@@ -16,7 +16,6 @@
      });		
           
     </script>
-<span class="top_menu"><a href="/about/">About Newsflippers</a></span>
 <div id="header">
     <div id="logo"><a href="/"><asp:Image style="border:0" ID="Image1" runat="server" 
         AlternateText="fast & easy - Newsflippers.com" 
