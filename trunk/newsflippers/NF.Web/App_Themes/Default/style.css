@@ -16,5 +16,23 @@ h3{font-size:18px;font-weight:bold}
     padding:5px;
     text-align:right;
 }
+div#titlebar
+{
+    background-color: #e5ecf9;
+    border-top-color: #C1C1FF;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding:4px;
+}
+div#container_left{float:left;width:15%;  }
 
+div#container_middle{margin: 0 15%}
+
+#logo {
+    padding:5px;
+}
 a:visited,a:link,a:hover,a:active{color:#4272db; text-decoration:none;}
+
+ul {
+    list-style-type: none ;
+}

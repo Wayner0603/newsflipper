@@ -176,6 +176,13 @@
     <Compile Include="uc\SourceControlUC.ascx.designer.cs">
       <DependentUpon>SourceControlUC.ascx</DependentUpon>
     </Compile>
+    <Compile Include="uc\TopBar.ascx.cs">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\TopBar.ascx.designer.cs">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="about\submit-issue.aspx" />
@@ -224,6 +231,7 @@
     <Content Include="js\source\liquid-canvas-plugins.js" />
     <Content Include="js\source\liquid-canvas.js" />
     <Content Include="uc\BugFeatureRequestUc.ascx" />
+    <Content Include="uc\TopBar.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

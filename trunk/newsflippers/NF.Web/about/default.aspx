@@ -4,6 +4,7 @@
 <%@ Register Src="../uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
 <%@ OutputCache Duration="90" VaryByParam="none" %>
 <%@ Register src="../uc/BugFeatureRequestUc.ascx" tagname="BugFeatureRequestUc" tagprefix="uc3" %>
+<%@ Register src="../uc/TopBar.ascx" tagname="TopBar" tagprefix="uc4" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -49,30 +50,24 @@
             } else {
                 loadPage(page, div);
             }
-
-            $("#container").liquidCanvas(
-            "[shadow{color:#CDCFD1}fill{color:#fff} ] => roundedRect{radius:10}");
-
         });
 
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="page">
-       
+    <uc4:TopBar ID="TopBar1" runat="server" />
         <uc1:HeaderUc ID="HeaderUc1" runat="server" />
+        <div id="titlebar">More Info</div>
       <div id="container">
-            <div id="header_style">
-                About Newsflippers!</div>
-            <div id="sub_page_content">
-                <a href="javascript:loadPage('about.htm', 'about_div');">About</a>&nbsp;-&nbsp;
-                <a href="javascript:loadPage('whats-new.htm', 'whatsnew_div');">What's new</a>&nbsp;-&nbsp;
-                <a href="javascript:loadPage('sources.htm', 'sources_div');">Sources</a>&nbsp;-&nbsp;
-                <a href="/">« Back to News</a>
-                <br />
-              
-                <div id="about_div">
+      <div id="container_left"><ul>
+        <li><a href="javascript:loadPage('about.htm', 'about_div');">About</a></li>
+        <li><a href="javascript:loadPage('whats-new.htm', 'whatsnew_div');">What's new</a></li>
+        <li><a href="javascript:loadPage('sources.htm', 'sources_div');">Sources</a></li>
+        <li><a href="/">« Back to News</a></li>
+      </ul></div>
+      <div id="container_middle">
+            <div id="about_div">
                     Loading...</div>
                 <div id="whatsnew_div" style="display: none">
                     Loading...</div>
@@ -81,8 +76,6 @@
             </div>
         </div>
         <uc2:FooterUc ID="FooterUc1" runat="server" />
-    </div>
-    
     <uc3:BugFeatureRequestUc ID="BugFeatureRequestUc1" runat="server" />
     
     </form>
