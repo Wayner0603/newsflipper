@@ -4,6 +4,7 @@
 <%@ Register Src="uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
 <%@ OutputCache Duration="20" VaryByParam="none" %>
 <%@ Register Src="uc/BugFeatureRequestUc.ascx" TagName="BugFeatureRequestUc" TagPrefix="uc3" %>
+<%@ Register src="uc/TopBar.ascx" tagname="TopBar" tagprefix="uc4" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head id="Head1" runat="server">
@@ -20,10 +21,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="header_top"><a href="/about/">About Newsflippers</a></div>
-    <div id="page">
+    <uc4:TopBar ID="TopBar1" runat="server" />
+ 
         <uc1:HeaderUc ID="HeaderUc1" runat="server" />
-        <div id="container">
+        <div id="titlebar">Alpha Version</div>
+        
+        <div id="page">
             <div id="news">
                 <div id="mycarousel" class="jcarousel-skin-ie7">
                     <ul>
@@ -37,7 +40,7 @@
 
         <script type="text/javascript">try { var pageTracker = _gat._getTracker("UA-254993-16"); pageTracker._trackPageview(); } catch (err) { }</script>
 
-    </div>
+  
     <uc3:BugFeatureRequestUc ID="BugFeatureRequestUc1" runat="server" />
     <div id="help_div">
         <div class="popup_outer">
