@@ -148,6 +148,13 @@
       <DependentUpon>getimage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rss_test.aspx.cs">
+      <DependentUpon>rss_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rss_test.aspx.designer.cs">
+      <DependentUpon>rss_test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uc\BugFeatureRequestUc.ascx.cs">
       <DependentUpon>BugFeatureRequestUc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,8 +237,15 @@
     <Content Include="js\source\jquery-1.3.2.js" />
     <Content Include="js\source\liquid-canvas-plugins.js" />
     <Content Include="js\source\liquid-canvas.js" />
+    <Content Include="rss_test.aspx" />
     <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\TopBar.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NF.Core\NF.Core.csproj">
+      <Project>{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}</Project>
+      <Name>NF.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,12 +10,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NF.Core</RootNamespace>
     <AssemblyName>NF.Core</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>Svn</SccProjectName>
     <SccLocalPath>Svn</SccLocalPath>
     <SccAuxPath>Svn</SccAuxPath>
     <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,10 +37,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    <Reference Include="Infonex, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASES\IWT_Releases\Infonex.dll</HintPath>
     </Reference>
+    <Reference Include="skmRss, Version=1.9.3.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\skmRss.1.9.3.Binary\skmRss.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -49,8 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="NFEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RssManager.cs" />
+    <Compile Include="RssPost.cs" />
+    <Compile Include="RssSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
