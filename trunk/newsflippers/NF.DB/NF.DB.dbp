@@ -20,7 +20,8 @@ Begin DataProject = "NF.DB"
    Begin Folder = "Queries"
    End
    Begin Folder = "SP"
-      Script = "NEWSL_LINKS__INSERT.sql"
+      Script = "NEWS_LINKS__GETDATA.sql"
+      Script = "NEWS_LINKS__INSERT.sql"
    End
    Begin Folder = "TABLES"
    End
