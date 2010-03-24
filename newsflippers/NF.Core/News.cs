@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Infonex.Data;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace NF.Core
 {
@@ -22,7 +23,13 @@ namespace NF.Core
             cmd.Parameters.AddWithValue("@NEWS_DATEREF",dateref );
             cmd.Parameters.AddWithValue("@NEWS_IMAGE_NAME",imageName );
             cmd.Parameters.AddWithValue("@NEWS_IMAGE_GENERATED", false );
-            cmd.ExecuteNonQuery();
+            db.ExecuteNonQuery("NEWSL_LINKS__INSERT", cmd);
+        }
+
+        public static DataSet GetData() {
+            Database db = new Database();
+            SqlCommand cmd = new SqlCommand();
+            return db.ExecuteDataSet("NEWS_LINKS__GETDATA", cmd);
         }
     }
 }

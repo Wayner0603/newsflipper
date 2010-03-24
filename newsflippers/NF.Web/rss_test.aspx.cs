@@ -18,8 +18,15 @@ namespace newsflippers
         protected void Button1_Click(object sender, EventArgs e)
         {
             RssManager m = new RssManager();
-            this.GridView1.DataSource = m.GetRssItems(@"http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss");
-            this.GridView1.DataBind();
+            RssItemList items = m.GetRssItems(@"http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss");
+
+            foreach (RssItem item in items)
+            {
+                News.Insert(35, item.Title, item.Description, item.Link, item.Author, item.Category, item.PubDate, DateTime.Now, DateTime.Now.ToString("yyyyMMddHH"), string.Empty);
+            }
+
+            this.Label1.Text = "Successfully Installed!";
+
         }
     }
 }
