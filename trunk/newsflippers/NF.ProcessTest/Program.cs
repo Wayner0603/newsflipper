@@ -25,18 +25,18 @@ namespace NF.ProcessTest
             //Step 1
             try
             {
-                StreamWriter w = new StreamWriter(path + "urls_TEST.txt");
+                //StreamWriter w = new StreamWriter(path + "urls_TEST.txt");
 
-                DataSet ds = News.GetData();
+                //DataSet ds = News.GetData();
 
-                StringBuilder b = new StringBuilder();
+                //StringBuilder b = new StringBuilder();
 
-                foreach (DataRow s in ds.Tables[0].Rows)
-                {
-                    w.WriteLine("{0}", s["NEWS_LINK"].ToString());
-                }
+                //foreach (DataRow s in ds.Tables[0].Rows)
+                //{
+                //    w.WriteLine("{0}", s["NEWS_LINK"].ToString());
+                //}
 
-                w.Flush();
+                //w.Flush();
 
             }
             catch (Exception ex)
