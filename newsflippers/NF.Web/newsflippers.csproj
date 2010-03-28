@@ -36,9 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Infonex, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Infonex, Version=1.0.0.54, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\RnD\fastflip\bin\Infonex.dll</HintPath>
+      <HintPath>..\..\..\RELEASES\IWT_Releases\Infonex.dll</HintPath>
     </Reference>
     <Reference Include="skmRss, Version=1.9.3.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>

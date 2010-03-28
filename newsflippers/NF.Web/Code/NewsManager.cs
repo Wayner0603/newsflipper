@@ -27,7 +27,7 @@ namespace newsflippers {
         }
 
         private static string GetConnectionString() {
-            return ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            return Infonex.Security.Encrypter.DecryptString(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
         }
 
         //public static Stream GetPhoto(int photoid) {
