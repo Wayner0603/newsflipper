@@ -7,9 +7,9 @@ using System.Data;
 
 namespace NF.Core
 {
-    public class News 
+    public class NewsLink 
     {
-        public static void Insert(int source, string title, string desc, string link, string author, string category, DateTime pubdate, DateTime extractedDate, string dateref, string imageName) {
+        public static void Create(int source, string title, string desc, string link, string author, string category, DateTime pubdate, DateTime extractedDate, string dateref, string imageName) {
             Database db = new Database();
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@NEWS_SOURCE", source );
@@ -23,13 +23,13 @@ namespace NF.Core
             cmd.Parameters.AddWithValue("@NEWS_DATEREF",dateref );
             cmd.Parameters.AddWithValue("@NEWS_IMAGE_NAME",imageName );
             cmd.Parameters.AddWithValue("@NEWS_IMAGE_GENERATED", false );
-            db.ExecuteNonQuery("NEWSL_LINKS__INSERT", cmd);
+            db.ExecuteNonQuery("USP_NEWS_LINKS_INSERT", cmd);
         }
 
-        public static DataSet GetData() {
-            Database db = new Database();
-            SqlCommand cmd = new SqlCommand();
-            return db.ExecuteDataSet("NEWS_LINKS__GETDATA", cmd);
-        }
+        //public static DataSet GetData() {
+        //    Database db = new Database();
+        //    SqlCommand cmd = new SqlCommand();
+        //    return db.ExecuteDataSet("NEWS_LINKS__GETDATA", cmd);
+        //}
     }
 }
