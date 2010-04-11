@@ -161,6 +161,11 @@ namespace NF.Core
             return childSources;
         }
 
+        public static void InsertSourceItemRemotely(DataTable dt) {
+            NFServices.NFService s = new NF.Core.NFServices.NFService();
+            s.AddNewsItems(dt);
+        }
+
         public static void InsertSourceItem(DataTable dt) {
            
             SqlConnection cnn = new SqlConnection(GetConnectionString());
