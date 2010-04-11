@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Configuration;
-using System.Web;
 
-namespace newsflippers
+namespace NF.Core
 {
     public static class Extensions
     {
@@ -34,6 +34,9 @@ namespace newsflippers
             return dt.ToString("MMddyyyy");
         }
 
+        public static string ToMonthRef(DateTime dt) {
+            return dt.ToString("yyyyMMdd");
+        }
 
         public static string ToDay(DateTime dt)
         {
@@ -48,7 +51,7 @@ namespace newsflippers
 
         public static string FormatURL(string url)
         {
-            string dateTimeText = Extensions.ToNewsDateTimeFull(Utility.LocalDate());
+            string dateTimeText = Extensions.ToNewsDateTimeFull(NFEngine.LocalDate());
             if (url.Contains(DATE))
             {
                 url = url.Replace(DATE, dateTimeText);
