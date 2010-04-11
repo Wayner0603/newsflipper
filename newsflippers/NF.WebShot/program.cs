@@ -20,7 +20,7 @@ namespace webshotex_csharp
         {
             WebShot.OleInitialize(IntPtr.Zero);
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
                 string imgName = string.Format("{0}.gif",ShortGuid.NewGuid().ToString());
                 string path = string.Format(@"{0}{1}", NFEngine.GetImageFolder(), imgName);
@@ -41,7 +41,7 @@ namespace webshotex_csharp
             //Locally
             NFEngine.InsertSourceItem(dt);
             //Remotely
-
+            NFEngine.InsertSourceItemRemotely(dt);
         }
 
         public static void CaptureScreenshot(string Url, string ImageFilename)
