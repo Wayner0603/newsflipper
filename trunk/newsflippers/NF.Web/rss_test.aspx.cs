@@ -17,6 +17,7 @@ namespace newsflippers
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //NFEngine.ProcessRss();
             /*RssManager m = new RssManager();
             RssItemList items = m.GetRssItems(@"http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss");
 
@@ -27,7 +28,7 @@ namespace newsflippers
 
             this.Label1.Text = "Successfully Installed!";*/
 
-            NFEngine.ProcessRss();
+            //NFEngine.ProcessRss();
         }
     }
 }

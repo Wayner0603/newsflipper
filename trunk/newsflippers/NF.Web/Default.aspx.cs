@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NF.Core;
 
 namespace newsflippers
 {
@@ -18,13 +19,14 @@ namespace newsflippers
 
                 DateTime dt = Utility.LocalDate();
 
-                List<CaptureWebPage> capturedWebPages = NewsManager.GetCaptureWebPages();
-                if (capturedWebPages.Count == 0)
-                {
-                    dt = Utility.LocalDate().AddDays(-1);
-                    cacheKey = Utility.GetPreviousCacheKey();
-                    capturedWebPages = NewsManager.GetCaptureWebPages(Extensions.ToDateRef(dt));
-                }
+                List<CaptureWebPage> capturedWebPages = NFEngine.GetCaptureWebPages();
+                
+                //if (capturedWebPages.Count == 0)
+                //{
+                //    dt = Utility.LocalDate().AddDays(-1);
+                //    cacheKey = Utility.GetPreviousCacheKey();
+                //    capturedWebPages = NewsManager.GetCaptureWebPages(Extensions.ToDateRef(dt));
+                //}
 
                 string baseUrl = GetBaseURL();
                 //this.Label1.Text = string.Format("Date:{0}<br> Links:{1}", Utility.LocalDate().ToString(Utility.DATE_LONG_FORMAT), capturedWebPages.Count.ToString());

@@ -15,6 +15,8 @@ Project("{4F174C21-8C12-11D0-8340-0000F80270F8}") = "NF.DB", "..\NF.DB\NF.DB.dbp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NF.ProcessTest", "..\NF.ProcessTest\NF.ProcessTest.csproj", "{485E75FA-6202-492B-96D2-CDDD0B96AEF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webshotex", "..\NF.WebShot\webshotex.csproj", "{BBBD74C6-9ED5-427D-9AFF-69B9E2008BFD}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -49,6 +51,10 @@ Global
 		{485E75FA-6202-492B-96D2-CDDD0B96AEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{485E75FA-6202-492B-96D2-CDDD0B96AEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{485E75FA-6202-492B-96D2-CDDD0B96AEF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBBD74C6-9ED5-427D-9AFF-69B9E2008BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBBD74C6-9ED5-427D-9AFF-69B9E2008BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBBD74C6-9ED5-427D-9AFF-69B9E2008BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBBD74C6-9ED5-427D-9AFF-69B9E2008BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

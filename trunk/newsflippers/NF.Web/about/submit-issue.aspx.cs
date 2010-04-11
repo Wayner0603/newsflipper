@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NF.Core;
 
 namespace newsflippers.about
 {
@@ -16,7 +17,7 @@ namespace newsflippers.about
             string content = string.Empty;
             try
             {
-                NewsManager.InsertIssue("issue");
+                NFEngine.InsertIssue("issue");
                 content = "Thank you for your submission.";
             }
             catch (Exception ex)

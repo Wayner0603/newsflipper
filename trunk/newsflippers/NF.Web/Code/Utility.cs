@@ -11,7 +11,8 @@ namespace newsflippers
         public static string DATE_SHORT_FORMAT = "ddMMyyyy";
         private const string DATE = "<DATE>";
 
-        public static DateTime LocalDate() {
+        public static DateTime LocalDate()
+        {
             string timespanstr = ConfigurationSettings.AppSettings["LocalTime"];
             char[] c = { ':' };
             string hr = timespanstr.Split(c)[0];
@@ -21,7 +22,8 @@ namespace newsflippers
             return DateTime.UtcNow.Add(s);
         }
 
-        public static string GetCacheKey() {
+        public static string GetCacheKey()
+        {
             return string.Format("links_{0}", LocalDate().ToString(DATE_SHORT_FORMAT));
         }
 
@@ -30,7 +32,8 @@ namespace newsflippers
             return string.Format("links_{0}", LocalDate().AddDays(-1).ToString(DATE_SHORT_FORMAT));
         }
 
-        public static string GetImageFolder() {
+        public static string GetImageFolder()
+        {
             return string.Format("~/pages/{0}/{1}/{2}/", Extensions.ToYear(Utility.LocalDate()), Extensions.ToMonth(Utility.LocalDate()), Extensions.ToDay(Utility.LocalDate()));
         }
 

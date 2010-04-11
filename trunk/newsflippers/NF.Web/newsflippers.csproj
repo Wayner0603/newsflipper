@@ -121,7 +121,6 @@
     <Compile Include="admin\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Code\ChildSource.cs" />
     <Compile Include="Code\Extensions.cs" />
     <Compile Include="Code\NewsManager.cs" />
     <Compile Include="Code\Source.cs" />
@@ -133,19 +132,16 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="default_old.aspx.cs">
-      <DependentUpon>default_old.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="default_old.aspx.designer.cs">
-      <DependentUpon>default_old.aspx</DependentUpon>
-    </Compile>
     <Compile Include="getimage.aspx.cs">
       <DependentUpon>getimage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="getimage.aspx.designer.cs">
       <DependentUpon>getimage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFService.asmx.cs">
+      <DependentUpon>NFService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rss_test.aspx.cs">
@@ -195,7 +191,6 @@
     <Content Include="about\submit-issue.aspx" />
     <Content Include="admin\admin.Master" />
     <Content Include="admin\default.aspx" />
-    <Content Include="default_old.aspx" />
     <Content Include="images\bg-button.gif" />
     <Content Include="images\loading.gif" />
     <Content Include="images\logo.png" />
@@ -237,6 +232,7 @@
     <Content Include="js\source\jquery-1.3.2.js" />
     <Content Include="js\source\liquid-canvas-plugins.js" />
     <Content Include="js\source\liquid-canvas.js" />
+    <Content Include="NFService.asmx" />
     <Content Include="rss_test.aspx" />
     <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\TopBar.ascx" />
@@ -265,7 +261,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1751</DevelopmentServerPort>
+          <DevelopmentServerPort>2726</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

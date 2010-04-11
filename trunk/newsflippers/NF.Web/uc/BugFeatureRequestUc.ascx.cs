@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using NF.Core;
 namespace newsflippers.uc
 {
     public partial class BugFeatureRequestUc : System.Web.UI.UserControl
@@ -17,7 +17,7 @@ namespace newsflippers.uc
         {
             try
             {
-                NewsManager.InsertIssue(this.TextBox1.Text);
+                NFEngine.InsertIssue(this.TextBox1.Text);
                 this.lblMsg.Text = "Thanks!";
                 this.lblMsg.CssClass = "success";
             }

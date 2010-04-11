@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NF.Core;
 
 namespace newsflippers.uc {
     public partial class SourceControlUC : System.Web.UI.UserControl {
@@ -22,7 +23,7 @@ namespace newsflippers.uc {
 
         public Source SelectedSource {
             get {
-                return NewsManager.GetSource(Convert.ToInt32(this.DropDownList1.SelectedValue));
+                return null;//NewsManager.GetSource(Convert.ToInt32(this.DropDownList1.SelectedValue));
             }
         }
 
@@ -33,10 +34,10 @@ namespace newsflippers.uc {
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
-                this.DropDownList1.DataTextField = "Title";
-                this.DropDownList1.DataValueField= "ID";
-                this.DropDownList1.DataSource = NewsManager.GetSources();
-                this.DropDownList1.DataBind();
+                //this.DropDownList1.DataTextField = "Title";
+                //this.DropDownList1.DataValueField= "ID";
+                //this.DropDownList1.DataSource = NewsManager.GetSources();
+                //this.DropDownList1.DataBind();
             }
         }
     }
