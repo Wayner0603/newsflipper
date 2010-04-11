@@ -73,16 +73,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Web References\NFServices\NFService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://www.newsflippers.com/NFService.asmx">
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\NFServices\nfservice.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://newsflippers.com/nfservice.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\NFServices\</RelPath>
-      <UpdateFromURL>http://www.newsflippers.com/NFService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://newsflippers.com/nfservice.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -92,11 +98,7 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\NFServices\NFService.disco" />
+    <None Include="Web References\NFServices\nfservice.disco" />
     <None Include="Web References\NFServices\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="NF_Core_NFServices_NFService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://www.newsflippers.com/NFService.asmx</Value>
+      <Value Profile="(Default)">http://newsflippers.com/nfservice.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -12,59 +12,71 @@ namespace newsflippers
     /// <summary>
     /// Summary description for NFService
     /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
+    [WebService(Namespace = "http://www.newsflippers.com/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     public class NFService : System.Web.Services.WebService
     {
 
         [WebMethod]
-        public void AddNewsItems(DataTable dt)
+        public string GetName(string dt)
+        {
+            return "Ludmal" + dt;
+        }
+
+        [WebMethod]
+        public string AddNewsItems(DataTable dt)
         {
             try
             {
-                InsertSourceItem(dt);
+                //InsertSourceItem(dt);
+                return "done";
 
             }
             catch (Exception ex)
             {
-                throw ex;
+                return ex.Message.ToString();
             }
+            return "nothin happend";
         }
 
-        public static string GetConnectionString() {
-            return Infonex.Security.Encrypter.DecryptString(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
+        public static string GetConnectionString()
+        {
+            //return @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF_2;Data Source=LUDMAL_PC";
+
+            return @"Data Source=winsqlus03.lxa.perfora.net,1433;Initial Catalog=db311835257;User Id=dbo311835257;Password=thu$hari78-$@";
         }
 
-        public static void InsertSourceItem(DataTable dt)
+        [WebMethod]
+        public void InsertSourceItem(string name)
         {
 
-            SqlConnection cnn = new SqlConnection(GetConnectionString());
+            SqlConnection cnn = new SqlConnection(@"Data Source=winsqlus03.lxa.perfora.net,1433;Initial Catalog=db311835257;User Id=dbo311835257;Password=thu$hari78-$@");
             SqlCommand cmd = new SqlCommand("INSERT_SOURCE_ITEMS_1", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cnn.Open();
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                DataRow row = dt.Rows[i];
-                cmd.Parameters.AddWithValue("@SRC_LNK_ID", row["SRC_LNK_ID"]);
-                cmd.Parameters.AddWithValue("@ITM_TITLE", row["ITM_TITLE"]);
-                cmd.Parameters.AddWithValue("@ITM_URL", row["ITM_URL"]);
-                cmd.Parameters.AddWithValue("@ITM_CAT", row["ITM_CAT"]);
-                cmd.Parameters.AddWithValue("@ITM_DESC", row["ITM_DESC"]);
-                cmd.Parameters.AddWithValue("@ITM_PUBDATE", row["ITM_PUBDATE"]);
-                cmd.Parameters.AddWithValue("@ITM_ADDEDDATE", row["ITM_ADDEDDATE"]);
-                cmd.Parameters.AddWithValue("@ITM_DATEREF", row["ITM_DATEREF"]);
-                cmd.Parameters.AddWithValue("@ITM_IMGNAME", row["ITM_IMGNAME"]);
-                cmd.Parameters.AddWithValue("@ITM_IMGTHUMB", row["ITM_IMGTHUMB"]);
-                cmd.Parameters.AddWithValue("@ITM_IMAGE", row["ITM_IMAGE"]);
-                cmd.Parameters.AddWithValue("@ITM_FAILED", row["ITM_FAILED"]);
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+                //DataRow row = dt.Rows[i];
+                cmd.Parameters.AddWithValue("@SRC_LNK_ID", 1);
+                cmd.Parameters.AddWithValue("@ITM_TITLE", name);
+                cmd.Parameters.AddWithValue("@ITM_URL", name);
+                cmd.Parameters.AddWithValue("@ITM_CAT", name);
+                cmd.Parameters.AddWithValue("@ITM_DESC", name);
+                cmd.Parameters.AddWithValue("@ITM_PUBDATE", DateTime.Now );
+                cmd.Parameters.AddWithValue("@ITM_ADDEDDATE", DateTime.Now );
+                cmd.Parameters.AddWithValue("@ITM_DATEREF", "2323");
+                cmd.Parameters.AddWithValue("@ITM_IMGNAME", "sds");
+                cmd.Parameters.AddWithValue("@ITM_IMGTHUMB", "");
+                cmd.Parameters.AddWithValue("@ITM_IMAGE", true);
+                cmd.Parameters.AddWithValue("@ITM_FAILED", 0);
 
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
-            }
+           // }
             cnn.Close();
         }
-           
+
     }
 }

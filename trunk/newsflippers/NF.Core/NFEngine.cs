@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using skmRss.Engine;
 using System.Collections;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace NF.Core
 {
@@ -16,7 +17,7 @@ namespace NF.Core
         private const string DATE = "<DATE>";
         
         //Processes main path
-        private static string imagePath = @"D:\NF_PROCESS\IMAGES\";
+        private static string imagePath = @"D:\01_PROJECTS\SOURCE\NF\NF.Web\pages\";
 
         public static DateTime GetDate() {
             return DateTime.UtcNow;
@@ -143,6 +144,8 @@ namespace NF.Core
             SqlConnection cnn = new SqlConnection(GetConnectionString());
             SqlCommand cmd = new SqlCommand("GET_SOURCE_ITEMS", cnn);
             cmd.Parameters.AddWithValue("@DATE_REF", dt);
+            cmd.CommandType = CommandType.StoredProcedure;
+
             cnn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -151,9 +154,9 @@ namespace NF.Core
             {
                 childSources.Add(new CaptureWebPage()
                 {
-                    Title = rdr["NMG_TITLE"].ToString(),
-                    ImageName = rdr["NMG_IMAGENAME"].ToString(),
-                    Url = rdr["NMG_URL"].ToString()
+                    Title = rdr["ITM_TITLE"].ToString(),
+                    ImageName = rdr["ITM_IMGNAME"].ToString(),
+                    Url = rdr["ITM_URL"].ToString()
                 });
             }
             rdr.Close();
@@ -163,7 +166,13 @@ namespace NF.Core
 
         public static void InsertSourceItemRemotely(DataTable dt) {
             NFServices.NFService s = new NF.Core.NFServices.NFService();
-            s.AddNewsItems(dt);
+            string name = s.GetName("desilva");
+            s.InsertSourceItem("heyyyy");
+        }
+
+        public static string GetImageName(string url) {
+            //char[] exclude = { '%', '_', '-', '&', ';', '=', '.' };
+            return url.Replace("http://", "").Replace("%", "").Replace("$", "").Replace("=", "").Replace(".", "").Replace("&", "").Replace("-", "").Replace(@"\","").Replace("/","").Replace("?","").Replace(";","").Replace(":","");
         }
 
         public static void InsertSourceItem(DataTable dt) {
@@ -195,9 +204,42 @@ namespace NF.Core
             cnn.Close();
         }
 
+        public static void InsertSourceItemBlank(DataTable dt)
+        {
+
+            SqlConnection cnn = new SqlConnection(GetConnectionString());
+            SqlCommand cmd = new SqlCommand("INSERT_SOURCE_ITEMS_1", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cnn.Open();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow row = dt.Rows[i];
+                string imgName = string.Format("{0}.gif", NFEngine.GetImageName(dt.Rows[i]["ITM_URL"].ToString()));
+
+                cmd.Parameters.AddWithValue("@SRC_LNK_ID", row["SRC_LNK_ID"]);
+                cmd.Parameters.AddWithValue("@ITM_TITLE", row["ITM_TITLE"]);
+                cmd.Parameters.AddWithValue("@ITM_URL", row["ITM_URL"]);
+                cmd.Parameters.AddWithValue("@ITM_CAT", row["ITM_CAT"]);
+                cmd.Parameters.AddWithValue("@ITM_DESC", row["ITM_DESC"]);
+                cmd.Parameters.AddWithValue("@ITM_PUBDATE", row["ITM_PUBDATE"]);
+                cmd.Parameters.AddWithValue("@ITM_ADDEDDATE", row["ITM_ADDEDDATE"]);
+                cmd.Parameters.AddWithValue("@ITM_DATEREF", row["ITM_DATEREF"]);
+                cmd.Parameters.AddWithValue("@ITM_IMGNAME", imgName);
+                cmd.Parameters.AddWithValue("@ITM_IMGTHUMB", row["ITM_IMGTHUMB"]);
+                cmd.Parameters.AddWithValue("@ITM_IMAGE", true);
+                cmd.Parameters.AddWithValue("@ITM_FAILED", row["ITM_FAILED"]);
+
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+            }
+            cnn.Close();
+        }
+
         public static string GetConnectionString()
         {
-            return @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF_2;Data Source=LUDMAL_PC";
+            return Infonex.Security.Encrypter.DecryptString("qEVt7BghHJo0FvI9XvXFdUMEQ9/uXlEhw3fHsmh8jCd52WAKuDvmlwIjDwOItM2Y7D85RHbhkD/ltrD1qgKdLkN+2NfzL90YO6X8cXrJH28y+vAb2ceDqRXreSK7MfU4pyXHZt8EEm4uY3T/Nr2qFLCnfBQ5NVl53NA2YH0m42cUdKfHB9vulHpsj3CiSjJs20L7IGLzq8wj1OCHOo47de3g1kmSDBMSmnfBFzGet4MLSKY5T8jVvfXbsziE57HE80iU3nDNCGnZXjayRH328c4I43o5HXc0kMd0Z7xULvueqUFvX3SnbbNeqa1Lu9hW"); //@"Data Source=winsqlus03.lxa.perfora.net,1433;Initial Catalog=db311835257;User Id=dbo311835257;Password=thu$hari78-$@";
+           //return @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF_2;Data Source=LUDMAL_PC";
         }
 
         public static void InsertIssue(string issueText)
