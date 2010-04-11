@@ -1,0 +1,54 @@
+﻿.jcarousel-skin-ie7 .jcarousel-container
+{
+    width:1024px;
+    height:768px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+    width: 845px;
+    padding: 10px 50px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+    width:  845px;
+    height: 77px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item {
+    text-align: left;
+}
+
+
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+    position: absolute;
+    top: 20px;
+    width: 100px;
+    height: 600px;
+    cursor: pointer;
+    background: transparent url(../images/next.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-next-horizontal:hover {
+}
+
+.jcarousel-skin-ie7 .jcarousel-next-horizontal:active {
+
+}
+
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    height: 600px;
+    cursor: pointer;
+    background: transparent url(../images/prev.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal:hover {
+}
+
