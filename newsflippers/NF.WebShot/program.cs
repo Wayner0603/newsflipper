@@ -20,9 +20,9 @@ namespace webshotex_csharp
         {
             WebShot.OleInitialize(IntPtr.Zero);
 
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Rows.Count ; i++)
             {
-                string imgName = string.Format("{0}.gif",ShortGuid.NewGuid().ToString());
+                string imgName = string.Format("{0}.gif", NFEngine.GetImageName(dt.Rows[i]["ITM_URL"].ToString()));
                 string path = string.Format(@"{0}{1}", NFEngine.GetImageFolder(), imgName);
                 try
                 {
@@ -41,7 +41,7 @@ namespace webshotex_csharp
             //Locally
             NFEngine.InsertSourceItem(dt);
             //Remotely
-            NFEngine.InsertSourceItemRemotely(dt);
+            //NFEngine.InsertSourceItemRemotely(dt);
         }
 
         public static void CaptureScreenshot(string Url, string ImageFilename)
@@ -65,7 +65,6 @@ namespace webshotex_csharp
                 Console.WriteLine("Error: Cannot take screenshot!");
 
             WebShot.Destroy(ref WebShotHandle);
-
             WebShot.DllUninit();
 
         }

@@ -208,6 +208,7 @@
     <Content Include="about\whats-new.aspx" />
     <Content Include="about\whats-new.htm" />
     <Content Include="default.aspx" />
+    <Content Include="default.htm" />
     <Content Include="images\close.gif" />
     <Content Include="images\keyboard.gif" />
     <Content Include="images\logo4.gif" />

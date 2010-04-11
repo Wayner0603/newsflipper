@@ -5,6 +5,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 using System.IO;
+using System.Data;
+using NF.Core;
 
 namespace newsflippers.admin
 {
@@ -12,13 +14,16 @@ namespace newsflippers.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack) {
-            //    this.Label1.Text = Utility.LocalDate().ToString(Utility.DATE_LONG_FORMAT);
-            //    if (Request["admin"] != null) {
-            //        InsertData();
-            //        Response.Redirect("~/default.aspx");
-            //    }
-            //}
+            if (!IsPostBack)
+            {
+                this.Label1.Text = Utility.LocalDate().ToString(Utility.DATE_LONG_FORMAT);
+                if (Request["admin"] != null)
+                {
+                    DataTable dt = NFEngine.GetNewsItems();
+                    NFEngine.InsertSourceItemBlank(dt);
+                    Response.Redirect("~/default.aspx");
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -41,7 +46,8 @@ namespace newsflippers.admin
             //{
             //    this.lblMsg.Text = ex.Message;
             //}
-            
+            DataTable dt = NFEngine.GetNewsItems();
+            NFEngine.InsertSourceItemBlank(dt);
         }
 
         //private void InsertData() {
