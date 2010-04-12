@@ -147,6 +147,20 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="get_images.aspx.cs">
+      <DependentUpon>get_images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="get_images.aspx.designer.cs">
+      <DependentUpon>get_images.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="getimage.aspx.cs">
       <DependentUpon>getimage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,7 +236,11 @@
     <Content Include="about\sources.htm" />
     <Content Include="about\whats-new.aspx" />
     <Content Include="about\whats-new.htm" />
+    <Content Include="css\skin.css" />
+    <Content Include="css\skin_jcoursal.css" />
     <Content Include="default.aspx" />
+    <Content Include="get_images.aspx" />
+    <Content Include="view.aspx" />
     <Content Include="default.htm" />
     <Content Include="images\close.gif" />
     <Content Include="images\keyboard.gif" />
@@ -252,6 +270,12 @@
     <Content Include="rss_test.aspx" />
     <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\TopBar.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NF.Engine\NF.Engine.csproj">
+      <Project>{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}</Project>
+      <Name>NF.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
