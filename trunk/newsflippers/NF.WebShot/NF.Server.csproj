@@ -20,6 +20,7 @@
     <SccLocalPath>Svn</SccLocalPath>
     <SccAuxPath>Svn</SccAuxPath>
     <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +46,9 @@
     </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Services" />
@@ -64,12 +68,6 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="webshot.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NF.Core\NF.Engine.csproj">
-      <Project>{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}</Project>
-      <Name>NF.Engine</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -101,6 +99,12 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NF.Core\NF.Engine.csproj">
+      <Project>{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}</Project>
+      <Name>NF.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

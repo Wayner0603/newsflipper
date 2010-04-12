@@ -8,10 +8,10 @@ using System.Collections;
 using System.Configuration;
 using System.Text.RegularExpressions;
 
-namespace NF.Core
+namespace NF.Engine
 {
     public class NFEngine
-    {
+    {//
         public static string DATE_LONG_FORMAT = "dd MM yyyy hh:mm tt";
         public static string DATE_SHORT_FORMAT = "ddMMyyyy";
         private const string DATE = "<DATE>";
@@ -235,8 +235,8 @@ namespace NF.Core
 
         public static string GetConnectionString()
         {
-            return Infonex.Security.Encrypter.DecryptString("qEVt7BghHJo0FvI9XvXFdUMEQ9/uXlEhw3fHsmh8jCd52WAKuDvmlwIjDwOItM2Y7D85RHbhkD/ltrD1qgKdLkN+2NfzL90YO6X8cXrJH28y+vAb2ceDqRXreSK7MfU4pyXHZt8EEm4uY3T/Nr2qFLCnfBQ5NVl53NA2YH0m42cUdKfHB9vulHpsj3CiSjJs20L7IGLzq8wj1OCHOo47de3g1kmSDBMSmnfBFzGet4MLSKY5T8jVvfXbsziE57HE80iU3nDNCGnZXjayRH328c4I43o5HXc0kMd0Z7xULvueqUFvX3SnbbNeqa1Lu9hW"); //@"Data Source=winsqlus03.lxa.perfora.net,1433;Initial Catalog=db311835257;User Id=dbo311835257;Password=thu$hari78-$@";
-           //return @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF_2;Data Source=LUDMAL_PC";
+           //return Infonex.Security.Encrypter.DecryptString("qEVt7BghHJo0FvI9XvXFdUMEQ9/uXlEhw3fHsmh8jCd52WAKuDvmlwIjDwOItM2Y7D85RHbhkD/ltrD1qgKdLkN+2NfzL90YO6X8cXrJH28y+vAb2ceDqRXreSK7MfU4pyXHZt8EEm4uY3T/Nr2qFLCnfBQ5NVl53NA2YH0m42cUdKfHB9vulHpsj3CiSjJs20L7IGLzq8wj1OCHOo47de3g1kmSDBMSmnfBFzGet4MLSKY5T8jVvfXbsziE57HE80iU3nDNCGnZXjayRH328c4I43o5HXc0kMd0Z7xULvueqUFvX3SnbbNeqa1Lu9hW"); //@"Data Source=winsqlus03.lxa.perfora.net,1433;Initial Catalog=db311835257;User Id=dbo311835257;Password=thu$hari78-$@";
+           return @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=NF_2;Data Source=LUDMAL_PC";
         }
 
         public static void InsertIssue(string issueText)

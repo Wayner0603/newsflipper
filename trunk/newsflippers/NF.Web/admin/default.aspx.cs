@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.IO;
 using System.Data;
-using NF.Core;
+using NF.Engine;
 
 namespace newsflippers.admin
 {

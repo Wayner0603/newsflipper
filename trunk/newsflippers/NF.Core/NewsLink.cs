@@ -5,7 +5,7 @@ using Infonex.Data;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace NF.Core
+namespace NF.Engine
 {
     public class NewsLink 
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 
-namespace NF.Core
+namespace NF.Engine
 {
     public static class Extensions
     {

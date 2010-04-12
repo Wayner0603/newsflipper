@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NF.Core
+namespace NF.Engine
 {
     public class CaptureWebPage
     {
