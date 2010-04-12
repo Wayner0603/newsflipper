@@ -165,9 +165,6 @@ namespace NF.Core
         }
 
         public static void InsertSourceItemRemotely(DataTable dt) {
-            NFServices.NFService s = new NF.Core.NFServices.NFService();
-            string name = s.GetName("desilva");
-            s.InsertSourceItem("heyyyy");
         }
 
         public static string GetImageName(string url) {

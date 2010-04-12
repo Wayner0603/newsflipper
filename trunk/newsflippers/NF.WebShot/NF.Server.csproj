@@ -66,9 +66,9 @@
     <Compile Include="webshot.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NF.Core\NF.Core.csproj">
+    <ProjectReference Include="..\NF.Core\NF.Engine.csproj">
       <Project>{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}</Project>
-      <Name>NF.Core</Name>
+      <Name>NF.Engine</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
