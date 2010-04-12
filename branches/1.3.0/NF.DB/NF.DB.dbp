@@ -1,0 +1,43 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "NF.DB"
+   MSDTVersion = "80"
+   DefDBRef = "ludmal_pc.NF.dbo"
+   SccProjectName = "Svn"
+   SccLocalPath = "Svn"
+   SccAuxPath = "Svn"
+   SccProvider = "SubversionScc"
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = "ludmal_pc.NF.dbo"
+         ConnectStr = "Data Source=LUDMAL_PC;Initial Catalog=NF;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Queries"
+   End
+   Begin Folder = "SP"
+      Script = "USP_ISSUES_INSERT.sql"
+      Script = "USP_NEWS_SOURCES_DELETE.sql"
+      Script = "USP_NEWS_SOURCES_GETALL.sql"
+      Script = "USP_NEWS_SOURCES_INSERT.sql"
+      Script = "USP_NEWS_SOURCES_UPDATE.sql"
+      Script = "USP_NEWSPAPER_GETIMAGE.sql"
+      Script = "USP_NEWSPAPER_IMAGES_CREATE.sql"
+      Script = "USP_NEWSPAPER_IMAGES_GETALL.sql"
+      Script = "USP_NEWSPAPER_IMAGES_RECORDEXISTS.sql"
+      Script = "USP_NEWSPAPERS_GETALL.sql"
+      Script = "USP_NEWSPAPERS_INSERT.sql"
+      Script = "USP_SOURCE_GETBYID.sql"
+      Script = "USP_SOURCES_GETALL.sql"
+      Script = "USP_SOURCES_GETCHILDSOURCES.sql"
+      Script = "USP_SOURCES_GETDATA.sql"
+   End
+   Begin Folder = "TABLES"
+   End
+   Begin Folder = "VIEWS"
+   End
+End
