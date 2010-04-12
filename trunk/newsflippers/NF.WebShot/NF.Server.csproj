@@ -101,7 +101,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NF.Core\NF.Engine.csproj">
+    <ProjectReference Include="..\NF.Engine\NF.Engine.csproj">
       <Project>{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}</Project>
       <Name>NF.Engine</Name>
     </ProjectReference>
