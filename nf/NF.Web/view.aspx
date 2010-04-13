@@ -19,34 +19,42 @@
     <script type="text/javascript" src="js/c.js"></script>
     
     <script type="text/javascript">        $(document).ready(function() { if ($.cookie('__N') == null || $.cookie('__N') == 'false') { showPanel("#help_div"); } }); function closePanelWithCookie(div) { closePanel(div); $.cookie('__N', (document.getElementById('chkDontShow').checked), { expires: 365 }); return false; }
+        var x = new Array(); 
         var u = '';
         var c = 0; var totalcount = -1; 
         function mycarousel_itemLoadCallback(carousel, state)
         {
             var url_1 = 'view.aspx?id=';
             var frag = '';
-            var url = parent.document.URL;
+            var url = '';
             var id = url.substring(url.indexOf('?') + 1, url.length).split('=')[1];
+           
             
-            if (carousel.has(carousel.first, carousel.last)) { return; } if (totalcount == c) { c = c - 1; carousel.prev(); return; } 
-            jQuery.get("getimage.aspx?m=1&c=" + c, function(response) { carousel.add(response.split(';')[0], response.split(';')[1]); totalcount = response.split(';')[2]; }); $(document).keydown(function(event)
+            if (carousel.has(carousel.first, carousel.last)) { return; } if (totalcount == c) { c = c - 1; carousel.prev(); return; }
+            jQuery.get("get_images.aspx?m=2&c=" + c, function(response) {
+                carousel.add(response.split(';')[0], response.split(';')[1]);
+                url = response.split(';')[4];
+                window.location.hash = url;
+                x[c] = url;
+                totalcount = response.split(';')[2];
+            });       $(document).keydown(function(event)
             {
-                u = response.split(';')[1]
                 if (event.keyCode == 37)
                 {
                     carousel.prev();
                     
                 } else if (event.keyCode == 39) { carousel.next(); }
-            }); c = c + 1; 
+            });
+            c = c + 1; 
+           
         };
 
 /**
  * This is the callback function which receives notification
  * about the state of the next button.
  */
-        function mycarousel_buttonInCallback(carousel, item, idx, state)
-        {
-         alert(u);
+        function mycarousel_buttonInCallback(carousel, item, idx, state) {
+            window.location.hash = x[idx];  
 };
  
 /**

@@ -18,6 +18,8 @@
             // at once and set the size accordingly.
             if (state != 'init')
                 return;
+
+            
             j = carousel;
             jQuery.get('get_images.aspx?m=1&cat=top', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
@@ -29,8 +31,8 @@
             // at once and set the size accordingly.
             if (state != 'init')
                 return;
-            j = carousel;
-            jQuery.get('get_images.aspx?m=1&cat=ent', function(data) {
+             j = carousel;
+            jQuery.get('get_images.aspx?m=1&cat=top', function(data) {
                 mycarousel2_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
         };
@@ -62,7 +64,7 @@
         */
         function mycarousel_getItemHTML(url) {
             var j = url.split(',');
-            return '<a href=view.aspx?id=' + j[2] + '><img border="0" src="images/' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
+            return '<a href=view.aspx#' + j[2] + '><img border="0" src="pages/2010/04/13/' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
         };
 
         jQuery(document).ready(function() {
@@ -86,8 +88,9 @@
             $("#mycarousel2").show();
 
             if (loaded == 0) {
+                
                 jQuery('#mycarousel2').jcarousel({
-                    itemLoadCallback: mycarousel2_itemLoadCallback
+                itemLoadCallback: mycarousel2_itemLoadCallback
                 });
                 loaded = 1;
             }

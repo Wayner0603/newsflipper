@@ -14,20 +14,25 @@ namespace NF.Engine
         //    return dt.ToString("yyyyMMdd");
         //}
 
-        //public static string ToNewsDateTimeFull(DateTime dt)
-        //{
-        //    return dt.ToString("yyyy/MM/dd");
-        //}
+        public static string ToImagePath(this DateTime dt)
+        {
+            return dt.ToString("yyyy/MM/dd");
+        }
 
-        //public static string ToYear(DateTime dt)
-        //{
-        //    return dt.ToString("yyyy");
-        //}
+        public static string ToYear(this DateTime dt)
+        {
+            return dt.ToString("yyyy");
+        }
 
-        //public static string ToMonth(DateTime dt)
-        //{
-        //    return dt.ToString("MM");
-        //}
+        public static string ToMonth(this DateTime dt)
+        {
+            return dt.ToString("MM");
+        }
+
+        public static string ToDay(this DateTime dt)
+        {
+            return dt.ToString("dd");
+        }
 
         //public static string ToDateRef(DateTime dt)
         //{
@@ -38,10 +43,7 @@ namespace NF.Engine
             return dt.ToString(Constants.DATE_MONTH_REF); 
         }
 
-        //public static string ToDay(DateTime dt)
-        //{
-        //    return dt.ToString("dd");
-        //}
+       
 
         //public static string ToImageString(string url)
         //{

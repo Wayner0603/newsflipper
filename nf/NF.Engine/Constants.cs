@@ -5,12 +5,12 @@ using System.Text;
 
 namespace NF.Engine {
     public class Constants {
-        public static string DATE_LONG_FORMAT = "dd MM yyyy hh:mm tt";
-        public static string DATE_SHORT_FORMAT = "ddMMyyyy";
-        public static string DATE_MONTH_REF = "yyyyMMdd";
+        public const string DATE_LONG_FORMAT = "dd MM yyyy hh:mm tt";
+        public const string DATE_SHORT_FORMAT = "ddMMyyyy";
+        public const string DATE_MONTH_REF = "yyyyMMdd";
         
         private const string DATE = "<DATE>";
 
-        private const string IMAGE_PATH = "";
+        public const string IMAGE_PATH = @"D:\01_PROJECTS\SOURCE\NF\NF.Web\pages\";
     }
 }
