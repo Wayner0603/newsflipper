@@ -21,14 +21,18 @@ namespace webshotex_csharp
         {
             WebShot.OleInitialize(IntPtr.Zero);
 
-            for (int i = 0; i < dt.Rows.Count ; i++)
+            for (int i = 0; i < 4 ; i++)
             {
                 string imgName = string.Format("{0}.gif", ShortGuid.NewGuid().ToString());
+                string imgNameThumb = string.Format("t__{0}.gif", ShortGuid.NewGuid().ToString());
                 string path = string.Format(@"{0}{1}", Util.GetImageFolder(), imgName);
+                string pathTo = string.Format(@"{0}{1}", Util.GetImageFolder(), imgNameThumb);
                 try
                 {
                     CaptureScreenshot(dt.Rows[i]["ITM_URL"].ToString(), path );
+                    ImageManager.ResizeImageFile(PhotoSize.Medium, path, pathTo);
                     dt.Rows[i]["ITM_IMGNAME"] = imgName;
+                    dt.Rows[i]["ITM_IMGTHUMB"] = imgNameThumb;
                     dt.Rows[i]["ITM_IMAGE"] = true;
                     dt.Rows[i]["ITM_FAILED"] = 0;
                 }

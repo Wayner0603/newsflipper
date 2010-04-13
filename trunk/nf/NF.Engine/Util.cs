@@ -26,8 +26,8 @@ namespace NF.Engine {
         }
 
         public static string GetImageFolder() {
-            return string.Empty;
-            //return string.Format(@"{3}{0}\{1}\{2}\", Extensions.ToYear(NFEngine.LocalDate()), Extensions.ToMonth(NFEngine.LocalDate()), Extensions.ToDay(NFEngine.LocalDate()), imagePath);
+            //return string.Empty;
+            return string.Format(@"{3}{0}\{1}\{2}\", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(),Constants.IMAGE_PATH);
         }
 
         public static string GetCacheKey() {
@@ -39,7 +39,7 @@ namespace NF.Engine {
             return string.Empty;
         }
 
-        private string GetBaseURL() {
+        public static string GetBaseURL() {
             string Port = HttpContext.Current.Request.ServerVariables["SERVER_PORT"];
             if (Port == null || Port == "80" || Port == "443")
                 Port = "";

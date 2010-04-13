@@ -9,5 +9,7 @@ namespace NF.Engine
         public string Title { get; set; }
         public string Url { get; set; }
         public string ImageName { get; set; }
+        public string ThumbImageName { get; set; }
+        public string Src { get; set; }
     }
 }

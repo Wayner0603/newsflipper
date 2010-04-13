@@ -16,5 +16,10 @@ namespace NF.Engine.Facade {
             SourceLogic logic = new SourceLogic();
             logic.InsertSourceItems(dt);
         }
+
+        public static List<CaptureWebPage> GetCapturedWebPages(string date) {
+            SourceLogic logic = new SourceLogic();
+            return logic.GetCaptureWebPages(date);
+        }
     }
 }

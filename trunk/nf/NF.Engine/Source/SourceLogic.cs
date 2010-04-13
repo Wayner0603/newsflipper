@@ -23,6 +23,7 @@ namespace NF.Engine.Source {
                 childSources.Add(new CaptureWebPage() {
                     Title = rdr["ITM_TITLE"].ToString(),
                     ImageName = rdr["ITM_IMGNAME"].ToString(),
+                    ThumbImageName = rdr["ITM_IMGTHUMB"].ToString(),
                     Url = rdr["ITM_URL"].ToString()
                 });
             }
