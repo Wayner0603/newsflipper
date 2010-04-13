@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using NF.Engine.Facade;
 using NF.Engine;
 using Infonex;
 
@@ -12,7 +13,7 @@ namespace webshotex_csharp
         [STAThread] // [STAThread] REQUIRED!
         static void Main(string[] args)
         {
-            DataTable dt = NFEngine.GetNewsItems();
+            DataTable dt = SourceFacade.GetSourceItems();
             CaptureScreenshot(ref dt);
         }
 
@@ -22,8 +23,8 @@ namespace webshotex_csharp
 
             for (int i = 0; i < dt.Rows.Count ; i++)
             {
-                string imgName = string.Format("{0}.gif", NFEngine.GetImageName(dt.Rows[i]["ITM_URL"].ToString()));
-                string path = string.Format(@"{0}{1}", NFEngine.GetImageFolder(), imgName);
+                string imgName = string.Format("{0}.gif", ShortGuid.NewGuid().ToString());
+                string path = string.Format(@"{0}{1}", Util.GetImageFolder(), imgName);
                 try
                 {
                     CaptureScreenshot(dt.Rows[i]["ITM_URL"].ToString(), path );
@@ -38,10 +39,7 @@ namespace webshotex_csharp
                 }
             }
             WebShot.OleUninitialize();
-            //Locally
-            NFEngine.InsertSourceItem(dt);
-            //Remotely
-            //NFEngine.InsertSourceItemRemotely(dt);
+            SourceFacade.InsertSourceItems(dt);
         }
 
         public static void CaptureScreenshot(string Url, string ImageFilename)
