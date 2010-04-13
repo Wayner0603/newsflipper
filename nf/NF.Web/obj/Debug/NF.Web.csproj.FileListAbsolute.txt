@@ -1,0 +1,16 @@
+D:\01_PROJECTS\SOURCE\NF\NF.Web\bin\newsflippers.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Web\bin\newsflippers.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.Web\bin\Infonex.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Web\bin\Infonex.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\01_PROJECTS\SOURCE\NF\NF.Web\obj\Debug\newsflippers.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Web\obj\Debug\newsflippers.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.Web\bin\NF.Engine.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Web\bin\NF.Engine.pdb
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\bin\newsflippers.dll
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\bin\newsflippers.pdb
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\bin\NF.Engine.dll
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\bin\NF.Engine.pdb
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\obj\Debug\newsflippers.dll
+D:\Projects\Library\To_Office\To_Office\NF\NF\NF.Web\obj\Debug\newsflippers.pdb

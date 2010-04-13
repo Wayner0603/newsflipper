@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="webshotex">
+</Property><Property Name="Solution File" Value="C:\Program Files\WebShot2\Example\C#\webshotex.sln">
+</Property><Property Name="Date" Value="Monday, 29 March 2010">
+</Property><Property Name="Time" Value="17:48">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="webshotex.sln" Description="File successfully backed up as C:\Program Files\WebShot2\Example\C#\Backup\webshotex.sln">
+</Event><Event ErrorLevel="0" Project="webshotex" Source="webshotex.csproj" Description="Project file successfully backed up as C:\Program Files\WebShot2\Example\C#\Backup\webshotex.csproj">
+</Event><Event ErrorLevel="0" Project="webshotex" Source="program.cs" Description="File successfully backed up as C:\Program Files\WebShot2\Example\C#\Backup\program.cs">
+</Event><Event ErrorLevel="0" Project="webshotex" Source="Properties\assemblyinfo.cs" Description="File successfully backed up as C:\Program Files\WebShot2\Example\C#\Backup\Properties\assemblyinfo.cs">
+</Event><Event ErrorLevel="0" Project="webshotex" Source="webshot.cs" Description="File successfully backed up as C:\Program Files\WebShot2\Example\C#\Backup\webshot.cs">
+</Event><Event ErrorLevel="0" Project="webshotex" Source="webshotex.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="webshotex" Source="webshotex.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="webshotex.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="webshotex.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="webshotex" Source="webshotex.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

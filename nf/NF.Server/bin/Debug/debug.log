@@ -1,0 +1,105 @@
+Waiting 40.0 seconds for page to load
+Resized browser window [1000x800]
+Navigating web browser [http://news.google.com/news/url?fd=R&sa=T&url=http%3A%2F%2Fwww.reuters.com%2Farticle%2FidUSTRE6390VO20100412&usg=AFQjCNEeqsBWa_YWdPXGrTKe-s3rRi5Nrw]
+Dispatch event: Ambient user mode
+Web event: Window set left
+Web event: Window set top
+Web event: Window set width
+Web event: Window set height
+Ole command: Select all
+Web event: Window set resizable
+Web event: Before navigate 2
+Before navigation url [http://news.google.com/news/url?fd=R&sa=T&url=http%%3A%%2F%%2Fwww.reuters.com%%2Farticle%%2FidUSTRE6390VO20100412&usg=AFQjCNEeqsBWa_YWdPXGrTKe-s3rRi5Nrw]
+Web event: Download begin
+Ole command: Set download state
+Ole command: Set download state
+Web event: Command state changed
+Web event: Command state changed
+Web event: Status text changed
+Web site found. Waiting for reply...
+Web event: Progress change
+Web event: Status text changed
+Redirecting to site: http://www.reuters.com/article/idUSTRE6390VO20100412
+Web event: Status text changed
+Finding site: www.reuters.com
+Web event: Progress change
+Web event: Status text changed
+Connecting to site 64.14.40.104
+Web event: Status text changed
+Web site found. Waiting for reply...
+Web event: Progress change
+Web event: Progress change
+Response headers (HTTP/1.1 200 OK
+Date: Mon, 12 Apr 2010 15:36:37 GMT
+Server: Apache
+Expires: Mon, 12 Apr 2010 15:34:30 GMT
+Last-UpdatedL: Mon, 12 Apr 2010 15:26:44 GMT
+CHANNEL-NAME: topNews
+Last-UpdatedA: Mon, 12 Apr 2010 13:54:26 GMT
+Age: 126
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 15414
+Content-Type: text/html;charset=UTF-8
+Connection: close
+Set-Cookie: SSLB=A;path=/;domain=www.reuters.com;
+
+)
+Web event: Status text changed
+Start downloading from site: http://www.reuters.com/article/idUSTRE6390VO20100412
+Ole command: Hide toolbars
+Dispatch event: Ambient user mode
+Dispatch event: Ambient user mode
+Dispatch event: Ambient download control
+Dispatch event: Ambient user agent
+Ole command: Set progress max
+Ole command: Set progress pos
+Web event: File download
+Ole command: Set download state
+Web event: Download complete
+Web event: Status text changed
+Web event: Status text changed
+Ole command: Set progress max
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set download state
+Web event: Download begin
+Web event: Set secure lock icon
+Web event: Command state changed
+Web event: Command state changed
+Ole command: Prerefresh
+Web event: Status text changed
+Web event: Status text changed
+Opening page http://www.reuters.com/article/idUSTRE6390VO20100412...
+Ole command: Set progress max
+Ole command: Set progress pos
+Ole command: Set download state
+Web event: Status text changed
+Web event: Set secure lock icon
+Web event: Status text changed
+Web event: Status text changed
+Ole command: Set download state
+Web event: Command state changed
+Web event: Command state changed
+Web event: Command state changed
+Web event: Title change
+Web event: Navigate complete 2
+Web event: Status text changed
+Web event: Set secure lock icon
+Web event: Status text changed
+Ole command: Set progress pos
+Web event: Progress change
+Web event: Status text changed
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Update commands
+Web event: Command state changed
+Web event: Title change
+Ole command: Set progress pos
+Web event: Progress change
+Web event: Status text changed
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Web event: Status text changed

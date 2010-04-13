@@ -1,0 +1,9 @@
+D:\01_PROJECTS\SOURCE\NF\NF.Core\bin\Debug\NF.Core.dll.config
+D:\01_PROJECTS\SOURCE\NF\NF.Core\bin\Debug\NF.Core.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Core\bin\Debug\NF.Core.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.Core\bin\Debug\Infonex.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Core\bin\Debug\skmRss.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Core\bin\Debug\Infonex.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.Core\obj\Debug\ResolveAssemblyReference.cache
+D:\01_PROJECTS\SOURCE\NF\NF.Core\obj\Debug\NF.Core.dll
+D:\01_PROJECTS\SOURCE\NF\NF.Core\obj\Debug\NF.Core.pdb
