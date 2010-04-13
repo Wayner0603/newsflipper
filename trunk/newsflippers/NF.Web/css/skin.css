@@ -42,7 +42,7 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
-    background: transparent url(nexdt.png) no-repeat 0 0;
+    background: transparent url(../images/right.png) no-repeat 0 0;
 }
 
 .jcarousel-skin-ie7 .jcarousel-next-horizontal:hover {
@@ -67,7 +67,7 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
-    background: transparent url(preview.gif) no-repeat 0 0;
+    background: transparent url(../images/left.png) no-repeat 0 0;
 }
 
 .jcarousel-skin-ie7 .jcarousel-prev-horizontal:hover {

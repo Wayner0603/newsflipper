@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NF.Web", "NF.Web.csproj", "{4F189D9C-F4FA-4DB9-93A0-AA7873D9669A}"
 EndProject
-Project("{4F174C21-8C12-11D0-8340-0000F80270F8}") = "NF.DB", "..\NF.DB\NF.DB.dbp", "{7CC23C26-C72F-4947-97EA-1ECBF58AB918}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NF.Engine", "..\NF.Engine\NF.Engine.csproj", "{6E1E0BA2-5FCC-486C-B2CE-AF3C173760D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NF.Server", "..\NF.Server\NF.Server.csproj", "{BBBD74C6-9ED5-427D-9AFF-69B9E2008BFD}"

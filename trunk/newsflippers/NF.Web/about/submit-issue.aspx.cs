@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using NF.Engine;
+using NF.Engine.Facade ;
 
 namespace newsflippers.about
 {
@@ -17,7 +17,7 @@ namespace newsflippers.about
             string content = string.Empty;
             try
             {
-                NFEngine.InsertIssue("issue");
+                FeedbackFacade.InsertFeedback(request);
                 content = "Thank you for your submission.";
             }
             catch (Exception ex)

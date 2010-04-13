@@ -4,6 +4,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NF.Engine;
+using NF.Engine.Facade;
+
 namespace newsflippers.uc
 {
     public partial class BugFeatureRequestUc : System.Web.UI.UserControl
@@ -17,7 +19,7 @@ namespace newsflippers.uc
         {
             try
             {
-                NFEngine.InsertIssue(this.TextBox1.Text);
+                 FeedbackFacade.InsertFeedback(this.TextBox1.Text);
                 this.lblMsg.Text = "Thanks!";
                 this.lblMsg.CssClass = "success";
             }
