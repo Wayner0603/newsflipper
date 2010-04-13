@@ -1,0 +1,18 @@
+C:\Program Files\WebShot2\Example\C#\bin\Debug\webshotex.exe
+C:\Program Files\WebShot2\Example\C#\bin\Debug\webshotex.pdb
+C:\Program Files\WebShot2\Example\C#\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\WebShot2\Example\C#\obj\Debug\webshotex.exe
+C:\Program Files\WebShot2\Example\C#\obj\Debug\webshotex.pdb
+D:\07_DOWNLOADS\C#\C#\obj\Debug\webshotex.exe
+D:\07_DOWNLOADS\C#\C#\obj\Debug\webshotex.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\webshotex.exe.config
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\webshotex.exe
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\webshotex.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\Infonex.dll
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\NF.Core.dll
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\skmRss.dll
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\Infonex.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\bin\Debug\NF.Core.pdb
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\obj\Debug\ResolveAssemblyReference.cache
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\obj\Debug\webshotex.exe
+D:\01_PROJECTS\SOURCE\NF\NF.WebShot\obj\Debug\webshotex.pdb
