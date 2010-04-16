@@ -16,7 +16,7 @@ namespace NF.Engine
 
         public static string ToImagePath(this DateTime dt)
         {
-            return dt.ToString("yyyy/MM/dd");
+            return dt.ToString("2010/04/15");
         }
 
         public static string ToYear(this DateTime dt)

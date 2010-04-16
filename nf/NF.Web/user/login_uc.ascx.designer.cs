@@ -8,63 +8,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace newsflippers {
+namespace newsflippers.user {
     
     
-    public partial class _default {
+    public partial class login_uc {
         
         /// <summary>
-        /// Head1 control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// form1 control.
+        /// txtPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txtPass;
         
         /// <summary>
-        /// TopBar1 control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.TopBar TopBar1;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
         
         /// <summary>
-        /// HeaderUc1 control.
+        /// chkSignIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.HeaderUc HeaderUc1;
+        protected global::System.Web.UI.WebControls.CheckBox chkSignIn;
         
         /// <summary>
-        /// FooterUc1 control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.FooterUc FooterUc1;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
-        /// modal_dialog1 control.
+        /// hpNewUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.modal_dialog modal_dialog1;
+        protected global::System.Web.UI.WebControls.HyperLink hpNewUser;
+        
+        /// <summary>
+        /// msg_ctrl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::newsflippers.uc.msg_ctrl msg_ctrl1;
     }
 }

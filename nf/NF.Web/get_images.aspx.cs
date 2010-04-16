@@ -19,7 +19,7 @@ namespace newsflippers
             string response = string.Empty;
 
             if (Request["m"] != null) {
-                List<CaptureWebPage> webpages = SourceFacade.GetCapturedWebPages(Util.GetDate().ToMonthRef());
+                List<CaptureWebPage> webpages = SourceFacade.GetCapturedWebPages("20100415");//(Util.GetDate().ToMonthRef());
 
                 string mode = Request["m"];
                 if (mode == "1") {
