@@ -4,7 +4,7 @@
 <%@ Register Src="uc/HeaderUc.ascx" TagName="HeaderUc" TagPrefix="uc1" %>
 <%@ Register Src="uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
 <%@ Register src="uc/TopBar.ascx" tagname="TopBar" tagprefix="uc4" %>
-
+<%@ Register src="uc/modal_dialog.ascx" tagname="modal_dialog" tagprefix="uc3" %>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
     <title></title>
@@ -64,7 +64,7 @@
         */
         function mycarousel_getItemHTML(url) {
             var j = url.split(',');
-            return '<a href=view.aspx#' + j[2] + '><img border="0" src="pages/2010/04/13/' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
+            return '<a href=view.aspx#' + j[2] + '><img border="0" src="pages/2010/04/15/' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
         };
 
         jQuery(document).ready(function() {
@@ -108,6 +108,7 @@
 <uc1:HeaderUc ID="HeaderUc1" runat="server" />
 <div id="wrap"> 
     <div class="menu_bar"><span onclick="loadtop();">Top Stories</span> | <span onclick="loadcnn();">CNN</span></div>
+   <div id="carousel">
   <div id="mycarousel" class="jcarousel-skin-ie7"> 
     <ul> 
       <!-- The content will be dynamically loaded in here --> 
@@ -118,9 +119,11 @@
       <!-- The content will be dynamically loaded in here --> 
     </ul> 
   </div> 
-  
+  </div> 
 </div> 
 <uc2:FooterUc ID="FooterUc1" runat="server" />
+<uc3:modal_dialog ID="modal_dialog1" runat="server" />
+
 </form>
 </body>
 </html>

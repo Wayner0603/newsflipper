@@ -66,6 +66,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Facade\FeedbackFacade.cs" />
     <Compile Include="Facade\SourceFacade.cs" />
+    <Compile Include="Facade\UserFacade.cs" />
     <Compile Include="Feedback\FeedbackData.cs" />
     <Compile Include="Feedback\FeedbackLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +77,8 @@
     </Compile>
     <Compile Include="Source\SourceData.cs" />
     <Compile Include="Source\SourceLogic.cs" />
+    <Compile Include="User\UserData.cs" />
+    <Compile Include="User\UserLogic.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -137,6 +137,62 @@
     <Compile Include="load_content.aspx.designer.cs">
       <DependentUpon>load_content.aspx</DependentUpon>
     </Compile>
+    <Compile Include="settings\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\jQueryCtrl.ascx.cs">
+      <DependentUpon>jQueryCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\jQueryCtrl.ascx.designer.cs">
+      <DependentUpon>jQueryCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\modal_dialog.ascx.cs">
+      <DependentUpon>modal_dialog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\modal_dialog.ascx.designer.cs">
+      <DependentUpon>modal_dialog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\msg_ctrl.ascx.cs">
+      <DependentUpon>msg_ctrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\msg_ctrl.ascx.designer.cs">
+      <DependentUpon>msg_ctrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\login_uc.ascx.cs">
+      <DependentUpon>login_uc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\login_uc.ascx.designer.cs">
+      <DependentUpon>login_uc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user\register_uc.ascx.cs">
+      <DependentUpon>register_uc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\register_uc.ascx.designer.cs">
+      <DependentUpon>register_uc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view.aspx.cs">
       <DependentUpon>view.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +240,13 @@
     <Compile Include="uc\TopBar.ascx.designer.cs">
       <DependentUpon>TopBar.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="about\submit-issue.aspx" />
@@ -210,6 +273,7 @@
     <Content Include="default.txt" />
     <Content Include="get_images.aspx" />
     <Content Include="images\border_bkg.PNG" />
+    <Content Include="images\close.png" />
     <Content Include="images\im1.png" />
     <Content Include="images\im2.png" />
     <Content Include="images\im3.png" />
@@ -223,6 +287,14 @@
     <Content Include="js\jcoursalpack.js" />
     <Content Include="js\jspack.js" />
     <Content Include="load_content.aspx" />
+    <Content Include="settings\default.aspx" />
+    <Content Include="uc\jQueryCtrl.ascx" />
+    <Content Include="uc\modal_dialog.ascx" />
+    <Content Include="uc\msg_ctrl.ascx" />
+    <Content Include="user\default.aspx" />
+    <Content Include="user\login_uc.ascx" />
+    <Content Include="user\register_uc.ascx" />
+    <Content Include="user\WebForm1.aspx" />
     <Content Include="view.aspx" />
     <Content Include="default.htm" />
     <Content Include="images\close.gif" />
@@ -253,6 +325,7 @@
     <Content Include="rss_test.aspx" />
     <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\TopBar.ascx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NF.Engine\NF.Engine.csproj">
