@@ -79,6 +79,7 @@ jQuery(document).ready( function() {
     <form id="form1" runat="server">
     <uc4:TopBar ID="TopBar1" runat="server" />
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
+    <div id="toolbar">Like</div>
     <div id="page">
         <div id="news">
             <div id="mycarousel" class="jcarousel-skin-ie7">

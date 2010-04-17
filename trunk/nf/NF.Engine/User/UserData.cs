@@ -11,16 +11,28 @@ using System.Data;
 namespace NF.Engine.User {
     public class UserData : DataLogicBase {
             
-        public void CreateUser(string email, string salt, string hash, DateTime dt, bool active) {
-            Database db = new Database();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@USER_ID", email);
-            cmd.Parameters.AddWithValue("@USER_SALT", salt );
-            cmd.Parameters.AddWithValue("@USER_HASH", hash );
-            cmd.Parameters.AddWithValue("@USER_CREATEDDATE", dt);
-            cmd.Parameters.AddWithValue("@USER_ACTIVE", active);
-
-            db.ExecuteNonQuery("Gsp_Users_Insert", cmd);
+        public string CreateUser(string email, string salt, string hash, DateTime dt, bool active) {
+            string satus = string.Empty;
+            try
+            {
+                Database db = new Database();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@USER_ID", email);
+                cmd.Parameters.AddWithValue("@USER_SALT", salt);
+                cmd.Parameters.AddWithValue("@USER_HASH", hash);
+                cmd.Parameters.AddWithValue("@USER_CREATEDDATE", dt);
+                cmd.Parameters.AddWithValue("@USER_ACTIVE", active);
+                //SqlParameter para = new SqlParameter("@MSG", SqlDbType.Char);
+                //para.Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(para);
+                db.ExecuteNonQuery("Gsp_Users_Insert", cmd);
+                return "1000";// cmd.Parameters["@MSG"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                return "1001";
+            }
+           
         }
 
         public SaltedHash Login(string email) {

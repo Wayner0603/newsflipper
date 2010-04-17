@@ -11,35 +11,39 @@
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/jspack.js"></script>
     <script type="text/javascript" src="js/jcoursalpack.js"></script>
+    <script type="text/javascript" src="js/g.js"></script>
     <script type="text/javascript">
         var j = null;
         function mycarousel_itemLoadCallback(carousel, state) {
-            // Since we get all URLs in one file, we simply add all items
-            // at once and set the size accordingly.
             if (state != 'init')
                 return;
 
-            
             j = carousel;
             jQuery.get('get_images.aspx?m=1&cat=top', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
         };
 
-        function mycarousel2_itemLoadCallback(carousel, state) {
-            // Since we get all URLs in one file, we simply add all items
-            // at once and set the size accordingly.
+        function car3_itemLoadCallback(carousel, state) {
             if (state != 'init')
                 return;
-             j = carousel;
+
+            j = carousel;
+            jQuery.get('get_images.aspx?m=1&cat=top', function(data) {
+                car3_itemAddCallback(carousel, carousel.first, carousel.last, data);
+            });
+        };
+
+        function mycarousel2_itemLoadCallback(carousel, state) {
+            if (state != 'init')
+                return;
+            j = carousel;
             jQuery.get('get_images.aspx?m=1&cat=top', function(data) {
                 mycarousel2_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
         };
 
         function mycarousel_itemAddCallback(carousel, first, last, data) {
-            // Simply add all items at once and set the size accordingly.
-            //var t = 'images/home.gif|images/import.gif|images/left-arrow.gif|images/logout_new.png'
             var items = data.split('|');
             for (i = 0; i < items.length; i++) {
                 carousel.add(i + 1, mycarousel_getItemHTML(items[i]));
@@ -49,8 +53,6 @@
         };
 
         function mycarousel2_itemAddCallback(carousel, first, last, data) {
-            // Simply add all items at once and set the size accordingly.
-            //var t = 'images/home.gif|images/import.gif|images/left-arrow.gif|images/logout_new.png'
             var items = data.split('|');
             for (i = 0; i < items.length; i++) {
                 carousel.add(i + 1, mycarousel_getItemHTML(items[i]));
@@ -59,41 +61,107 @@
             carousel.size(items.length);
         };
 
-        /**
-        * Item html creation helper.
-        */
+        function car3_itemAddCallback(carousel, first, last, data) {
+            var items = data.split('|');
+            for (i = 0; i < items.length; i++) {
+                carousel.add(i + 1, mycarousel_getItemHTML(items[i]));
+            }
+
+            carousel.size(items.length);
+        };
+
         function mycarousel_getItemHTML(url) {
             var j = url.split(',');
             return '<a href=view.aspx#' + j[2] + '><img border="0" src="pages/2010/04/15/' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
         };
 
         jQuery(document).ready(function() {
-            jQuery('#mycarousel').jcarousel({
+        load1();
+
+        $("#car2").hide();
+        $("#car3").hide();
+        $("#car4").hide();
+        $("#car5").hide();
+        
+            jQuery('#car1').jcarousel({
                 itemLoadCallback: mycarousel_itemLoadCallback
             });
-            $("#mycarousel2").hide();
+
+            jQuery('#car2').jcarousel({
+                itemLoadCallback: mycarousel1_itemLoadCallback
+            });
+
+            jQuery('#car3').jcarousel({
+                itemLoadCallback: car3_itemLoadCallback
+            });
+            
+           
         });
 
-        function loadtop() {
-            $("#mycarousel").show();
-            $("#mycarousel2").hide();
-            //    jQuery('#mycarousel2').jcarousel({
-            //        itemLoadCallback: mycarousel2_itemLoadCallback
-            //    });
+        function load1() {
+            $("#car1").show();
+            $("#car2").hide();
+            $("#car3").hide();
+            $("#car4").hide();
+            $("#car5").hide();
+            $("#sp1").addClass('menu_selected');
+            $("#sp2").removeClass('menu_selected');
+            $("#sp3").removeClass('menu_selected');
+            $("#sp4").removeClass('menu_selected');
+            $("#sp5").removeClass('menu_selected');
         }
 
-        var loaded = 0;
-        function loadcnn() {
-            $("#mycarousel").hide();
-            $("#mycarousel2").show();
+        function load2() {
+            $("#car1").hide();
+            $("#car2").show();
+            $("#car3").hide();
+            $("#car4").hide();
+            $("#car5").hide();
+            $("#sp1").removeClass('menu_selected');
+            $("#sp2").addClass('menu_selected');
+            $("#sp3").removeClass('menu_selected');
+            $("#sp4").removeClass('menu_selected');
+            $("#sp5").removeClass('menu_selected');
+        }
 
-            if (loaded == 0) {
-                
-                jQuery('#mycarousel2').jcarousel({
-                itemLoadCallback: mycarousel2_itemLoadCallback
-                });
-                loaded = 1;
-            }
+        function load3() {
+            $("#car1").hide();
+            $("#car2").hide();
+            $("#car3").show();
+            $("#car4").hide();
+            $("#car5").hide();
+            $("#sp1").removeClass('menu_selected');
+            $("#sp2").removeClass('menu_selected');
+            $("#sp3").addClass('menu_selected');
+            $("#sp4").removeClass('menu_selected');
+            $("#sp5").removeClass('menu_selected');
+        }
+        
+        function load4() {
+            $("#car1").hide();
+            $("#car2").hide();
+            $("#car3").hide();
+            $("#car4").show();
+            $("#car5").hide();
+            $("#sp1").removeClass('menu_selected');
+            $("#sp2").removeClass('menu_selected');
+            $("#sp3").removeClass('menu_selected');
+            $("#sp4").addClass('menu_selected');
+            $("#sp5").removeClass('menu_selected');
+        }
+
+
+        function load5() {
+            $("#car1").hide();
+            $("#car2").hide();
+            $("#car3").hide();
+            $("#car4").hide();
+            $("#car5").show();
+            $("#sp1").removeClass('menu_selected');
+            $("#sp2").removeClass('menu_selected');
+            $("#sp3").removeClass('menu_selected');
+            $("#sp4").removeClass('menu_selected');
+            $("#sp5").addClass('menu_selected');
         }
 
 </script> 
@@ -107,19 +175,35 @@
 <uc4:TopBar ID="TopBar1" runat="server" />
 <uc1:HeaderUc ID="HeaderUc1" runat="server" />
 <div id="wrap"> 
-    <div class="menu_bar"><span onclick="loadtop();">Top Stories</span> | <span onclick="loadcnn();">CNN</span></div>
+    <div class="menu_bar"><span id="sp1" class="menu_item" onclick="load1();">Top Stories</span>&nbsp;&nbsp;&nbsp;<span class="menu_item" id="sp2" onclick="load2();">Business</span>&nbsp;&nbsp;&nbsp;<span class="menu_item" id="sp3" onclick="load3();">Sci/Tech</span>&nbsp;&nbsp;&nbsp;<span class="menu_item" id="sp4" onclick="load4();">Entertainment</span>&nbsp;&nbsp;&nbsp;<span class="menu_item" id="sp5" onclick="load5();">Starred</span></div>
    <div id="carousel">
-  <div id="mycarousel" class="jcarousel-skin-ie7"> 
+  <div id="car1" class="jcarousel-skin-ie7"> 1
     <ul> 
       <!-- The content will be dynamically loaded in here --> 
     </ul> 
   </div> 
-  <div id="mycarousel2" class="jcarousel-skin-ie7"> 
+  <div id="car2" class="jcarousel-skin-ie7"> 2
     <ul> 
       <!-- The content will be dynamically loaded in here --> 
     </ul> 
   </div> 
+  </div>
+  <div id="car3" class="jcarousel-skin-ie7"> 3
+    <ul> 
+      <!-- The content will be dynamically loaded in here --> 
+    </ul> 
   </div> 
+   <div id="car4" class="jcarousel-skin-ie7"> 3
+    <ul> 
+      <!-- The content will be dynamically loaded in here --> 
+    </ul> 
+  </div> 
+   <div id="car5" class="jcarousel-skin-ie7"> 3
+    <ul> 
+      <!-- The content will be dynamically loaded in here --> 
+    </ul> 
+  </div> 
+  </div>  
 </div> 
 <uc2:FooterUc ID="FooterUc1" runat="server" />
 <uc3:modal_dialog ID="modal_dialog1" runat="server" />

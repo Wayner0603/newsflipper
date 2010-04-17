@@ -137,12 +137,23 @@
     <Compile Include="load_content.aspx.designer.cs">
       <DependentUpon>load_content.aspx</DependentUpon>
     </Compile>
+    <Compile Include="services\UserService.asmx.cs">
+      <DependentUpon>UserService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="settings\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="settings\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sign_out.aspx.cs">
+      <DependentUpon>sign_out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sign_out.aspx.designer.cs">
+      <DependentUpon>sign_out.aspx</DependentUpon>
     </Compile>
     <Compile Include="uc\jQueryCtrl.ascx.cs">
       <DependentUpon>jQueryCtrl.ascx</DependentUpon>
@@ -284,10 +295,13 @@
     <Content Include="images\previous.png" />
     <Content Include="images\right.png" />
     <Content Include="js\c.js" />
+    <Content Include="js\g.js" />
     <Content Include="js\jcoursalpack.js" />
     <Content Include="js\jspack.js" />
     <Content Include="load_content.aspx" />
+    <Content Include="services\UserService.asmx" />
     <Content Include="settings\default.aspx" />
+    <Content Include="sign_out.aspx" />
     <Content Include="uc\jQueryCtrl.ascx" />
     <Content Include="uc\modal_dialog.ascx" />
     <Content Include="uc\msg_ctrl.ascx" />
