@@ -21,7 +21,7 @@ namespace webshotex_csharp
         {
             WebShot.OleInitialize(IntPtr.Zero);
 
-            for (int i = 0; i < 4 ; i++)
+            for (int i = 0; i < dt.Rows.Count ; i++)
             {
                 string imgName = string.Format("{0}.gif", ShortGuid.NewGuid().ToString());
                 string imgNameThumb = string.Format("t__{0}.gif", ShortGuid.NewGuid().ToString());

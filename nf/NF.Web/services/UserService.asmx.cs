@@ -14,8 +14,11 @@ namespace newsflippers.services {
         public bool Authenticate(string mode, string email, string password) {
             if (mode == "0") {
                //Login
-                FormsAuthentication.SetAuthCookie(email, false);
-               return UserFacade.Login(email, password);
+                if (UserFacade.Login(email, password)) {
+                    FormsAuthentication.SetAuthCookie(email, false);
+                    return true;
+                }
+                return false;
             }
             else
             {

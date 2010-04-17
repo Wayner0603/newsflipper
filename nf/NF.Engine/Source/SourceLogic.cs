@@ -12,19 +12,25 @@ namespace NF.Engine.Source {
             return DataModel.GetNewsItems();
         }
 
-        public List<CaptureWebPage> GetCaptureWebPages() {
+        public PageList GetCaptureWebPages() {
             return GetCaptureWebPages(Util.GetDate().ToMonthRef());
         }
 
-        public List<CaptureWebPage> GetCaptureWebPages(string dt) {
-            List<CaptureWebPage> childSources = new List<CaptureWebPage>();
-            IDataReader rdr = DataModel.GetCaptureWebPages(dt);
+        public PageList GetCaptureWebPages(string dt)
+        {
+            return GetCaptureWebPages(dt, string.Empty );
+        }
+
+        public PageList GetCaptureWebPages(string dt, string cat) {
+            PageList childSources = new PageList();
+            IDataReader rdr = DataModel.GetCaptureWebPages(dt, cat);
             while (rdr.Read()) {
                 childSources.Add(new CaptureWebPage() {
                     Title = rdr["ITM_TITLE"].ToString(),
                     ImageName = rdr["ITM_IMGNAME"].ToString(),
                     ThumbImageName = rdr["ITM_IMGTHUMB"].ToString(),
-                    Url = rdr["ITM_URL"].ToString()
+                    Url = rdr["ITM_URL"].ToString(),
+                    Category = rdr["ITM_CAT"].ToString()
                 });
             }
             rdr.Close();
