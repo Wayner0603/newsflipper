@@ -6,9 +6,9 @@ using NF.Engine.User;
 
 namespace NF.Engine.Facade {
     public class UserFacade {
-        public static void CreateUser(string email, string salt, string hash, DateTime dt, bool active) {
+        public static UserStatus CreateUser(string email, string password, DateTime dt, bool active) {
             UserLogic logic = new UserLogic();
-            logic.CreateUser(email, salt, hash, dt, active);
+            return logic.CreateUser(email, password, dt, active);
         }
 
         public static bool Login(string email, string password) {

@@ -8,8 +8,15 @@ using Infonex.Security;
 namespace NF.Engine.User {
     public class UserLogic : LogicBase<UserData> {
 
-        public void CreateUser(string email, string salt, string hash, DateTime dt, bool active) {
-            DataModel.CreateUser(email, salt, hash, dt, active);
+        public UserStatus  CreateUser(string email, string password, DateTime dt, bool active) {
+            SaltedHash salt = SaltedHash.Create(password);
+            string status = DataModel.CreateUser(email, salt.Salt, salt.Hash , dt, active);
+            UserStatus ustatus = UserStatus.Success;
+
+            if (status == "1001") {
+                ustatus = UserStatus.Duplicate;
+            }
+            return ustatus;
         }
 
         public bool Login(string email, string password) {
@@ -18,5 +25,12 @@ namespace NF.Engine.User {
 
             return hash.Verify(password);
         }
-    }   
+    }
+
+    public enum UserStatus { 
+        Success,
+        Duplicate,
+        Invalid,
+        Unknown
+    }
 }

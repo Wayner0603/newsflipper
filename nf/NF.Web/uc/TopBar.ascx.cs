@@ -11,8 +11,10 @@ namespace newsflippers.uc
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                if (Request.IsAuthenticated) {
+                if (Request.IsAuthenticated)
+                {
                     this.hpLogin.Visible = false;
+                    this.hpSingOut.Visible = true;
                     this.lblUser.Text = Context.User.Identity.Name;
                 }
             }
