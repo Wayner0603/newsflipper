@@ -89,13 +89,17 @@ ul {
     padding:4px;
 }
 
-.modal_title {
-    float:left;
-    padding:12px;
-    font-size:18px;
-    font-weight:bold;
-    background-color:#e0edfe;
-    width:100%;
+.modal_title
+{
+    float: left;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e0edfe;
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D8DFF3;
 }
 
 .nav_item {
@@ -197,4 +201,8 @@ a.nav_text:visited {
     padding: 4px;
     text-align: center;
     background-color: #ebeff9;
+}
+
+#signin_box {
+    padding-left:30px;
 }

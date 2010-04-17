@@ -72,10 +72,16 @@ namespace NF.Engine.Source {
             //cnn.Close();
         }
 
-        public IDataReader GetCaptureWebPages(string dt) {
+        public IDataReader GetCaptureWebPages(string dt)
+        {
+            return GetCaptureWebPages(dt, string.Empty);
+        }
+
+        public IDataReader GetCaptureWebPages(string dt, string category) {
             Database db = new Database();
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@DATE_REF", dt);
+            cmd.Parameters.AddWithValue("@ITM_CAT", category );
 
             IDataReader rdr = db.ExecuteReader("Usp_Source_GetSourceItems", cmd);
 

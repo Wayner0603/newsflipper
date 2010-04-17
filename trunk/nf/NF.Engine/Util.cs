@@ -30,6 +30,38 @@ namespace NF.Engine {
             return string.Format(@"{3}{0}\{1}\{2}\", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(),Constants.IMAGE_PATH);
         }
 
+        /// <summary>
+        /// /Pages/2010/04/17
+        /// </summary>
+        /// <returns></returns>
+        public static string GetRelativeImageFolder()
+        {
+            //return string.Empty;
+            return string.Format(@"{3}/{0}/{1}/{2}", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.RELATIVE_IMAGE_PATH);
+        }
+
+        public static string ToCategories(string type) {
+            string cat = string.Empty;
+            switch (type)
+            {
+                case "top":
+                    cat = "Top Stories";
+                    break;
+                case "bus":
+                    cat = "Business";
+                    break;
+                case "sci":
+                    cat = "Sci/Tech";
+                    break;
+                case "ent":
+                    cat = "Entertainment";
+                    break;
+               
+            }
+            return cat;
+        }
+
+
         public static string GetCacheKey() {
             return string.Empty;
             

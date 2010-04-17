@@ -12,5 +12,12 @@ namespace NF.Engine {
         private const string DATE = "<DATE>";
 
         public const string IMAGE_PATH = @"D:\01_PROJECTS\SOURCE\NF\NF.Web\pages\";
+        /// <summary>
+        /// /Pages
+        /// </summary>
+        public const string RELATIVE_IMAGE_PATH = @"pages";
+
+        public const string KEY_SESSION_PAGES  = "__CPAGES";
+
     }
 }

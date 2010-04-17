@@ -22,16 +22,21 @@
         var x = new Array(); 
         var u = '';
         var c = 0; var totalcount = -1; 
-        function mycarousel_itemLoadCallback(carousel, state)
-        {
+        var type = '';
+        var imName = '';
+        var x = 'x:0&';
+        function mycarousel_itemLoadCallback(carousel, state) {
             var url_1 = 'view.aspx?id=';
             var frag = '';
             var url = '';
             var id = url.substring(url.indexOf('?') + 1, url.length).split('=')[1];
-           
+            alert(c);
+            if (c != 0) {
+                x = '';
+            }
             
             if (carousel.has(carousel.first, carousel.last)) { return; } if (totalcount == c) { c = c - 1; carousel.prev(); return; }
-            jQuery.get("get_images.aspx?m=2&c=" + c, function(response) {
+            jQuery.get("get_images.aspx?" + x +  "m=2&c=" + c + '&type=' + type + '&imname=' + imName, function(response) {
                 carousel.add(response.split(';')[0], response.split(';')[1]);
                 url = response.split(';')[4];
                 window.location.hash = url;
@@ -65,9 +70,10 @@ jQuery(document).ready( function() {
             jQuery('#mycarousel').jcarousel({ scroll: 1, animation: 200, itemLoadCallback: mycarousel_itemLoadCallback ,
              itemFirstInCallback: mycarousel_buttonInCallback
             });
-            
+            type = location.href.substring(location.href.indexOf('=') + 1, location.href.indexOf('#'));
+            imName = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
             }
-       
+            
         );
    
        </script>
