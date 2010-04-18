@@ -14,7 +14,6 @@ namespace NF.Engine {
 
             TimeSpan s = new TimeSpan(Convert.ToInt32(hr), Convert.ToInt32(min), 0);
             return DateTime.UtcNow.Add(s);
-            //return DateTime.Now;
         }
         public static string FormatURL(string url) {
             //string dateTimeText = Extensions.ToNewsDateTimeFull(Util.GetDate());
@@ -26,8 +25,16 @@ namespace NF.Engine {
         }
 
         public static string GetImageFolder() {
-            //return string.Empty;
-            return string.Format(@"{3}{0}\{1}\{2}\", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(),Constants.IMAGE_PATH);
+            return string.Format(@"{0}2010\04\17\", Constants.IMAGE_PATH);
+            //return string.Format(@"{3}{0}\{1}\{2}\", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.IMAGE_PATH);
+        }
+
+        public static string UrlEncode(string url) {
+            return HttpContext.Current.Server.UrlEncode(url);
+        }
+
+        public static string UrlDecode(string url) {
+            return HttpContext.Current.Server.UrlDecode(url);
         }
 
         /// <summary>
@@ -36,8 +43,8 @@ namespace NF.Engine {
         /// <returns></returns>
         public static string GetRelativeImageFolder()
         {
-            //return string.Empty;
-            return string.Format(@"{3}/{0}/{1}/{2}", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.RELATIVE_IMAGE_PATH);
+            //return string.Format(@"{3}/{0}/{1}/{2}", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.RELATIVE_IMAGE_PATH);
+            return string.Format(@"{0}/2010/04/17", Constants.RELATIVE_IMAGE_PATH);
         }
 
         public static string ToCategories(string type) {
