@@ -32,6 +32,16 @@ namespace NF.Engine
                 return string.Empty;
             }
         }
+        private string _type = "section";
+        public string Type {
+            get {
+                return _type;
+            }
+            set {
+                _type = value;
+            }
+        }
+
     }
 
     public class PageList : List<CaptureWebPage> {
@@ -40,7 +50,11 @@ namespace NF.Engine
         }
 
         public PageList GetAll(string cat) {
-            List<CaptureWebPage> list = base.FindAll(delegate(CaptureWebPage p) { return p.ShortCategory == cat; });
+            return GetAll("section", cat);
+        }
+
+        public PageList GetAll(string type, string cat) {
+            List<CaptureWebPage> list = base.FindAll(delegate(CaptureWebPage p) { return p.Category.ToLower() == cat.ToLower() && p.Type.ToLower() == type.ToLower(); });
             PageList pl = new PageList();
             for (int i = 0; i < list.Count; i++) {
                 pl.Add(list[i]);

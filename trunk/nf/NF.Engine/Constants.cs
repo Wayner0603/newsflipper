@@ -11,6 +11,9 @@ namespace NF.Engine {
         
         private const string DATE = "<DATE>";
 
+        /// <summary>
+        /// D:\01_PROJECTS\SOURCE\NF\NF.Web\pages\
+        /// </summary>
         public const string IMAGE_PATH = @"D:\01_PROJECTS\SOURCE\NF\NF.Web\pages\";
         /// <summary>
         /// /Pages

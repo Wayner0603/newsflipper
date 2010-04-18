@@ -23,7 +23,7 @@
             if (state != 'init')
                 return;
 
-            jQuery.get('get_images.aspx?m=1&type=top', function(data) {
+            jQuery.get('get_images.aspx?m=1&type=section:top+stories', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
         };
@@ -32,7 +32,7 @@
             if (state != 'init')
                 return;
 
-            jQuery.get('get_images.aspx?m=1&type=bus', function(data) {
+            jQuery.get('get_images.aspx?m=1&type=section:business', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
             $('#bus_d').hide();
@@ -42,7 +42,7 @@
             if (state != 'init')
                 return;
 
-            jQuery.get('get_images.aspx?m=1&type=sci', function(data) {
+            jQuery.get('get_images.aspx?m=1&type=section:sci/tech', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
             $('#sci_d').hide();
@@ -53,7 +53,7 @@
             if (state != 'init')
                 return;
 
-            jQuery.get('get_images.aspx?m=1&type=ent', function(data) {
+            jQuery.get('get_images.aspx?m=1&type=section:entertainment', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
             $('#ent_d').hide();
@@ -64,7 +64,7 @@
             if (state != 'init')
                 return;
 
-            jQuery.get('get_images.aspx?m=1&type=sta', function(data) {
+            jQuery.get('get_images.aspx?m=1&type=starred', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
             $('#sta_d').hide();
@@ -82,7 +82,8 @@
        
         function mycarousel_getItemHTML(url) {
             var j = url.split(',');
-            return '<a href=view.aspx?x:0&type=' + j[3] + '#' + j[2] + '><img border="0" src="' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
+            var href = '<a href=view.aspx?' + j[3] + '#' + j[2] + '><img border="0" src="' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
+            return href;
         };
 
         function load_c(type) {
@@ -101,21 +102,21 @@
                     itemLoadCallback: top_itemLoadCallback
                 });
 
-                jQuery('#bus_j').jcarousel({
-                    itemLoadCallback: bus_itemLoadCallback
-                });
+//                jQuery('#bus_j').jcarousel({
+//                    itemLoadCallback: bus_itemLoadCallback
+//                });
 
-                jQuery('#sci_j').jcarousel({
-                    itemLoadCallback: sci_itemLoadCallback
-                });
+//                jQuery('#sci_j').jcarousel({
+//                    itemLoadCallback: sci_itemLoadCallback
+//                });
 
-                jQuery('#ent_j').jcarousel({
-                    itemLoadCallback: ent_itemLoadCallback
-                });
+//                jQuery('#ent_j').jcarousel({
+//                    itemLoadCallback: ent_itemLoadCallback
+//                });
 
-                jQuery('#sta_j').jcarousel({
-                    itemLoadCallback: sta_itemLoadCallback
-                });
+//                jQuery('#sta_j').jcarousel({
+//                    itemLoadCallback: sta_itemLoadCallback
+//                });
         });
 
         function set_links(type) {

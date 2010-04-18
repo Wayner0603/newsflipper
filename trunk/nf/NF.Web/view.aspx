@@ -30,7 +30,6 @@
             var frag = '';
             var url = '';
             var id = url.substring(url.indexOf('?') + 1, url.length).split('=')[1];
-            alert(c);
             if (c != 0) {
                 x = '';
             }
@@ -70,7 +69,7 @@ jQuery(document).ready( function() {
             jQuery('#mycarousel').jcarousel({ scroll: 1, animation: 200, itemLoadCallback: mycarousel_itemLoadCallback ,
              itemFirstInCallback: mycarousel_buttonInCallback
             });
-            type = location.href.substring(location.href.indexOf('=') + 1, location.href.indexOf('#'));
+            type = location.href.substring(location.href.indexOf('?') + 1, location.href.indexOf('#'));
             imName = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
             }
             
