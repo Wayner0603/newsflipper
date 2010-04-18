@@ -12,29 +12,51 @@ namespace NF.Engine.Source {
             return DataModel.GetNewsItems();
         }
 
-        public PageList GetCaptureWebPages() {
-            return GetCaptureWebPages(Util.GetDate().ToMonthRef());
-        }
+        //public WebPageList GetCaptureWebPages() {
+        //    return GetCaptureWebPages(Util.GetDate().ToMonthRef());
+        //}
 
-        public PageList GetCaptureWebPages(string dt)
-        {
-            return GetCaptureWebPages(dt, string.Empty );
-        }
+        //public WebPageList GetCaptureWebPages(string dt)
+        //{
+        //    return GetCaptureWebPages(dt, string.Empty );
+        //}
 
-        public PageList GetCaptureWebPages(string dt, string cat) {
-            PageList childSources = new PageList();
-            IDataReader rdr = DataModel.GetCaptureWebPages(dt, cat);
+        private WebPageList ConverToWebPageList(IDataReader rdr, string section, string source, string country) {
+            WebPageList webpageList = new WebPageList();
             while (rdr.Read()) {
-                childSources.Add(new CaptureWebPage() {
+                webpageList.Add(new WebPage() {
                     Title = rdr["ITM_TITLE"].ToString(),
                     ImageName = rdr["ITM_IMGNAME"].ToString(),
                     ThumbImageName = rdr["ITM_IMGTHUMB"].ToString(),
                     Url = rdr["ITM_URL"].ToString(),
-                    Category = rdr["ITM_CAT"].ToString()
+                    Category = rdr["ITM_CAT"].ToString(),
+                    Source = rdr["SRC_NAME"].ToString(), Section = rdr["ITM_CAT"].ToString(), Country = rdr["SRC_COUNTRY"].ToString()
                 });
             }
             rdr.Close();
-            return childSources;
+            webpageList.WebPageTypes.Add("source", source);
+            webpageList.WebPageTypes.Add("section", section);
+            webpageList.WebPageTypes.Add("country", country);
+            return webpageList;
+        }
+
+        public WebPageList GetWebPages(string dateRef, string section, string source, string country) {
+            IDataReader rdr = DataModel.GetWebPages(dateRef ,section , source , country );
+            WebPageList webpageList = ConverToWebPageList(rdr, section, source, country);
+            return webpageList;
+        }
+
+        //public WebPage GetWebPage(WebPageList pageList, string pageName) {
+        //    WebPage page = pageList.Get(pageName);
+        //    if (page == null) { 
+                
+        //    }
+        //}
+
+        public WebPageList Search(string keyword) {
+            IDataReader rdr = DataModel.GetWebPages(keyword);
+            WebPageList webpageList = ConverToWebPageList(rdr, string.Empty, string.Empty, string.Empty);
+            return webpageList;
         }
 
         public void InsertSourceItems(DataTable dt) {

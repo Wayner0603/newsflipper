@@ -23,7 +23,7 @@
             if (state != 'init')
                 return;
 
-            jQuery.get('get_images.aspx?m=1&type=section:top+stories', function(data) {
+            jQuery.get('get_images.aspx?type=section:top+stories;country:sri+lanka', function(data) {
                 mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
             });
         };
@@ -38,16 +38,16 @@
             $('#bus_d').hide();
         };
 
-        function sci_itemLoadCallback(carousel, state) {
-            if (state != 'init')
-                return;
+//        function sci_itemLoadCallback(carousel, state) {
+//            if (state != 'init')
+//                return;
 
-            jQuery.get('get_images.aspx?m=1&type=section:sci/tech', function(data) {
-                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
-            });
-            $('#sci_d').hide();
+//            jQuery.get('get_images.aspx?m=1&type=section:sci/tech', function(data) {
+//                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
+//            });
+//            $('#sci_d').hide();
 
-        };
+//        };
 
         function ent_itemLoadCallback(carousel, state) {
             if (state != 'init')
@@ -82,7 +82,7 @@
        
         function mycarousel_getItemHTML(url) {
             var j = url.split(',');
-            var href = '<a href=view.aspx?' + j[3] + '#' + j[2] + '><img border="0" src="' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
+            var href = '<a href=view/?' + j[3] + '#' + j[2] + '><img border="0" src="' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
             return href;
         };
 
@@ -102,21 +102,21 @@
                     itemLoadCallback: top_itemLoadCallback
                 });
 
-//                jQuery('#bus_j').jcarousel({
-//                    itemLoadCallback: bus_itemLoadCallback
-//                });
+                jQuery('#bus_j').jcarousel({
+                    itemLoadCallback: bus_itemLoadCallback
+                });
 
-//                jQuery('#sci_j').jcarousel({
-//                    itemLoadCallback: sci_itemLoadCallback
-//                });
+                jQuery('#sci_j').jcarousel({
+                    itemLoadCallback: sci_itemLoadCallback
+                });
 
-//                jQuery('#ent_j').jcarousel({
-//                    itemLoadCallback: ent_itemLoadCallback
-//                });
+                jQuery('#ent_j').jcarousel({
+                    itemLoadCallback: ent_itemLoadCallback
+                });
 
-//                jQuery('#sta_j').jcarousel({
-//                    itemLoadCallback: sta_itemLoadCallback
-//                });
+                jQuery('#sta_j').jcarousel({
+                    itemLoadCallback: sta_itemLoadCallback
+                });
         });
 
         function set_links(type) {

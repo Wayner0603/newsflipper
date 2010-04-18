@@ -8,27 +8,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace newsflippers.uc {
+namespace newsflippers {
     
     
-    public partial class HeaderUc {
+    public partial class get_view {
         
         /// <summary>
-        /// Image1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// search_uc1 control.
+        /// __PRE_IMG_NAME control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.search_uc search_uc1;
+        protected global::System.Web.UI.WebControls.HiddenField @__PRE_IMG_NAME;
     }
 }

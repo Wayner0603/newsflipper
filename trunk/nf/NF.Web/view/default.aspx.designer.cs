@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace newsflippers {
+namespace newsflippers.view {
     
     
-    public partial class default_new {
+    public partial class _default {
         
         /// <summary>
         /// Head1 control.
