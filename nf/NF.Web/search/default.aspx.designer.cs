@@ -8,19 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace newsflippers {
+namespace newsflippers.search {
     
     
-    public partial class default_new {
-        
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+    public partial class _default {
         
         /// <summary>
         /// form1 control.
@@ -50,6 +41,24 @@ namespace newsflippers {
         protected global::newsflippers.uc.HeaderUc HeaderUc1;
         
         /// <summary>
+        /// DataList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DataList1;
+        
+        /// <summary>
+        /// __Q control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField @__Q;
+        
+        /// <summary>
         /// FooterUc1 control.
         /// </summary>
         /// <remarks>
@@ -57,33 +66,6 @@ namespace newsflippers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::newsflippers.uc.FooterUc FooterUc1;
-        
-        /// <summary>
-        /// BugFeatureRequestUc1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::newsflippers.uc.BugFeatureRequestUc BugFeatureRequestUc1;
-        
-        /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-        
-        /// <summary>
-        /// chkDontShow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkDontShow;
         
         /// <summary>
         /// modal_dialog1 control.

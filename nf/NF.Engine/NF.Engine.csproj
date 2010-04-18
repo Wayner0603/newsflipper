@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CapturedWebPage.cs" />
+    <Compile Include="WebPage.cs" />
     <Compile Include="Common\DataLogicBase.cs" />
     <Compile Include="Common\ILogicBase.cs" />
     <Compile Include="Common\LogicBase.cs" />
@@ -80,6 +80,8 @@
     <Compile Include="User\UserData.cs" />
     <Compile Include="User\UserLogic.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="WebPageList.cs" />
+    <Compile Include="WebPageTypeList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

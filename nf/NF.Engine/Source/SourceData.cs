@@ -72,21 +72,33 @@ namespace NF.Engine.Source {
             //cnn.Close();
         }
 
-        public IDataReader GetCaptureWebPages(string dt)
-        {
-            return GetCaptureWebPages(dt, string.Empty);
-        }
+        //public IDataReader GetCaptureWebPages(string dt)
+        //{
+        //    return GetCaptureWebPages(dt, string.Empty);
+        //}
 
-        public IDataReader GetCaptureWebPages(string dt, string category) {
+        public IDataReader GetWebPages(string dateRef, string section, string source, string country) {
             Database db = new Database();
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@DATE_REF", dt);
-            cmd.Parameters.AddWithValue("@ITM_CAT", category );
+            cmd.Parameters.AddWithValue("@DateRef", dateRef );
+            cmd.Parameters.AddWithValue("@Source", source );
+            cmd.Parameters.AddWithValue("@Section", section  );
+            cmd.Parameters.AddWithValue("@Country", country );
 
             IDataReader rdr = db.ExecuteReader("Usp_Source_GetSourceItems", cmd);
 
             return rdr;
         }
+
+        public IDataReader GetWebPages(string keyword) {
+            Database db = new Database();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@SearchString", keyword);
+            IDataReader rdr = db.ExecuteReader("Usp_Source_Search", cmd);
+            return rdr;
+        }
+
+        
 
         public void InsertSourceItem(DataTable dt) {
             SqlCommand cmd = new SqlCommand();
