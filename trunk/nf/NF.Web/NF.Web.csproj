@@ -151,6 +151,10 @@
     <Compile Include="search\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="services\SourceService.asmx.cs">
+      <DependentUpon>SourceService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="services\UserService.asmx.cs">
       <DependentUpon>UserService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -324,11 +328,14 @@
     <Content Include="images\previous.png" />
     <Content Include="images\right.png" />
     <Content Include="js\c.js" />
+    <Content Include="js\car.js" />
     <Content Include="js\g.js" />
     <Content Include="js\jcoursalpack.js" />
+    <Content Include="js\jquery.mousewheel.pack.js" />
     <Content Include="js\jspack.js" />
     <Content Include="load_content.aspx" />
     <Content Include="search\default.aspx" />
+    <Content Include="services\SourceService.asmx" />
     <Content Include="services\UserService.asmx" />
     <Content Include="settings\default.aspx" />
     <Content Include="sign_out.aspx" />

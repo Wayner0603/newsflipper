@@ -5,6 +5,7 @@ using System.Data;
 using NF.Engine.Facade;
 using NF.Engine;
 using Infonex;
+using System.Drawing;
 
 namespace webshotex_csharp
 {
@@ -30,7 +31,10 @@ namespace webshotex_csharp
                 try
                 {
                     CaptureScreenshot(dt.Rows[i]["ITM_URL"].ToString(), path );
-                    ImageManager.ResizeImageFile(PhotoSize.Medium, path, pathTo);
+                    //ImageManager.ResizeImageFile(PhotoSize.Medium, path, pathTo);
+                    Bitmap b = ImageManager.ResizeImage(System.Drawing.Image.FromFile(path), 320, 340);
+                    ImageManager.SaveJpeg(pathTo, b, 60);
+
                     dt.Rows[i]["ITM_IMGNAME"] = imgName;
                     dt.Rows[i]["ITM_IMGTHUMB"] = imgNameThumb;
                     dt.Rows[i]["ITM_IMAGE"] = true;
