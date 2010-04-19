@@ -19,9 +19,9 @@ namespace newsflippers
     {
 
         [WebMethod]
-        public string GetName(string dt)
+        public string GetName()
         {
-            return "Ludmal" + dt;
+            return "Ludmal" ;
         }
 
         [WebMethod]

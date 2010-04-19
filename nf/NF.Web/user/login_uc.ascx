@@ -3,16 +3,16 @@
 <uc1:msg_ctrl ID="msg_ctrl1" runat="server" />
 <div id="signin_box">
     Email<br />
-    <asp:TextBox ID="txtEmail" runat="server" Width="306px"></asp:TextBox><br />
+    <asp:TextBox ID="txtEmail" CssClass="textbox" runat="server" Width="306px"></asp:TextBox><br />
     Password<br />
-    <asp:TextBox ID="txtPass" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
+    <asp:TextBox ID="txtPass" CssClass="textbox" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
     <div style="display: none" id="newUser">
         Confirm Password<br />
         <asp:TextBox ID="txtConfirmPassword" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
     </div>
     <asp:CheckBox Checked="true" ID="chkSignIn" runat="server" Text="Stay signed in" /><br />
     <br />
-    <asp:Button ID="btnLogin" runat="server" OnClientClick="return auth();" Text="Login" />&nbsp;<asp:HyperLink
+    <asp:Button ID="btnLogin" CssClass="button" runat="server" OnClientClick="return auth();" Text="Login" />&nbsp;<asp:HyperLink
         ID="hpNewUser" NavigateUrl="javascript:newUser();" runat="server">New User?</asp:HyperLink>
     <br />
 </div>

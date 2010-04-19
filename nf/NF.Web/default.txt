@@ -1,129 +1,120 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="newsflippers._default" %>
+﻿ <script type="text/javascript">
+        var j = null;
+        var t = ''
+        var c_loaded = '0';
+        
+        var lst = 'top;bus;sci;ent;sta';
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%@ Register Src="uc/HeaderUc.ascx" TagName="HeaderUc" TagPrefix="uc1" %>
-<%@ Register Src="uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
-<%@ Register src="uc/TopBar.ascx" tagname="TopBar" tagprefix="uc4" %>
+        function top_itemLoadCallback(carousel, state) {
+            if (state != 'init')
+                return;
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title></title>
-    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="js/global.min.js"></script>
+            jQuery.get('get_images.aspx?type=section:top+stories;country:sri+lanka', function(data) {
+                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
+            });
+        };
 
-    <script type="text/javascript">
-var j = null;
-function mycarousel_itemLoadCallback(carousel, state)
-{
-    // Since we get all URLs in one file, we simply add all items
-    // at once and set the size accordingly.
-    if (state != 'init')
-        return;
-    j = carousel;
-    jQuery.get('get_images.aspx?m=1&cat=top', function(data) {
-        mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
-    });
-};
+        function bus_itemLoadCallback(carousel, state) {
+            if (state != 'init')
+                return;
 
-function mycarousel2_itemLoadCallback(carousel, state) {
-    // Since we get all URLs in one file, we simply add all items
-    // at once and set the size accordingly.
-    if (state != 'init')
-        return;
-    j = carousel;
-    jQuery.get('get_images.aspx?m=1&cat=ent', function(data) {
-        mycarousel2_itemAddCallback(carousel, carousel.first, carousel.last, data);
-    });
-};
- 
-function mycarousel_itemAddCallback(carousel, first, last, data)
-{
-    // Simply add all items at once and set the size accordingly.
-    //var t = 'images/home.gif|images/import.gif|images/left-arrow.gif|images/logout_new.png'
-    var items = data.split('|');
-    for (i = 0; i < items.length; i++) {
-        carousel.add(i+1, mycarousel_getItemHTML(items[i]));
-    }
- 
-    carousel.size(items.length);
-};
+            jQuery.get('get_images.aspx?m=1&type=section:business', function(data) {
+                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
+            });
+            $('#bus_d').hide();
+        };
 
-function mycarousel2_itemAddCallback(carousel, first, last, data) {
-    // Simply add all items at once and set the size accordingly.
-    //var t = 'images/home.gif|images/import.gif|images/left-arrow.gif|images/logout_new.png'
-    var items = data.split('|');
-    for (i = 0; i < items.length; i++) {
-        carousel.add(i + 1, mycarousel_getItemHTML(items[i]));
-    }
+//        function sci_itemLoadCallback(carousel, state) {
+//            if (state != 'init')
+//                return;
 
-    carousel.size(items.length);
-};
- 
-/**
- * Item html creation helper.
- */
-function mycarousel_getItemHTML(url) {
-    var j = url.split(',');
-    return '<a href="' + j[2] + '"><img border="0" src="images/' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
-};
+//            jQuery.get('get_images.aspx?m=1&type=section:sci/tech', function(data) {
+//                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
+//            });
+//            $('#sci_d').hide();
 
-jQuery(document).ready(function() {
-  
-    jQuery('#mycarousel').jcarousel({
-            itemLoadCallback: mycarousel_itemLoadCallback
+//        };
+
+        function ent_itemLoadCallback(carousel, state) {
+            if (state != 'init')
+                return;
+
+            jQuery.get('get_images.aspx?m=1&type=section:entertainment', function(data) {
+                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
+            });
+            $('#ent_d').hide();
+
+        };
+
+        function sta_itemLoadCallback(carousel, state) {
+            if (state != 'init')
+                return;
+
+            jQuery.get('get_images.aspx?m=1&type=starred', function(data) {
+                mycarousel_itemAddCallback(carousel, carousel.first, carousel.last, data);
+            });
+            $('#sta_d').hide();
+
+        };
+
+        function mycarousel_itemAddCallback(carousel, first, last, data) {
+            var items = data.split('|');
+            for (i = 0; i < items.length; i++) {
+                carousel.add(i + 1, mycarousel_getItemHTML(items[i]));
+            }
+
+            carousel.size(items.length);
+        };
+       
+        function mycarousel_getItemHTML(url) {
+            var j = url.split(',');
+            var href = '<a href=view/?' + j[3] + '#' + j[2] + '><img border="0" src="' + j[0] + '" width="320px" height="350px" alt="' + j[1] + '" /><br><span>' + j[1] + '</span></a>';
+            return href;
+        };
+
+        function load_c(type) {
+            set_links(type);
+            var l = lst.split(';');
+            for (i = 0; i < l.length; i++) {
+                if (l[i] != type) {
+                    $('#' + l[i] + '_d').hide();
+                }
+            }
+            $('#' + type + '_d').show();
+        }
+        
+        jQuery(document).ready(function() {
+                jQuery('#top_j').jcarousel({
+                    itemLoadCallback: top_itemLoadCallback
+                });
+
+                jQuery('#bus_j').jcarousel({
+                    itemLoadCallback: bus_itemLoadCallback
+                });
+
+                jQuery('#sci_j').jcarousel({
+                    itemLoadCallback: sci_itemLoadCallback
+                });
+
+                jQuery('#ent_j').jcarousel({
+                    itemLoadCallback: ent_itemLoadCallback
+                });
+
+                jQuery('#sta_j').jcarousel({
+                    itemLoadCallback: sta_itemLoadCallback
+                });
         });
 
-//    jQuery('#mycarousel2').jcarousel({
-//        itemLoadCallback: mycarousel2_itemLoadCallback
-//    });
-    $("#mycarousel2").hide();
-});
-
-function loadtop() {
-    $("#mycarousel").show();
-    $("#mycarousel2").hide();
-//    jQuery('#mycarousel2').jcarousel({
-//        itemLoadCallback: mycarousel2_itemLoadCallback
-//    });
-}
-
-var loaded = 0;
-function loadcnn() {
-    $("#mycarousel").hide();
-    $("#mycarousel2").show();
-
-    if (loaded == 0) {
-        jQuery('#mycarousel2').jcarousel({
-            itemLoadCallback: mycarousel2_itemLoadCallback
-        });
-        loaded = 1;
-    }
-}
+        function set_links(type) {
+            var l = lst.split(';');
+            for (i = 0; i < l.length; i++) {
+                if (l[i] != type) {
+                    //$("#" + l[i] + '_d').hide();
+                    $("#" + l[i] + '_l').removeClass('menu_selected');
+                }
+            }
+            //$("#" + type + '_d').show();
+            $("#" + type + '_l').addClass('menu_selected');
+        }
 
 </script> 
-<link href="css/skin.css" rel="stylesheet" type="text/css" />
-<link href="css/skin_jcoursal.css" rel="stylesheet" type="text/css" />
-
-</head>
-<body>
-<form id="form1" runat="server">
-<uc4:TopBar ID="TopBar1" runat="server" />
-<uc1:HeaderUc ID="HeaderUc1" runat="server" />
-<div id="wrap"> 
-    <span onclick="loadtop();">Top Stories</span> | <span onclick="loadcnn();">CNN</span>
-  <div id="mycarousel" class="jcarousel-skin-ie7"> 
-    <ul> 
-      <!-- The content will be dynamically loaded in here --> 
-    </ul> 
-  </div> 
-  <div id="mycarousel2" class="jcarousel-skin-ie7"> 
-    <ul> 
-      <!-- The content will be dynamically loaded in here --> 
-    </ul> 
-  </div> 
-  
-</div> 
-<uc2:FooterUc ID="FooterUc1" runat="server" />
-</form>
-</body>
-</html>
