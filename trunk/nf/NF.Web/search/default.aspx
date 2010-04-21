@@ -22,7 +22,7 @@
         <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" 
             RepeatColumns="3">
             <ItemTemplate>
-            <div class="list_image"><a href='<%# GetUrl(DataBinder.Eval(Container.DataItem,"ImageName")) %>'><asp:Image ID="Image1" Width="320px" Height="400px" ImageUrl='<%# DataBinder.Eval(Container.DataItem,"FullThumbnailImagePath") %>' runat="server" /></a></div>
+            <div class="thumb"><a href='<%# GetUrl(DataBinder.Eval(Container.DataItem,"ImageName")) %>'><asp:Image ID="Image1" Width="320px" Height="360px" ImageUrl='<%# DataBinder.Eval(Container.DataItem,"FullThumbnailImagePath") %>' runat="server" /></a></div>
             <div class="list_title">
             <a href='<%# GetUrl(DataBinder.Eval(Container.DataItem,"ImageName")) %>'><asp:Label ID="lblTitle" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"Title") %>'></asp:Label></a> </div>
             </ItemTemplate>

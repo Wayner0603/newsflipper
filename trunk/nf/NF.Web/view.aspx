@@ -64,7 +64,7 @@
  * about the state of the prev button.
  */
 jQuery(document).ready( function() {
-            jQuery('#mycarousel').jcarousel({ scroll: 1, animation: 200, itemLoadCallback: mycarousel_itemLoadCallback ,
+            jQuery('#mcar').jcarousel({ scroll: 1, animation: 200, itemLoadCallback: mycarousel_itemLoadCallback ,
              itemFirstInCallback: mycarousel_buttonInCallback
             });
             type = location.href.substring(location.href.indexOf('?') + 1, location.href.indexOf('#'));
@@ -75,7 +75,6 @@ jQuery(document).ready( function() {
    
        </script>
 
-    <link href="App_Themes/Default/skin_view.css" rel="stylesheet" type="text/css" />
     <link href="App_Themes/Default/skin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>

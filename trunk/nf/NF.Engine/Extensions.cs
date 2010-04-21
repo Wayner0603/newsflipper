@@ -41,8 +41,8 @@ namespace NF.Engine
         //}
 
         public static string ToMonthRef(this DateTime dt) {
-            //return "20100417";
-            return dt.ToString(Constants.DATE_MONTH_REF); 
+            return "20100419";
+            //return dt.ToString(Constants.DATE_MONTH_REF); 
         }
 
        
