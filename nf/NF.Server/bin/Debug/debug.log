@@ -1,6 +1,6 @@
 Waiting 40.0 seconds for page to load
 Resized browser window [1000x800]
-Navigating web browser [http://news.google.com/news/url?fd=R&sa=T&url=http%3A%2F%2Fwww.reuters.com%2Farticle%2FidUSTRE6390VO20100412&usg=AFQjCNEeqsBWa_YWdPXGrTKe-s3rRi5Nrw]
+Navigating web browser [http://news.google.com/news/url?fd=R&sa=T&url=http%3A%2F%2Fnewsroom.mtv.com%2F2010%2F04%2F19%2Fcelebrity-apprentice-recap-goldberg%2F&usg=AFQjCNFTz_7bIzCgRzT2Xz9w8THb9ZcTng]
 Dispatch event: Ambient user mode
 Web event: Window set left
 Web event: Window set top
@@ -9,7 +9,7 @@ Web event: Window set height
 Ole command: Select all
 Web event: Window set resizable
 Web event: Before navigate 2
-Before navigation url [http://news.google.com/news/url?fd=R&sa=T&url=http%%3A%%2F%%2Fwww.reuters.com%%2Farticle%%2FidUSTRE6390VO20100412&usg=AFQjCNEeqsBWa_YWdPXGrTKe-s3rRi5Nrw]
+Before navigation url [http://news.google.com/news/url?fd=R&sa=T&url=http%%3A%%2F%%2Fnewsroom.mtv.com%%2F2010%%2F04%%2F19%%2Fcelebrity-apprentice-recap-goldberg%%2F&usg=AFQjCNFTz_7bIzCgRzT2Xz9w8THb9ZcTng]
 Web event: Download begin
 Ole command: Set download state
 Ole command: Set download state
@@ -19,34 +19,32 @@ Web event: Status text changed
 Web site found. Waiting for reply...
 Web event: Progress change
 Web event: Status text changed
-Redirecting to site: http://www.reuters.com/article/idUSTRE6390VO20100412
+Redirecting to site: http://newsroom.mtv.com/2010/04/19/celebrity-apprentice-recap-goldberg/
 Web event: Status text changed
-Finding site: www.reuters.com
+Finding site: newsroom.mtv.com
 Web event: Progress change
 Web event: Status text changed
-Connecting to site 64.14.40.104
+Connecting to site 124.155.222.64
 Web event: Status text changed
 Web site found. Waiting for reply...
 Web event: Progress change
-Web event: Progress change
 Response headers (HTTP/1.1 200 OK
-Date: Mon, 12 Apr 2010 15:36:37 GMT
-Server: Apache
-Expires: Mon, 12 Apr 2010 15:34:30 GMT
-Last-UpdatedL: Mon, 12 Apr 2010 15:26:44 GMT
-CHANNEL-NAME: topNews
-Last-UpdatedA: Mon, 12 Apr 2010 13:54:26 GMT
-Age: 126
+Server: Apache/2
+Content-Type: text/html; charset=UTF-8
+X-Powered-By: PHP/5.2.8
 Vary: Accept-Encoding
+X-Pingback: http://newsroom.mtv.com/xmlrpc.php
+Pragma: public
 Content-Encoding: gzip
-Content-Length: 15414
-Content-Type: text/html;charset=UTF-8
-Connection: close
-Set-Cookie: SSLB=A;path=/;domain=www.reuters.com;
+Cache-Control: max-age=900
+Expires: Mon, 19 Apr 2010 16:47:21 GMT
+Date: Mon, 19 Apr 2010 16:32:21 GMT
+Content-Length: 8963
+Connection: keep-alive
 
 )
 Web event: Status text changed
-Start downloading from site: http://www.reuters.com/article/idUSTRE6390VO20100412
+Start downloading from site: http://newsroom.mtv.com/2010/04/19/celebrity-apprentice-recap-goldberg/
 Ole command: Hide toolbars
 Dispatch event: Ambient user mode
 Dispatch event: Ambient user mode
@@ -64,13 +62,29 @@ Ole command: Set progress pos
 Web event: Progress change
 Ole command: Set download state
 Web event: Download begin
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set progress pos
+Web event: Progress change
 Web event: Set secure lock icon
 Web event: Command state changed
 Web event: Command state changed
 Ole command: Prerefresh
 Web event: Status text changed
 Web event: Status text changed
-Opening page http://www.reuters.com/article/idUSTRE6390VO20100412...
+Opening page http://newsroom.mtv.com/2010/04/19/celebrity-apprentice-recap-goldberg/...
 Ole command: Set progress max
 Ole command: Set progress pos
 Ole command: Set download state
@@ -86,20 +100,91 @@ Web event: Title change
 Web event: Navigate complete 2
 Web event: Status text changed
 Web event: Set secure lock icon
-Web event: Status text changed
-Ole command: Set progress pos
-Web event: Progress change
-Web event: Status text changed
-Ole command: Set progress pos
-Web event: Progress change
 Ole command: Update commands
 Web event: Command state changed
 Web event: Title change
+Web event: Before navigate 2
+Before navigation url [http://fls.doubleclick.net/activityi;src=1498390;type=mtvre912;cat=remot936;ord=701707722063.5332?]
+Web event: Progress change
+Web event: Status text changed
+Opening page http://fls.doubleclick.net/activityi;src=1498390;type=mtvre912;cat=remot936;ord=701707722063.5332?...
+Ole command: Set progress max
 Ole command: Set progress pos
 Web event: Progress change
 Web event: Status text changed
-Ole command: Set progress pos
-Web event: Progress change
-Ole command: Set progress pos
+Web event: Command state changed
+Web event: Command state changed
+Web event: Navigate complete 2
+Web event: Status text changed
+(6 items remaining) Downloading picture http://ad-apac.doubleclick.net/activity;src=1498390;type=mtvre912;cat=remot936;ord=701707722063.5332?;~oref=http%3A%2F%2Fnewsroom.mtv.com%2F2010%2F04%2F19%2Fcelebrity-apprentice-recap-goldberg%2F...
+Web event: Status text changed
+Web event: Status text changed
+(5 items remaining) Downloading picture http://ads.revsci.net/adserver/ako?rsi_noads=1&rsi_pixel=1&rsi_account=352F6F25662BEFFD9FC43D7CA86B17EA&rsi_site=355F4CD2118A64AD05C45CD6729FBFD6&rsi_event=A76C14792A2CEEA402DDAC3A35E3B552...
 Web event: Progress change
 Web event: Status text changed
+(4 items remaining) Downloading picture http://ads.revsci.net/adserver/ako?rsi_noads=1&rsi_pixel=1&rsi_account=352F6F25662BEFFD9FC43D7CA86B17EA&rsi_site=355F4CD2118A64AD05C45CD6729FBFD6&rsi_event=A76C14792A2CEEA402DDAC3A35E3B552...
+Web event: Status text changed
+(4 items remaining) Downloading picture http://media.fastclick.net/w/tre?ad_id=18356&evt=69&cat1=56&cat2=74...
+Web event: Status text changed
+(3 items remaining) Downloading picture http://ads.revsci.net/adserver/ako?rsi_noads=1&rsi_pixel=1&rsi_account=352F6F25662BEFFD9FC43D7CA86B17EA&rsi_site=355F4CD2118A64AD05C45CD6729FBFD6&rsi_event=A76C14792A2CEEA402DDAC3A35E3B552...
+Web event: Status text changed
+(2 items remaining) Downloading picture http://ads.revsci.net/adserver/ako?rsi_noads=1&rsi_pixel=1&rsi_account=352F6F25662BEFFD9FC43D7CA86B17EA&rsi_site=355F4CD2118A64AD05C45CD6729FBFD6&rsi_event=A76C14792A2CEEA402DDAC3A35E3B552...
+Web event: Status text changed
+(2 items remaining) Downloading picture http://switch.atdmt.com/action/ampmtv_GossipShows_1...
+Web event: Status text changed
+(1 item remaining) Downloading picture http://ads.revsci.net/adserver/ako?rsi_noads=1&rsi_pixel=1&rsi_account=352F6F25662BEFFD9FC43D7CA86B17EA&rsi_site=355F4CD2118A64AD05C45CD6729FBFD6&rsi_event=A76C14792A2CEEA402DDAC3A35E3B552...
+Web event: Status text changed
+Web event: Status text changed
+Done
+Ole command: Set progress pos
+Web event: Progress change
+Web event: Progress change
+Ole command: Set download state
+Web event: Download complete
+Web event: Document complete
+Web event: Status text changed
+Privacy Report
+Web event: Privacy impacted state change
+Web event: Progress change
+Web event: Before navigate 2
+Before navigation url [about:blank]
+Web event: Before navigate 2
+Before navigation url [javascript:void(document.write('<html><head><title>Advertisement</title></head><body%%20id="dapIfM0"%%20leftmargin="0"%%20topmargin="0"%%20style="background-color:transparent"><script%%20type="text/javascript">var%%20inDapIF=true;%%20var%%20inDapMgrIf=true;</script><script%%20type="text/javascript"%%20%%20src="http://rad.msn.com/ADSAdClient31.dll?GetSAd=&DPJS=4&PG=SGVIA1&AP=1090&accyyyrandom=7367825&aamst=mtvzzzmtvi&aamsz=160x600&AXW=160&AXH=600"%%20onreadystatechange="startTimer();"></script><script%%20type="text/javascript">function%%20startTimer(){if%%20(event.srcElement.readyState%%20==%%20"complete")%%20{parent.verifyDapResize(0);window.setTimeout("document.close();",%%202000);}}</script></body></html>'));]
+Web event: Status text changed
+Opening page about:blank...
+Ole command: Set progress max
+Ole command: Set progress pos
+Ole command: Set download state
+Web event: Download begin
+Web event: Command state changed
+Web event: Command state changed
+Web event: Navigate complete 2
+Web event: Status text changed
+Done
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set download state
+Web event: Download complete
+Web event: Document complete
+Web event: Status text changed
+Downloading picture http://www.mtv.com/sitewide/images/u/acsearch.gif...
+Web event: Status text changed
+Done
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Prerefresh
+Web event: Progress change
+Web event: Document complete
+Document complete [‘The Celebrity Apprentice’ Recap: Goldberg Slammed By Cyndi Lauper » MTV Newsroom]
+Document meta description [This is the MTV Newsroom Blog]
+Saving web page image [D:\01_PROJECTS\SOURCE\NF\NF.Web\pages\2010\04\19\beXtvSgCHk-t0uxvEotV5A.gif 1000x800]
+Stopping web browser
+Ole command: Set download state
+Web event: Download begin
+Web event: Status text changed
+Ole command: Set progress pos
+Web event: Progress change
+Ole command: Set download state
+Web event: Download complete
+Navigation complete
+Web browser closed

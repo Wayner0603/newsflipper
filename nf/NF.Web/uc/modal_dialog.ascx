@@ -1,5 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="modal_dialog.ascx.cs"
     Inherits="newsflippers.uc.modal_dialog" %>
+    <script language=javascript >
+    $(window).resize(function() {
+    
+});
+    </script>
 <div id="overlay" class="overlay_div" style="background-color: #000">
 </div>
 <div id="modalDialog" class='modal_outer' style="display: none;">

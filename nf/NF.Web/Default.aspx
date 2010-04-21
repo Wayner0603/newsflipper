@@ -5,7 +5,6 @@
 <%@ Register Src="uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
 <%@ Register Src="uc/TopBar.ascx" TagName="TopBar" TagPrefix="uc4" %>
 <%@ Register Src="uc/modal_dialog.ascx" TagName="modal_dialog" TagPrefix="uc3" %>
-
 <head id="Head1" runat="server">
     <title></title>
 
@@ -21,8 +20,11 @@
         jQuery(document).ready(function()
         {
            load_thumb('top');
+          
         });
        
+      
+
        var load='';
        var lst = 'top;bus;sci;ent;sta';
        
@@ -64,7 +66,9 @@
                     $("#c_" +t).jCarouselLite({
                         btnNext: "#next_" + t,
                         btnPrev: "#prev_" + t,
-                        mouseWheel: true
+                        mouseWheel: true,
+                        visible:3,
+                        scroll:3
                     });
                 },
                 
@@ -93,37 +97,115 @@
                         class="menu_item" id="ent_l" onclick="load_thumb('ent');">Entertainment</span>&nbsp;&nbsp;&nbsp;<span
                             class="menu_item" id="sta_l" onclick="load_thumb('sta');">Starred</span></div>
         <div id="carousel">
-            <div id="d_top"><table cellpadding=0 cellspacing=0><tr><td><div id="prev_top" class="prev">
-                </div></td><td><div id="c_top"><ul>
-                    <li></li>
-                </ul></div></td><td> <div id="next_top" class="next">
-                </div></td></tr></table></div>
-             <div id="d_bus"><table cellpadding=0 cellspacing=0><tr><td><div id="prev_bus" class="prev">
-                </div></td><td><div id="c_bus"><ul>
-                    <li></li>
-                </ul></div></td><td> <div id="next_bus" class="next">
-                </div></td></tr></table></div>
-                <div id="d_sci"><table cellpadding=0 cellspacing=0><tr><td><div id="prev_sci" class="prev">
-                </div></td><td><div id="c_sci"><ul>
-                    <li></li>
-                </ul></div></td><td> <div id="next_sci" class="next">
-                </div></td></tr></table></div>
-                
-                <div id="d_ent"><table cellpadding=0 cellspacing=0><tr><td><div id="prev_ent" class="prev">
-                </div></td><td><div id="c_ent"><ul>
-                    <li></li>
-                </ul></div></td><td> <div id="next_ent" class="next">
-                </div></td></tr></table></div>
-                
-                <div id="d_sta"><table cellpadding=0 cellspacing=0><tr><td><div id="prev_sta" class="prev">
-                </div></td><td><div id="c_sta"><ul>
-                    <li></li>
-                </ul></div></td><td> <div id="next_sta" class="next">
-                </div></td></tr></table></div>
+            <div id="d_top">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div id="prev_top" class="prev">
+                            </div>
+                        </td>
+                        <td>
+                            <div id="c_top">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="next_top" class="next">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="d_bus">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div id="prev_bus" class="prev">
+                            </div>
+                        </td>
+                        <td>
+                            <div id="c_bus">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="next_bus" class="next">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="d_sci">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div id="prev_sci" class="prev">
+                            </div>
+                        </td>
+                        <td>
+                            <div id="c_sci">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="next_sci" class="next">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="d_ent">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div id="prev_ent" class="prev">
+                            </div>
+                        </td>
+                        <td>
+                            <div id="c_ent">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="next_ent" class="next">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="d_sta">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div id="prev_sta" class="prev">
+                            </div>
+                        </td>
+                        <td>
+                            <div id="c_sta">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="next_sta" class="next">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <uc2:FooterUc ID="FooterUc1" runat="server" />
     <uc3:modal_dialog ID="modal_dialog1" runat="server" />
     </form>
 </body>
-</html>
+</html> 

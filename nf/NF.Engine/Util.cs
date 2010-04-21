@@ -37,8 +37,8 @@ namespace NF.Engine {
         }
 
         public static string GetImageFolder() {
-            //return string.Format(@"{0}2010\04\18\", Constants.IMAGE_PATH);
-            return string.Format(@"{3}{0}\{1}\{2}\", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.IMAGE_PATH);
+            return string.Format(@"{0}2010\04\19\", Constants.IMAGE_PATH);
+            //return string.Format(@"{3}{0}\{1}\{2}\", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.IMAGE_PATH);
         }
 
         public static string UrlEncode(string url) {
@@ -55,8 +55,8 @@ namespace NF.Engine {
         /// <returns></returns>
         public static string GetRelativeImageFolder()
         {
-            return string.Format(@"{3}/{0}/{1}/{2}", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.RELATIVE_IMAGE_PATH);
-            //return string.Format(@"{0}/2010/04/18", Constants.RELATIVE_IMAGE_PATH);
+            //return string.Format(@"{3}/{0}/{1}/{2}", Util.GetDate().ToYear(), Util.GetDate().ToMonth(), Util.GetDate().ToDay(), Constants.RELATIVE_IMAGE_PATH);
+            return string.Format(@"{0}/2010/04/19", Constants.RELATIVE_IMAGE_PATH);
         }
 
         public static string ToCategories(string type) {

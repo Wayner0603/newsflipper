@@ -50,6 +50,7 @@ function util() {
 var ur = new util();
 
 
+
 jQuery.fn.encHTML = function() {
     var xx = ''
     this.each(function() {
@@ -94,7 +95,8 @@ function modalDialog() {
     });
 
     addMethod(this, "c", function() {
-        ur.hide('#overlay');
+    ur.hide('#overlay');
+    $("body").css("overflow", "");
         ur.hide('#modalDialog');
         sCor(1);
     });
@@ -102,6 +104,9 @@ function modalDialog() {
 }
 
 
+function overlay_resize() {
+    
+}
 
 function _show(url, title, width, height) {
     $("#modalDialog").width(width);
@@ -109,8 +114,10 @@ function _show(url, title, width, height) {
     $("#modalTitle").text(title);
 
     ur.show("#overlay");
-    $("#overlay").width($(document).width());
-    $("#overlay").height($(document).height());
+    $("body").css("overflow", "hidden");
+    
+    $("#overlay").width($(window).width());
+    $("#overlay").height($(window).height());
 
     sCor(0);
     ur.setLoc('#modalDialog');

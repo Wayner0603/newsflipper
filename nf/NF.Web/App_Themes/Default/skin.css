@@ -4,7 +4,7 @@
     font-size: 13px;
     padding-top: 0;
     margin: 0;
-}
+    }
 .success{-moz-border-radius:3px;-webkit-border:3px;font-family: arial, Helvetica, sans-serif;font-size: 12px;background-color: #006600;color: #FFFFFF;border-right-style: solid;border-right-width: 10px;border-right-color: #006600;border-left-style: solid;border-left-width: 10px;border-left-color: #006600;}
 .error{-moz-border-radius:3px;-webkit-border:3px;font-family: arial, Helvetica, sans-serif;font-size: 12px;background-color: #CC0000;color: #FFFFFF;border-right-style: solid;border-right-width: 10px;border-right-color: #CC0000;border-left-style: solid;border-left-width: 10px;border-left-color: #CC0000;}
 .msg_outer {margin:5px;width:90%;text-align:center;height:25px;}
@@ -242,11 +242,13 @@ a.nav_text:visited {
     padding:5px;
 }
 
-.thumb {
-    border:0px;
-    padding:10px;
-    width:320px;
-    height:370px;
+.thumb
+{
+    border: 1px solid #CCCCCC;
+    padding: 0px;
+    margin:10px;
+    width: 320px;
+    height: 370px;
 }
 
 .thumb_title {
@@ -265,4 +267,114 @@ a.nav_text:visited {
     width:75px;
      height:75px;
      cursor:pointer;
+}
+
+
+#mcar .jcarousel_itm_p
+{
+    background: transparent url(../../images/loading.gif) 50% 30% no-repeat;
+}
+#mcar .jcarousel-next
+{
+    top: 150px;
+    right: -65px;
+}
+#mcar .jcarousel-prev
+{
+    top: 150px;
+    left: 0;
+}
+
+
+
+#container
+{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-container
+{
+    position: relative;
+}
+
+.jcarousel-clip
+{
+    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list
+{
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list li, .jcarousel-item
+{
+    float: left;
+    list-style: none;
+    width: 65px;
+    height: 75px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-container-horizontal
+{
+    width: 845px;
+    padding: 10px 50px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal
+{
+    width: 845px;
+    height: 77px;
+    border-color: #D5D5FF;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item
+{
+    text-align: center;
+}
+
+.jcarousel-skin-ie7 .jcarousel-next-horizontal
+{
+    position: absolute;
+    top: 20px;
+    width: 100px;
+    height: 600px;
+    cursor: pointer;
+    background: transparent url(../../images/next.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal
+{
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    height: 600px;
+    cursor: pointer;
+    background: transparent url(../../images/prev.gif) no-repeat 0 0;
+}
+#page
+{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mcar.jcarousel-container-horizontal, #mcar .jcarousel-clip-horizontal, #mcar .jcarousel-item, #mcar .jcarousel_itm_p
+{
+    width: 880px;
+    height: 800px;
 }
