@@ -18,7 +18,7 @@
     <script type="text/javascript" src="../js/jcoursalpack.js"></script>
     <script type="text/javascript" src="../js/g.js"></script>
     <script type="text/javascript" src="../js/c.js"></script>
-    
+
     <script type="text/javascript">        $(document).ready(function() { if ($.cookie('__N') == null || $.cookie('__N') == 'false') { showPanel("#help_div"); } }); function closePanelWithCookie(div) { closePanel(div); $.cookie('__N', (document.getElementById('chkDontShow').checked), { expires: 365 }); return false; }
         var x = new Array(); 
         var u = '';
