@@ -6,6 +6,7 @@ namespace NF.Engine
 {
     public class WebPage
     {
+        public int ID { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
         public string ImageName { get; set; }

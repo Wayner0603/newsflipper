@@ -5,11 +5,11 @@
 
     function _msg() {
         addMethod(this, "suc", function(text) {
-            _setMsg(text, 'success');
+            _setMsg(text, 'msg_suc');
         });
 
         addMethod(this, "err", function(text) {
-            _setMsg(text, 'error');
+            _setMsg(text, 'msg_err');
         });
 
         addMethod(this, "val", function(text) {

@@ -72,10 +72,7 @@ namespace NF.Engine.Source {
             //cnn.Close();
         }
 
-        //public IDataReader GetCaptureWebPages(string dt)
-        //{
-        //    return GetCaptureWebPages(dt, string.Empty);
-        //}
+   
 
         public IDataReader GetWebPages(string dateRef, string section, string source, string country) {
             Database db = new Database();
@@ -98,7 +95,6 @@ namespace NF.Engine.Source {
             return rdr;
         }
 
-        
 
         public void InsertSourceItem(DataTable dt) {
             SqlCommand cmd = new SqlCommand();
@@ -120,6 +116,36 @@ namespace NF.Engine.Source {
 
                 db.ExecuteNonQuery("Usp_Source_InsertSourceItems", cmd);
                 cmd.Parameters.Clear();
+            }
+        }
+
+        public bool DoStarred(string userId, int itmId, bool isStar, DateTime dt) {
+            try {
+                Database db = new Database();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@NF_USER_ID", userId );
+                cmd.Parameters.AddWithValue("@ITM_ID", itmId);
+                cmd.Parameters.AddWithValue("@STARRED", isStar );
+                cmd.Parameters.AddWithValue("@ADDED_DATE", dt);
+                db.ExecuteNonQuery("Usp_Source_Starred", cmd);
+                return true;
+            } catch (Exception ex ) {
+                return false;
+            }
+        }
+
+        public bool IsStarred(string userId, int itmId) {
+            try {
+                Database db = new Database();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@USERID", userId);
+                cmd.Parameters.AddWithValue("@ITM_ID", itmId);
+                IDataReader rdr = db.ExecuteReader("Usp_Source_IsStarred", cmd);
+                bool isStarred = rdr.Read();
+                rdr.Close();
+                return isStarred;
+            } catch (Exception ex) {
+                return false;
             }
         }
     }

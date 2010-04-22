@@ -1,18 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="login_uc.ascx.cs" Inherits="newsflippers.user.login_uc" %>
 <%@ Register Src="../uc/msg_ctrl.ascx" TagName="msg_ctrl" TagPrefix="uc1" %>
 <uc1:msg_ctrl ID="msg_ctrl1" runat="server" />
-<div id="signin_box">
+<div id="login_box">
     Email<br />
-    <asp:TextBox ID="txtEmail" CssClass="textbox" runat="server" Width="306px"></asp:TextBox><br />
+    <asp:TextBox ID="txtEmail" CssClass="txt" runat="server" Width="306px"></asp:TextBox><br />
     Password<br />
-    <asp:TextBox ID="txtPass" CssClass="textbox" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
+    <asp:TextBox ID="txtPass" CssClass="txt" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
     <div style="display: none" id="newUser">
         Confirm Password<br />
-        <asp:TextBox ID="txtConfirmPassword" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
+        <asp:TextBox ID="txtConfirmPassword" CssClass="txt" TextMode="Password" runat="server" Width="306px"></asp:TextBox><br />
     </div>
     <asp:CheckBox Checked="true" ID="chkSignIn" runat="server" Text="Stay signed in" /><br />
     <br />
-    <asp:Button ID="btnLogin" CssClass="button" runat="server" OnClientClick="return auth();" Text="Login" />&nbsp;<asp:HyperLink
+    <asp:Button ID="btnLogin" CssClass="btn" runat="server" OnClientClick="return auth();" Text="Login" />&nbsp;<asp:HyperLink
         ID="hpNewUser" NavigateUrl="javascript:newUser();" runat="server">New User?</asp:HyperLink>
     <br />
 </div>
