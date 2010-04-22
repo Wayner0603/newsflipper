@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\sprite.png" />
     <Content Include="js\source\jCarousel.js" />
     <Content Include="js\source\jquery-1-3-2.js" />
     <Content Include="pages\Sources.txt" />
@@ -303,7 +304,7 @@
     <Content Include="about\sources.htm" />
     <Content Include="about\whats-new.aspx" />
     <Content Include="about\whats-new.htm" />
-    <Content Include="App_Themes\Default\skin.css" />
+    <Content Include="css\skin.css" />
     <Content Include="default.aspx" />
     <Content Include="default.txt" />
     <Content Include="get_images.aspx" />
@@ -379,8 +380,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="css\" />
     <Folder Include="js\_delete\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

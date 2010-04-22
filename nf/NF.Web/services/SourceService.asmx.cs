@@ -12,6 +12,30 @@ namespace newsflippers.services {
     public class SourceService : System.Web.Services.WebService {
 
         [WebMethod]
+        public bool DoStarred(string itemId, string isStarred) {
+            SourceLogic logic = new SourceLogic();
+            if (HttpContext.Current.Request.IsAuthenticated) {
+                if (logic.DoStarred(Context.User.Identity.Name, Convert.ToInt32(itemId), Convert.ToBoolean(isStarred))) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        [WebMethod]
+        public bool IsStarred(string itemId) {
+            SourceLogic logic = new SourceLogic();
+            if (HttpContext.Current.Request.IsAuthenticated) {
+                if (logic.IsStarred(Context.User.Identity.Name, Convert.ToInt32(itemId))) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        [WebMethod]
         public string GetResponse(string type) {
             SourceLogic logic = new SourceLogic();
 
@@ -38,9 +62,9 @@ namespace newsflippers.services {
 
             response = "<ul>";
             foreach (WebPage item in webpageList) {
-                response += string.Format("<li><a href='view/?{0}#{1}'><img class='thumb' src='{2}' alt='' /><br><span class='thumb_title'>{3}</span></a></li>", Util.UrlEncode(type),Util.RemoveImageExt(item.ImageName), item.FullThumbnailImagePath, item.Title);
+                response += string.Format("<li><a href='view/?{0}#{1}'><img class='thumb' src='{2}' alt='' /><br><span class='thumb_title'>{3}</span></a></li>", Util.UrlEncode(type), Util.RemoveImageExt(item.ImageName), item.FullThumbnailImagePath, item.Title);
             }
-            return response+"</ul>";
+            return response + "</ul>";
         }
     }
 }

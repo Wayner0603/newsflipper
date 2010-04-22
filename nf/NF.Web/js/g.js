@@ -8,7 +8,7 @@
     };
 }
 
-function util() {
+function _util() {
     addMethod(this, "hide", function(ctrl) {
         $(ctrl).hide();
 
@@ -45,10 +45,18 @@ function util() {
         window.location.hash = page;
     });
 
+    addMethod(this, "toggleClass", function (div, class1, class2) {
+        if ($(div).hasClass(class1)) {
+            $(div).removeClass(class1)
+            $(div).addClass(class2);
+        } else {
+            $(div).removeClass(class2)
+            $(div).addClass(class1);
+        }
 
+    });
 }
-var ur = new util();
-
+var util = new _util();
 
 
 jQuery.fn.encHTML = function() {
@@ -95,35 +103,48 @@ function modalDialog() {
     });
 
     addMethod(this, "c", function() {
-    ur.hide('#overlay');
+    util.hide('#overlay');
     $("body").css("overflow", "");
-        ur.hide('#modalDialog');
+        util.hide('#modalDialog');
         sCor(1);
     });
 
-}
+    addMethod(this, "showHtml", function (html, title, width, height) {
+        _showHtml(html, title, width, height);
+    });
 
+}
 
 function overlay_resize() {
     
 }
 
-function _show(url, title, width, height) {
+function _showHtml(html, title, width, height) {
+    _showCore(title, width, height);
+    $(".modal_title").hide();
+    $("#f").html(html);
+    return false;
+}
+
+function _showCore(title, width, height) {
     $("#modalDialog").width(width);
     $("#modalDialog").height(height);
     $("#modalTitle").text(title);
 
-    ur.show("#overlay");
+    util.show("#overlay");
     $("body").css("overflow", "hidden");
-    
+
     $("#overlay").width($(window).width());
     $("#overlay").height($(window).height());
 
     sCor(0);
-    ur.setLoc('#modalDialog');
+    util.setLoc('#modalDialog');
 
-    ur.show("#modalDialog");
+    util.show("#modalDialog");
+}
 
+function _show(url, title, width, height) {
+    _showCore(title, width, height);
     var frame = document.getElementById('modalIFrame');
     if (frame.src != url) {
         document.getElementById('modalIFrame').src = url;
@@ -134,10 +155,10 @@ function _show(url, title, width, height) {
 
 function sCor(v) {
     if (v == 0) {
-        ur.hide("#carousel");
+        util.hide("#carousel");
 
     } else {
-        ur.show("#carousel");
+        util.show("#carousel");
     }
 }
 

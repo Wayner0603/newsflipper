@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <script type="text/javascript" src="../js/g.js"></script>
-    <link href="../App_Themes/Default/skin.css" rel="stylesheet" type="text/css" />
+    <link href="../css/skin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">

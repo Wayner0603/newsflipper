@@ -1,11 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="modal_dialog.ascx.cs"
     Inherits="newsflippers.uc.modal_dialog" %>
-    <script language=javascript >
-    $(window).resize(function() {
-    
-});
-    </script>
-<div id="overlay" class="overlay_div" style="background-color: #000">
+<div id="overlay" class="modal_overlay" style="background-color: #000">
 </div>
 <div id="modalDialog" class='modal_outer' style="display: none;">
     <div class='modal_frame'>
@@ -19,8 +14,8 @@
                     <img class="modal_close" onclick="modal.c();" src="../images/close.gif" />
                 </td>
             </tr>
-        </table>
+        </table><div id="f">
     <iframe src='' id="modalIFrame" style="background-color: #fff" frameborder="0" width="100%"
-        height="100%"></iframe>    </div>
+        height="100%"></iframe></div>    </div>
 
 </div>

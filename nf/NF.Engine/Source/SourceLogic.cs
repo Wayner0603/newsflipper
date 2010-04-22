@@ -21,10 +21,21 @@ namespace NF.Engine.Source {
         //    return GetCaptureWebPages(dt, string.Empty );
         //}
 
+        public bool DoStarred(string userId, int itemId, bool isStarred) {
+            return DataModel.DoStarred(userId, itemId, isStarred, Util.GetDate());    
+        }
+
+
+        public bool IsStarred(string userId, int itemId) {
+            return DataModel.IsStarred(userId, itemId);
+        }
+
+
         private WebPageList ConverToWebPageList(IDataReader rdr, string section, string source, string country) {
             WebPageList webpageList = new WebPageList();
             while (rdr.Read()) {
                 webpageList.Add(new WebPage() {
+                    ID = Convert.ToInt32(rdr["ITM_ID"]),
                     Title = rdr["ITM_TITLE"].ToString(),
                     ImageName = rdr["ITM_IMGNAME"].ToString(),
                     ThumbImageName = rdr["ITM_IMGTHUMB"].ToString(),
@@ -45,13 +56,6 @@ namespace NF.Engine.Source {
             WebPageList webpageList = ConverToWebPageList(rdr, section, source, country);
             return webpageList;
         }
-
-        //public WebPage GetWebPage(WebPageList pageList, string pageName) {
-        //    WebPage page = pageList.Get(pageName);
-        //    if (page == null) { 
-                
-        //    }
-        //}
 
         public WebPageList Search(string keyword) {
             IDataReader rdr = DataModel.GetWebPages(keyword);
