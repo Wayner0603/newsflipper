@@ -5,6 +5,7 @@
 <%@ Register Src="uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
 <%@ Register Src="uc/TopBar.ascx" TagName="TopBar" TagPrefix="uc4" %>
 <%@ Register Src="uc/modal_dialog.ascx" TagName="modal_dialog" TagPrefix="uc3" %>
+<%@ Register src="uc/msg_ctrl.ascx" tagname="msg_ctrl" tagprefix="uc5" %>
 <head id="Head1" runat="server">
     <title></title>
 
@@ -17,10 +18,12 @@
     <script type="text/javascript" src="js/g.js"></script>
 
     <script type="text/javascript">
-        jQuery(document).ready(function()
-        {
-           load_thumb('top');
-          
+        jQuery(document).ready(function () {
+            if (jQuery.browser.msie == true) {
+                msg.html('You are currently using an unsupported browser. Please <a href="http://www.google.com/chrome">download</a> a new browser for better experience.');
+            }
+            load_thumb('top');
+            msg.text("testssss");
         });
        
       
@@ -89,6 +92,7 @@
 <body>
     <form id="form1" runat="server">
     <uc4:TopBar ID="TopBar1" runat="server" />
+    <uc5:msg_ctrl ID="msg_ctrl1" runat="server" />
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
     <div id="wrap">
         <div class="menu_bar">
@@ -207,6 +211,7 @@
     </div>
     <uc2:FooterUc ID="FooterUc1" runat="server" />
     <uc3:modal_dialog ID="modal_dialog1" runat="server" />
+
     </form>
 </body>
 </html> 

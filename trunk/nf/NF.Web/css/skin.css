@@ -108,6 +108,21 @@ h3
     height: 800px;
 }
 
+#message_box {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    z-index: 10;
+    background: #FEF989;
+    padding: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    text-align: center;
+    display: none;
+}
 
 .msg_suc
 {
@@ -146,25 +161,6 @@ h3
     width: 90%;
     text-align: center;
     height: 25px;
-}
-
-#msg_browser
-{
-    margin-top: 3px;
-    position: absolute;
-    left: 300px;
-    top: 0;
-    font-family: arial, Helvetica, sans-serif;
-    font-size: 12px;
-    background-color: #FC0;
-    color: #000;
-    border-right-style: solid;
-    border-right-width: 10px;
-    border-right-color: #FC0;
-    border-left-style: solid;
-    border-left-width: 10px;
-    border-left-color: #FC0;
-    padding: 2px;
 }
 
 .header_top
@@ -393,7 +389,7 @@ a.nav_text:visited {
 }
 
 #login_box {
-    padding-left:30px;
+    padding:30px;
 }
 
 .list_image {

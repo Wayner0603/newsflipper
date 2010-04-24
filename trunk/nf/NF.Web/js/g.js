@@ -164,4 +164,7 @@ function sCor(v) {
 
 var modal = new modalDialog();
 
+function call_signin() {
+    modal.show('/user/', 'Sign in to Newsflipper Account', 500, 300);
+}
 

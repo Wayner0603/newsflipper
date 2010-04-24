@@ -40,6 +40,15 @@ namespace newsflippers {
         protected global::newsflippers.uc.TopBar TopBar1;
         
         /// <summary>
+        /// msg_ctrl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::newsflippers.uc.msg_ctrl msg_ctrl1;
+        
+        /// <summary>
         /// HeaderUc1 control.
         /// </summary>
         /// <remarks>
