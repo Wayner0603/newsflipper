@@ -15,7 +15,7 @@ namespace newsflippers.uc
         }
 
         public void SetMsg(string text) {
-            this.lblMsg.Text = text;
+            //this.lblMsg.Text = text;
         }
     }
 }

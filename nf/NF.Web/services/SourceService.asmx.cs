@@ -15,7 +15,7 @@ namespace newsflippers.services {
         public bool DoStarred(string itemId, string isStarred) {
             SourceLogic logic = new SourceLogic();
             if (HttpContext.Current.Request.IsAuthenticated) {
-                if (logic.DoStarred(Context.User.Identity.Name, Convert.ToInt32(itemId), Convert.ToBoolean(isStarred))) {
+                if (logic.DoStarred(Context.User.Identity.Name, itemId , Convert.ToBoolean(isStarred))) {
                     return true;
                 }
             }
@@ -28,7 +28,7 @@ namespace newsflippers.services {
         public bool IsStarred(string itemId) {
             SourceLogic logic = new SourceLogic();
             if (HttpContext.Current.Request.IsAuthenticated) {
-                if (logic.IsStarred(Context.User.Identity.Name, Convert.ToInt32(itemId))) {
+                if (logic.IsStarred(Context.User.Identity.Name, itemId)) {
                     return true;
                 }
             }

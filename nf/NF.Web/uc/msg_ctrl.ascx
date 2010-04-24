@@ -1,38 +1,57 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="msg_ctrl.ascx.cs" Inherits="newsflippers.uc.msg_ctrl" %>
 
 <script type="text/javascript">
-    $(document).ready(function() { $("#<%=lblMsg.ClientID%>").fadeOut(20000); });
-
     function _msg() {
         addMethod(this, "suc", function(text) {
-            _setMsg(text, 'msg_suc');
+            _setMsg(text, 'msg_suc', 0);
         });
 
         addMethod(this, "err", function(text) {
-            _setMsg(text, 'msg_err');
+            _setMsg(text, 'msg_err', 0);
         });
 
         addMethod(this, "val", function(text) {
-            _setMsg(text, 'error');
+            _setMsg(text, 'error', 0);
         });
 
-        addMethod(this, "set", function(text, css) {
-            _setMsg(text, css);
+        addMethod(this, "text", function(text) {
+            _setMsg(text, '',0);
+        });
+
+        addMethod(this, "html", function (text) {
+            _setMsg(text, '', 1);
         });
     }
-
-    function _setMsg(text, css) {
-        $("#<%=lblMsg.ClientID %>").css("display", "inline");
-        $("#<%=lblMsg.ClientID %>").addClass(css);
-        $("#<%=lblMsg.ClientID %>").text(text);
-        $("#<%=lblMsg.ClientID %>").fadeOut(20000);
-        return false;
+    
+    function _setMsg(text, css, isHtml) {
+        if ($("#message_box").is(":hidden")) {
+            $("#message_box").show();
+            if (isHtml == 0) {
+                $("#message_box").text(text);
+            } else {
+                $("#message_box").html(text);
+            }
+            _setMsgLocation();
+            setTimeout(function () { $("#message_box").hide() }, 10000);
+        }
     }
+
+    function _setMsgLocation() {
+        var w = ($(window).width() / 2) - ($("#message_box").width() / 2);
+        $("#message_box").css("left", w);
+    }
+
+    $(window).scroll(function () {
+        $('#message_box').css("top", $(window).scrollTop() + "px")
+    });
+
+    $(window).resize(function () {
+        $('#message_box').css("top", $(window).scrollTop() + "px")
+        _setMsgLocation();
+    });
+
     var msg = new _msg();
 </script>
-<table cellpadding="0" cellspacing="0" class="msg_outer">
-    <tr>
-        <td><asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
-        </td>
-    </tr>
-</table>
+<div id="message_box">
+    
+</div>
