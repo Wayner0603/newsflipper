@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="newsflippers.view._default" %>
-<%@ OutputCache Duration="600" Location="Server" VaryByParam="*" %>
 <%@ Register Src="../uc/HeaderUc.ascx" TagName="HeaderUc" TagPrefix="uc1" %>
 <%@ Register Src="../uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
 <%@ Register Src="../uc/BugFeatureRequestUc.ascx" TagName="BugFeatureRequestUc" TagPrefix="uc3" %>
@@ -143,7 +142,7 @@
         }
 
         function c_email() {
-            call_email(_title, escape(window.location.href));
+            call_email( _title.replace(':',''), escape(window.location.href));
         }
     </script>
     <link href="../css/skin.css" rel="stylesheet" type="text/css" />
