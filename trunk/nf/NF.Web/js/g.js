@@ -1,6 +1,6 @@
 ﻿function addMethod(object, name, fn) {
     var old = object[name];
-    object[name] = function() {
+    object[name] = function () {
         if (fn.length == arguments.length)
             return fn.apply(this, arguments);
         else if (typeof old == 'function')
@@ -9,23 +9,23 @@
 }
 
 function _util() {
-    addMethod(this, "hide", function(ctrl) {
+    addMethod(this, "hide", function (ctrl) {
         $(ctrl).hide();
 
     });
 
-    addMethod(this, "show", function(ctrl) {
+    addMethod(this, "show", function (ctrl) {
         $(ctrl).show();
 
     });
 
-    addMethod(this, "setLoc", function(ctrl) {
+    addMethod(this, "setLoc", function (ctrl) {
         var w = ($(window).width() / 2) - ($(ctrl).width() / 2);
         $(ctrl).css("left", w);
 
     });
 
-    addMethod(this, "load", function(page) {
+    addMethod(this, "load", function (page) {
         if ($.trim($("#" + div).text()) == 'Loading...') {
             $("#" + div).load(page);
         } else {
@@ -59,9 +59,9 @@ function _util() {
 var util = new _util();
 
 
-jQuery.fn.encHTML = function() {
+jQuery.fn.encHTML = function () {
     var xx = ''
-    this.each(function() {
+    this.each(function () {
         var me = jQuery(this);
         var html = me.html();
 
@@ -72,11 +72,11 @@ jQuery.fn.encHTML = function() {
 
 
 function _menu() {
-    addMethod(this, "nav", function(url, sTab, oTabs, sTabCss, oTabCss) {
+    addMethod(this, "nav", function (url, sTab, oTabs, sTabCss, oTabCss) {
         _nav(url, sTab, oTabs, sTabCss, oTabCss);
     });
 
-    addMethod(this, "nav", function(url, sTab, oTabs) {
+    addMethod(this, "nav", function (url, sTab, oTabs) {
         _nav(url, sTab, oTabs, 'nav_item_selected', 'nav_item');
     });
 
@@ -95,28 +95,27 @@ var menu = new _menu();
 
 
 function modalDialog() {
-    addMethod(this, "show", function(url, title) {
+    addMethod(this, "show", function (url, title) {
         _show(url, title, 600, 400);
     });
-    addMethod(this, "show", function(url, title, width, height) {
+    addMethod(this, "show", function (url, title, width, height) {
         _show(url, title, width, height);
     });
 
-    addMethod(this, "c", function() {
-    util.hide('#overlay');
-    $("body").css("overflow", "");
-    util.hide('#modal_outer');
+    addMethod(this, "c", function () {
+        util.hide('#overlay');
+        $("body").css("overflow", "");
+        util.hide('#modal_outer');
         sCor(1);
     });
 
     addMethod(this, "showHtml", function (html, title, width, height) {
         _showHtml(html, title, width, height);
     });
-
 }
 
 function overlay_resize() {
-    
+
 }
 
 function _showHtml(html, title, width, height) {
@@ -128,14 +127,14 @@ function _showHtml(html, title, width, height) {
 
 function _showCore(title, width, height) {
     $("#modal_outer").width(width);
-    $("#modal_outer").height(height+18);
-    var h = height ;
+    $("#modal_outer").height(height + 18);
+    var h = height;
 
     $("#modal_frame").height(h);
-    $("#modal_iframe").height(h-48);
-    
+    $("#modal_iframe").height(h - 48);
+
     $("#modalTitle").text(title);
-    
+
     util.show("#overlay");
     $("body").css("overflow", "hidden");
 
@@ -152,9 +151,11 @@ function _show(url, title, width, height) {
     _showCore(title, width, height);
 
     var frame = document.getElementById('modalIFrame');
+
     if (frame.src != url) {
         document.getElementById('modalIFrame').src = url;
     }
+
     return false;
 }
 
@@ -179,6 +180,10 @@ function call_directlink(link) {
 
 function call_email(title, link) {
     modal.show('/settings/email_sender.aspx?title=' + title + "&lnk=" + link, 'Email', 500, 350);
+}
+
+function call_issues() {
+    modal.show('/settings/report_issues.aspx', 'Please send your issues or suggestions.', 550, 300);
 }
 
 

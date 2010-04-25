@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="newsflippers._default" %>
+<%@ OutputCache Duration="600" Location="Server" VaryByParam="*" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Src="uc/HeaderUc.ascx" TagName="HeaderUc" TagPrefix="uc1" %>
@@ -19,11 +20,12 @@
 
     <script type="text/javascript">
         jQuery(document).ready(function () {
-            if (jQuery.browser.msie == true) {
-                msg.html('You are currently using an unsupported browser. Please <a href="http://www.google.com/chrome">download</a> a new browser for better experience.');
-            }
             load_thumb('top');
-            msg.text("testssss");
+            var t = '<b>This is a very earrrrrrrrrrrly preview of the site.</b><br>So please <a href="javascript:call_issues();"><b>report</b></a> any issues or suggestions.';
+            if (jQuery.browser.msie == true) {
+                t += '<br>BTW, please use a faster browser like <a href="http://www.google.com/chrome">Google Chrome </a> for better experience.';
+            }
+            msg.html(t, 15000);
         });
        
       
@@ -50,38 +52,48 @@
          function showj() {
             jQuery('#c_top').show();
         }
-        
-        function load_thumb(t)
-        {
-           if(load.indexOf(t) == -1) {
-            
-            $("#c_" + t).text('Loading...');
-            
-            $.ajax({
-                type: "POST",
-                url: '/services/SourceService.asmx/GetResponse',
-                data: "{'type':'section:top+stories'}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function(text) {
-                    $("#c_" + t).html(text.d);
 
-                    $("#c_" +t).jCarouselLite({
-                        btnNext: "#next_" + t,
-                        btnPrev: "#prev_" + t,
-                        mouseWheel: true,
-                        visible:3,
-                        scroll:3
+        var blocked = false;
+        function load_thumb(t) {
+            if (!blocked) {
+                blocked = true;
+                if (load.indexOf(t) == -1 && t != 'sta') {
+                    $("#loading").text('Loading...');
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/services/SourceService.asmx/GetResponse',
+                        data: "{'type':'section:top+stories'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (text) {
+                            blocked = false;
+                            $("#loading").text('');
+
+                            $("#prev_" + t).show();
+                            $("#next_" + t).show();
+
+                            $("#c_" + t).html(text.d);
+                            $("#c_" + t).jCarouselLite({
+                                btnNext: "#next_" + t,
+                                btnPrev: "#prev_" + t,
+                                mouseWheel: true,
+                                visible: 3,
+                                scroll: 3
+                            });
+                        },
+
+                        error: function (text) {
+                            blocked = false;
+                            alert(text.d);
+                        }
                     });
-                },
-                
-                error: function(text) {
-                    alert(text.d);
+                    load += t + ',';
+                } else {
+                blocked = false;
                 }
-            });
-            load += t + ',';
+                set_links(t);
             }
-            set_links(t);
         }
         
     </script>
@@ -94,19 +106,19 @@
     <uc4:TopBar ID="TopBar1" runat="server" />
     <uc5:msg_ctrl ID="msg_ctrl1" runat="server" />
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
-    <div id="wrap">
         <div class="menu_bar">
             <span id="top_l" class="menu_item" onclick="load_thumb('top');">Top Stories</span>&nbsp;&nbsp;&nbsp;<span
                 class="menu_item" id="bus_l" onclick="load_thumb('bus');">Business</span>&nbsp;&nbsp;&nbsp;<span
                     class="menu_item" id="sci_l" onclick="load_thumb('sci');">Sci/Tech</span>&nbsp;&nbsp;&nbsp;<span
                         class="menu_item" id="ent_l" onclick="load_thumb('ent');">Entertainment</span>&nbsp;&nbsp;&nbsp;<span
-                            class="menu_item" id="sta_l" onclick="load_thumb('sta');">Starred</span></div>
-        <div id="carousel">
-            <div id="d_top">
+                            class="menu_item" id="sta_l" onclick="load_thumb('sta');">Starred news</span></div>
+        <div >
+        <div id="carousel"><div id="loading"></div>
+            <div id="d_top" style="display:none">
                 <table cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <div id="prev_top" class="prev">
+                            <div id="prev_top" style="display:none" class="prev">
                             </div>
                         </td>
                         <td>
@@ -117,17 +129,17 @@
                             </div>
                         </td>
                         <td>
-                            <div id="next_top" class="next">
+                            <div id="next_top" style="display:none"  class="next">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div id="d_bus">
+            <div id="d_bus" style="display:none">
                 <table cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <div id="prev_bus" class="prev">
+                            <div id="prev_bus" style="display:none" class="prev">
                             </div>
                         </td>
                         <td>
@@ -138,17 +150,17 @@
                             </div>
                         </td>
                         <td>
-                            <div id="next_bus" class="next">
+                            <div id="next_bus" style="display:none" class="next">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div id="d_sci">
+            <div id="d_sci" style="display:none">
                 <table cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <div id="prev_sci" class="prev">
+                            <div id="prev_sci" style="display:none" class="prev">
                             </div>
                         </td>
                         <td>
@@ -159,17 +171,17 @@
                             </div>
                         </td>
                         <td>
-                            <div id="next_sci" class="next">
+                            <div id="next_sci" style="display:none" class="next">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div id="d_ent">
+            <div id="d_ent" style="display:none">
                 <table cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <div id="prev_ent" class="prev">
+                            <div id="prev_ent" style="display:none"   class="prev">
                             </div>
                         </td>
                         <td>
@@ -180,35 +192,34 @@
                             </div>
                         </td>
                         <td>
-                            <div id="next_ent" class="next">
+                            <div id="next_ent" style="display:none"  class="next">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div id="d_sta">
+            <div id="d_sta" style="display:none">
                 <table cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <div id="prev_sta" class="prev">
-                            </div>
+                           <%-- <div id="prev_sta" class="prev">
+                            </div>--%>
                         </td>
                         <td>
                             <div id="c_sta">
                                 <ul>
-                                    <li></li>
+                                    <li>Please <a href="javascript:call_signin();">sign in</a> to view your starred news. Currently under-construction :-( </li>
                                 </ul>
                             </div>
                         </td>
                         <td>
-                            <div id="next_sta" class="next">
-                            </div>
+                           <%-- <div id="next_sta" class="next">
+                            </div>--%>
                         </td>
                     </tr>
                 </table>
             </div>
-        </div>
-    </div>
+        </div></div>
     <uc2:FooterUc ID="FooterUc1" runat="server" />
     <uc3:modal_dialog ID="modal_dialog1" runat="server" />
 

@@ -67,7 +67,7 @@ namespace newsflippers {
                 selWebPage = webpageList[count];
             }
             selWebPage.Src = string.Format("<a href='{0}' target=\"_blank\"><img border=\"0\" src=\"{1}\"   alt=\"Click here to read more...\" /></a>", selWebPage.Url, string.Format("{0}/{1}/{2}", baseUrl, NF.Engine.Util.GetRelativeImageFolder(), selWebPage.ImageName));
-            response = string.Format("{0};{1};{2};{3};{4};{5};{6}", count.ToString(), selWebPage.Src, webpageList.Count.ToString(), selWebPage.Url, Util.RemoveImageExt(selWebPage.ImageName), selWebPage.Source, selWebPage.ID);
+            response = string.Format("{0};{1};{2};{3};{4};{5};{6};{7}", count.ToString(), selWebPage.Src, webpageList.Count.ToString(), selWebPage.Url, Util.RemoveImageExt(selWebPage.ImageName), selWebPage.Source, selWebPage.ID, selWebPage.Title);
 
             Response.Write(response);
             Response.End();

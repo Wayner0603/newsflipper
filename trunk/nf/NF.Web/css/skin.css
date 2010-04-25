@@ -12,6 +12,10 @@ ul {
     list-style-type: none ;
 }
 
+#loading 
+{
+    padding:20px 0px 0px 20px;
+    }
 h3
 {
     font-size: 18px;
@@ -22,6 +26,10 @@ h3
     text-align:right;
 }
 
+.text_red
+{
+    color: #CC0000;
+}
 
 .jcarousel-container
 {
@@ -94,6 +102,7 @@ h3
      background-position:  -0px -40px;
     background-repeat: no-repeat;
 }
+
 #page
 {
     width: 990px;
