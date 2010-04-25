@@ -21,13 +21,13 @@ namespace NF.Engine.Source {
         //    return GetCaptureWebPages(dt, string.Empty );
         //}
 
-        public bool DoStarred(string userId, int itemId, bool isStarred) {
-            return DataModel.DoStarred(userId, itemId, isStarred, Util.GetDate());    
+        public bool DoStarred(string userId, string uniqueId, bool isStarred) {
+            return DataModel.DoStarred(userId, uniqueId, isStarred, Util.GetDate());    
         }
 
 
-        public bool IsStarred(string userId, int itemId) {
-            return DataModel.IsStarred(userId, itemId);
+        public bool IsStarred(string userId, string uniqueId) {
+            return DataModel.IsStarred(userId, uniqueId );
         }
 
 

@@ -470,3 +470,15 @@ a.nav_text:visited {
     height:16px;
     cursor:pointer;
 }
+
+#toolbar {}
+#toolbar ul {
+margin:0;
+padding:0;
+list-style:none;
+}
+#toolbar li {
+display:inline;
+margin:0;
+padding:0;
+}
