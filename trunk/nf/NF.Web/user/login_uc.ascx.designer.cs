@@ -67,6 +67,15 @@ namespace newsflippers.user {
         protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
+        /// btnOK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
         /// hpNewUser control.
         /// </summary>
         /// <remarks>

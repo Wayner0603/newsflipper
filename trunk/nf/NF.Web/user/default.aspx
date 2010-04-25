@@ -1,6 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="newsflippers.user._default" %>
-<%@ OutputCache Duration="6000" Location="Server" VaryByParam="*" %>
-
 
 <%@ Register src="login_uc.ascx" tagname="login_uc" tagprefix="uc1" %>
 

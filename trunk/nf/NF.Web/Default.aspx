@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="newsflippers._default" %>
-<%@ OutputCache Duration="600" Location="Server" VaryByParam="*" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Src="uc/HeaderUc.ascx" TagName="HeaderUc" TagPrefix="uc1" %>
@@ -21,7 +20,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function () {
             load_thumb('top');
-            var t = '<b>This is a very earrrrrrrrrrrly preview of the site.</b><br>So please <a href="javascript:call_issues();"><b>report</b></a> any issues or suggestions.';
+            var t = '<b>This is a very earrrrrrrrrrrly preview of the site. Also note that the data is not up-to-date.</b><br>So please <a href="javascript:call_issues();"><b>report</b></a> any issues or suggestions.';
             if (jQuery.browser.msie == true) {
                 t += '<br>BTW, please use a faster browser like <a href="http://www.google.com/chrome">Google Chrome </a> for better experience.';
             }

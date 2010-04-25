@@ -12,7 +12,8 @@
     </div>
     <asp:CheckBox Checked="true" ID="chkSignIn" runat="server" Text="Stay signed in" /><br />
     <br />
-    <asp:Button ID="btnLogin" CssClass="btn" runat="server" OnClientClick="return auth();" Text="Login" />&nbsp;<asp:HyperLink
+    <asp:Button ID="btnLogin" CssClass="btn" runat="server" OnClientClick="return auth();" Text="Login" />&nbsp;<asp:Button ID="btnOK" OnClientClick="return parent.modal.c();" runat="server" CssClass="btn"
+            Text="Cancel" />&nbsp;<asp:HyperLink
         ID="hpNewUser" NavigateUrl="javascript:newUser();" runat="server">New User?</asp:HyperLink>
     <br />
 </div>
