@@ -182,7 +182,7 @@ h3
 }
 
 #logo {
-    padding:12px;
+    padding:5px 0px 5px 15px;
 }
 
 /*
@@ -293,6 +293,12 @@ z-index:2px;
     text-align:right;
     cursor:pointer;
     padding:4px;
+    background: transparent url(../images/sprites.png) ;
+     background-position:  -70px -89px;
+    background-repeat: no-repeat;
+    width:8px;
+     height:8px;
+     
 }
 
 #modal_title

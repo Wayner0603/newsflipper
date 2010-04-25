@@ -11,7 +11,7 @@
                     </div>
                 </td>
                 <td class="set_right">
-                    <img class="modal_close" onclick="modal.c();" alt="Close" src="../images/close.gif" />
+                    <div class="modal_close set_righ" onclick="modal.c();"></div> 
                 </td>
             </tr>
         </table><div id="modal_iframe">
