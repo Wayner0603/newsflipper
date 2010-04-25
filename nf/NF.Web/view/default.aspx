@@ -12,9 +12,8 @@
     <title>Fastest way to read news online</title>
     <meta name="keywords" content="news,srilanka,online news,fastflip,news flipper" />
     <meta name="description" content="Fastest way to read online news." />
-    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="../js/jspack.js"></script>
-    <script type="text/javascript" src="../js/jcoursalpack.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="../js/g.js"></script>
     <script type="text/javascript" src="../js/c.js"></script>
     <script type="text/javascript">
@@ -57,7 +56,7 @@
 
                 totalcount = response.split(';')[2];
 
-            });        $(document).keydown(function (event) {
+            }); $(document).keydown(function (event) {
                 if (event.keyCode == 37) {
                     carousel.prev();
 
@@ -78,6 +77,7 @@
         };
 
         jQuery(document).ready(function () {
+            msg.text('hey this is great!');
             type = location.href.substring(location.href.indexOf('?') + 1, location.href.indexOf('#'));
             _uniqId = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
 
@@ -150,13 +150,12 @@
     <uc4:TopBar ID="TopBar1" runat="server" />
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
     <div id="toolbar">
-        <div id="star" class="unstar" onclick="setStar();">
-        </div>
-        <div id='full_story'>
-        </div>
-        <div onclick="showLink();">
-            Link</div>
+        <li><a  id='star' href="javascript:setStar();" class="unstar" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Star</a></li>
+        <li><a id='full_story' href="#"></a></li>
+        <li><a href="javascript:showLink();">Link</a></li>
+        
     </div>
+    
     <div id="page">
         <div id="carousel">
             <div id="mcar" class="jcarousel-skin-ie7">

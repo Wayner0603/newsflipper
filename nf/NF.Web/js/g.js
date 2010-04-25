@@ -130,7 +130,7 @@ function _showCore(title, width, height) {
     $("#modalDialog").width(width);
     $("#modalDialog").height(height);
     $("#modalTitle").text(title);
-
+    
     util.show("#overlay");
     $("body").css("overflow", "hidden");
 
@@ -145,10 +145,10 @@ function _showCore(title, width, height) {
 
 function _show(url, title, width, height) {
     _showCore(title, width, height);
+
     var frame = document.getElementById('modalIFrame');
     if (frame.src != url) {
         document.getElementById('modalIFrame').src = url;
-
     }
     return false;
 }

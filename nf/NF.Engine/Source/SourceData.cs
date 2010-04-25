@@ -119,12 +119,12 @@ namespace NF.Engine.Source {
             }
         }
 
-        public bool DoStarred(string userId, int itmId, bool isStar, DateTime dt) {
+        public bool DoStarred(string userId, string uniqueId, bool isStar, DateTime dt) {
             try {
                 Database db = new Database();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.AddWithValue("@NF_USER_ID", userId );
-                cmd.Parameters.AddWithValue("@ITM_ID", itmId);
+                cmd.Parameters.AddWithValue("@ITM_UNIQUE_ID", uniqueId);
                 cmd.Parameters.AddWithValue("@STARRED", isStar );
                 cmd.Parameters.AddWithValue("@ADDED_DATE", dt);
                 db.ExecuteNonQuery("Usp_Source_Starred", cmd);
@@ -134,12 +134,12 @@ namespace NF.Engine.Source {
             }
         }
 
-        public bool IsStarred(string userId, int itmId) {
+        public bool IsStarred(string userId, string uniqueId) {
             try {
                 Database db = new Database();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.AddWithValue("@USERID", userId);
-                cmd.Parameters.AddWithValue("@ITM_ID", itmId);
+                cmd.Parameters.AddWithValue("@ITM_UNIQUE_ID", uniqueId);
                 IDataReader rdr = db.ExecuteReader("Usp_Source_IsStarred", cmd);
                 bool isStarred = rdr.Read();
                 rdr.Close();

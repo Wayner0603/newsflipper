@@ -75,9 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\sprite.png" />
+    <Content Include="js\jquery-1.4.2.min.js" />
+    <Content Include="js\jquery.jcarousel.min.js" />
     <Content Include="js\source\jCarousel.js" />
     <Content Include="js\source\jquery-1-3-2.js" />
     <Content Include="pages\Sources.txt" />
+    <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\FooterUc.ascx" />
     <Content Include="uc\HeaderUc.ascx" />
     <Content Include="Web.config" />
@@ -139,13 +142,6 @@
     <Compile Include="get_view.aspx.designer.cs">
       <DependentUpon>get_view.aspx</DependentUpon>
     </Compile>
-    <Compile Include="load_content.aspx.cs">
-      <DependentUpon>load_content.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="load_content.aspx.designer.cs">
-      <DependentUpon>load_content.aspx</DependentUpon>
-    </Compile>
     <Compile Include="search\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,12 +171,12 @@
     <Compile Include="sign_out.aspx.designer.cs">
       <DependentUpon>sign_out.aspx</DependentUpon>
     </Compile>
-    <Compile Include="uc\jQueryCtrl.ascx.cs">
-      <DependentUpon>jQueryCtrl.ascx</DependentUpon>
+    <Compile Include="uc\BugFeatureRequestUc.ascx.cs">
+      <DependentUpon>BugFeatureRequestUc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uc\jQueryCtrl.ascx.designer.cs">
-      <DependentUpon>jQueryCtrl.ascx</DependentUpon>
+    <Compile Include="uc\BugFeatureRequestUc.ascx.designer.cs">
+      <DependentUpon>BugFeatureRequestUc.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc\modal_dialog.ascx.cs">
       <DependentUpon>modal_dialog.ascx</DependentUpon>
@@ -224,32 +220,7 @@
     <Compile Include="user\register_uc.ascx.designer.cs">
       <DependentUpon>register_uc.ascx</DependentUpon>
     </Compile>
-    <Compile Include="user\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NFService.asmx.cs">
-      <DependentUpon>NFService.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rss_test.aspx.cs">
-      <DependentUpon>rss_test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="rss_test.aspx.designer.cs">
-      <DependentUpon>rss_test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="uc\BugFeatureRequestUc.ascx.cs">
-      <DependentUpon>BugFeatureRequestUc.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uc\BugFeatureRequestUc.ascx.designer.cs">
-      <DependentUpon>BugFeatureRequestUc.ascx</DependentUpon>
-    </Compile>
     <Compile Include="uc\FooterUc.ascx.cs">
       <DependentUpon>FooterUc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,13 +249,6 @@
     <Compile Include="view\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="about\submit-issue.aspx" />
@@ -306,7 +270,6 @@
     <Content Include="about\whats-new.htm" />
     <Content Include="css\skin.css" />
     <Content Include="default.aspx" />
-    <Content Include="default.txt" />
     <Content Include="get_images.aspx" />
     <Content Include="get_view.aspx" />
     <Content Include="images\border_bkg.PNG" />
@@ -323,23 +286,18 @@
     <Content Include="js\c.js" />
     <Content Include="js\car.js" />
     <Content Include="js\g.js" />
-    <Content Include="js\jcoursalpack.js" />
     <Content Include="js\jquery.mousewheel.pack.js" />
-    <Content Include="js\jspack.js" />
-    <Content Include="load_content.aspx" />
     <Content Include="search\default.aspx" />
     <Content Include="services\SourceService.asmx" />
     <Content Include="services\UserService.asmx" />
     <Content Include="settings\default.aspx" />
     <Content Include="sign_out.aspx" />
-    <Content Include="uc\jQueryCtrl.ascx" />
     <Content Include="uc\modal_dialog.ascx" />
     <Content Include="uc\msg_ctrl.ascx" />
     <Content Include="uc\search_uc.ascx" />
     <Content Include="user\default.aspx" />
     <Content Include="user\login_uc.ascx" />
     <Content Include="user\register_uc.ascx" />
-    <Content Include="user\WebForm1.aspx" />
     <Content Include="default.htm" />
     <Content Include="images\close.gif" />
     <Content Include="images\keyboard.gif" />
@@ -359,18 +317,12 @@
     <Content Include="images\point_right_arrow.gif" />
     <Content Include="images\top-bar.gif" />
     <Content Include="images\topbackground.gif" />
-    <Content Include="js\global.min.js" />
-    <Content Include="js\jquery-1.3.2.min.js" />
     <Content Include="js\source\excanvas.js" />
     <Content Include="js\source\jquery-1.3.2.js" />
     <Content Include="js\source\liquid-canvas-plugins.js" />
     <Content Include="js\source\liquid-canvas.js" />
-    <Content Include="NFService.asmx" />
-    <Content Include="rss_test.aspx" />
-    <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\TopBar.ascx" />
     <Content Include="view\default.aspx" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NF.Engine\NF.Engine.csproj">
