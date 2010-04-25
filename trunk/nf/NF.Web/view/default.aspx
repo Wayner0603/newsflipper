@@ -19,6 +19,7 @@
     <script type="text/javascript">
         var _titles = new Array();
         var _uniqId = '';
+        var _title = '';
         var _uniqIds = new Array();
         var _count = 0; var totalcount = -1;
         var _ids = new Array();
@@ -45,7 +46,7 @@
                 _uniqId = response.split(';')[4];
                 _uniqIds[_count] = _uniqId;
                 _titles[_count] = response.split(';')[3];
-
+                _title = response.split(';')[3];
                 _id = response.split(';')[6];
                 _ids[_count] = _id;
 
@@ -150,9 +151,10 @@
     <uc4:TopBar ID="TopBar1" runat="server" />
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
     <div id="toolbar">
-        <li><a  id='star' href="javascript:setStar();" class="unstar" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Star</a></li>
-        <li><a id='full_story' href="#"></a></li>
-        <li><a href="javascript:showLink();">Link</a></li>
+        <li><a  id='star' href="javascript:setStar();" class="unstar" >Add Star</a></li>
+        <li><a id='email' href="javascript:call_email('fththy', escape(window.location.href));" class="email">Email</a></li>
+        <li><a id='full_story' href="#" class="full_story"></a></li>
+        <li><a href="javascript:call_directlink(escape(window.location.href));" class="out_link">Link</a></li>
         
     </div>
     

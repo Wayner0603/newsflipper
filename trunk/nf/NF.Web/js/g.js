@@ -105,7 +105,7 @@ function modalDialog() {
     addMethod(this, "c", function() {
     util.hide('#overlay');
     $("body").css("overflow", "");
-        util.hide('#modalDialog');
+    util.hide('#modal_outer');
         sCor(1);
     });
 
@@ -127,8 +127,13 @@ function _showHtml(html, title, width, height) {
 }
 
 function _showCore(title, width, height) {
-    $("#modalDialog").width(width);
-    $("#modalDialog").height(height);
+    $("#modal_outer").width(width);
+    $("#modal_outer").height(height+18);
+    var h = height ;
+
+    $("#modal_frame").height(h);
+    $("#modal_iframe").height(h-48);
+    
     $("#modalTitle").text(title);
     
     util.show("#overlay");
@@ -138,9 +143,9 @@ function _showCore(title, width, height) {
     $("#overlay").height($(window).height());
 
     sCor(0);
-    util.setLoc('#modalDialog');
+    util.setLoc('#modal_outer');
 
-    util.show("#modalDialog");
+    util.show("#modal_outer");
 }
 
 function _show(url, title, width, height) {
@@ -165,6 +170,15 @@ function sCor(v) {
 var modal = new modalDialog();
 
 function call_signin() {
-    modal.show('/user/', 'Sign in to Newsflipper Account', 500, 300);
+    modal.show('/user/', 'Sign in to Newsflipper Account', 500, 320);
 }
+
+function call_directlink(link) {
+    modal.show('/settings/direct_link.aspx?lnk=' + link, 'Direct Link to this page', 500, 150);
+}
+
+function call_email(title, link) {
+    modal.show('/settings/email_sender.aspx?title=' + title + "&lnk=" + link, 'Email', 500, 350);
+}
+
 

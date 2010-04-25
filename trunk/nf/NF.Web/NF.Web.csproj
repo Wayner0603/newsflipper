@@ -75,11 +75,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\sprite.png" />
+    <Content Include="images\sprites.png" />
     <Content Include="js\jquery-1.4.2.min.js" />
     <Content Include="js\jquery.jcarousel.min.js" />
     <Content Include="js\source\jCarousel.js" />
     <Content Include="js\source\jquery-1-3-2.js" />
     <Content Include="pages\Sources.txt" />
+    <Content Include="services\SettingsService.asmx" />
+    <Content Include="settings\direct_link.aspx" />
+    <Content Include="settings\email_sender.aspx" />
     <Content Include="uc\BugFeatureRequestUc.ascx" />
     <Content Include="uc\FooterUc.ascx" />
     <Content Include="uc\HeaderUc.ascx" />
@@ -149,6 +153,10 @@
     <Compile Include="search\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="services\SettingsService.asmx.cs">
+      <DependentUpon>SettingsService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="services\SourceService.asmx.cs">
       <DependentUpon>SourceService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -163,6 +171,20 @@
     </Compile>
     <Compile Include="settings\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settings\direct_link.aspx.cs">
+      <DependentUpon>direct_link.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings\direct_link.aspx.designer.cs">
+      <DependentUpon>direct_link.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settings\email_sender.aspx.cs">
+      <DependentUpon>email_sender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings\email_sender.aspx.designer.cs">
+      <DependentUpon>email_sender.aspx</DependentUpon>
     </Compile>
     <Compile Include="sign_out.aspx.cs">
       <DependentUpon>sign_out.aspx</DependentUpon>

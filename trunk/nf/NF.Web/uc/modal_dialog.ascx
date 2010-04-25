@@ -2,20 +2,20 @@
     Inherits="newsflippers.uc.modal_dialog" %>
 <div id="overlay" class="modal_overlay" style="background-color: #000">
 </div>
-<div id="modalDialog" class='modal_outer' style="display: none;">
-    <div class='modal_frame'>
-        <table cellpadding="0" class="modal_title" cellspacing="0">
+<div id="modal_outer" style="display: none;">
+    <div id='modal_frame'>
+        <table cellpadding="0" id="modal_title" cellspacing="0">
             <tr>
                 <td >
                     <div id="modalTitle" >
                     </div>
                 </td>
-                <td class="a_right">
-                    <img class="modal_close" onclick="modal.c();" src="../images/close.gif" />
+                <td class="set_right">
+                    <img class="modal_close" onclick="modal.c();" alt="Close" src="../images/close.gif" />
                 </td>
             </tr>
-        </table><div id="f">
+        </table><div id="modal_iframe">
     <iframe src='' id="modalIFrame" style="background-color: #fff" frameborder="0" width="100%"
-        height="100%"></iframe></div>    </div>
+        height="100%"></iframe></div> </div>  
 
 </div>
