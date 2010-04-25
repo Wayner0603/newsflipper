@@ -142,7 +142,7 @@
         }
 
         function c_email() {
-            call_email( _title.replace(':',''), escape(window.location.href));
+            call_email( _title.replace(':','').replace("'",""), escape(window.location.href));
         }
     </script>
     <link href="../css/skin.css" rel="stylesheet" type="text/css" />

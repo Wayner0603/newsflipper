@@ -33,7 +33,7 @@ var _time = 10000;
 
     function _setMsg(text, css, isHtml, time) {
         if ($("#message_box").is(":hidden")) {
-            $("#message_box").show();
+            $("#message_box").slideDown("fast");
         }
         if (isHtml == 0) {
             $("#message_box").text(text);
@@ -41,7 +41,7 @@ var _time = 10000;
             $("#message_box").html(text);
         }
         _setMsgLocation();
-        setTimeout(function () { $("#message_box").hide() }, time);
+        setTimeout(function () { $("#message_box").slideUp("fast") }, time);
 
     }
 
