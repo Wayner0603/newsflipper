@@ -37,6 +37,7 @@ namespace newsflippers.services {
 
         [WebMethod]
         public string GetResponse(string type) {
+            //System.Threading.Thread.Sleep(2000);
             SourceLogic logic = new SourceLogic();
 
             string response = string.Empty;
@@ -62,7 +63,7 @@ namespace newsflippers.services {
 
             response = "<ul>";
             foreach (WebPage item in webpageList) {
-                response += string.Format("<li><a href='view/?{0}#{1}'><img class='thumb' src='{2}' alt='' /><br><span class='thumb_title'>{3}</span></a></li>", Util.UrlEncode(type), Util.RemoveImageExt(item.ImageName), item.FullThumbnailImagePath, item.Title);
+                response += string.Format("<li><a href='view/?{0}#{1}'><img width='300px' height='300px' class='thumb' src='{2}' alt='' /><br><span class='thumb_title'>{3}</span></a></li>", Util.UrlEncode(type), Util.RemoveImageExt(item.ImageName), item.FullThumbnailImagePath, item.Title);
             }
             return response + "</ul>";
         }

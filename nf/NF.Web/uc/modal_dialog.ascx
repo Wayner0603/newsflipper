@@ -15,7 +15,6 @@
                 </td>
             </tr>
         </table><div id="modal_iframe">
-    <iframe src='' id="modalIFrame" style="background-color: #fff" frameborder="0" width="100%"
+    <iframe src='/loading.htm' id="modalIFrame" style="background-color: #fff" frameborder="0" width="100%"
         height="100%"></iframe></div> </div>  
-
 </div>

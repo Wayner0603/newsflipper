@@ -1,11 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="newsflippers.view._default" %>
-
+<%@ OutputCache Duration="600" Location="Server" VaryByParam="*" %>
 <%@ Register Src="../uc/HeaderUc.ascx" TagName="HeaderUc" TagPrefix="uc1" %>
 <%@ Register Src="../uc/FooterUc.ascx" TagName="FooterUc" TagPrefix="uc2" %>
-<%@ OutputCache Duration="20" VaryByParam="none" %>
 <%@ Register Src="../uc/BugFeatureRequestUc.ascx" TagName="BugFeatureRequestUc" TagPrefix="uc3" %>
 <%@ Register Src="../uc/TopBar.ascx" TagName="TopBar" TagPrefix="uc4" %>
 <%@ Register Src="../uc/modal_dialog.ascx" TagName="modal_dialog" TagPrefix="uc5" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head id="Head1" runat="server">
@@ -46,7 +46,7 @@
                 _uniqId = response.split(';')[4];
                 _uniqIds[_count] = _uniqId;
                 _titles[_count] = response.split(';')[3];
-                _title = response.split(';')[3];
+                _title = response.split(';')[7];
                 _id = response.split(';')[6];
                 _ids[_count] = _id;
 
@@ -78,7 +78,7 @@
         };
 
         jQuery(document).ready(function () {
-            msg.text('hey this is great!');
+            msg.html('You can <a href="javascript:call_signin();">login or register</a> and your account details will be preserved for the final release.', 15000);
             type = location.href.substring(location.href.indexOf('?') + 1, location.href.indexOf('#'));
             _uniqId = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
 
@@ -110,7 +110,6 @@
         function setStar() {
             var star = '';
             var uu = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
-            alert(uu);
             if ($("#star").hasClass("star")) {
                 star = 'false';
                 $("#star").removeClass("star");
@@ -143,6 +142,9 @@
             });
         }
 
+        function c_email() {
+            call_email(_title, escape(window.location.href));
+        }
     </script>
     <link href="../css/skin.css" rel="stylesheet" type="text/css" />
 </head>
@@ -152,7 +154,7 @@
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
     <div id="toolbar">
         <li><a  id='star' href="javascript:setStar();" class="unstar" >Add Star</a></li>
-        <li><a id='email' href="javascript:call_email('fththy', escape(window.location.href));" class="email">Email</a></li>
+        <li><a id='email' href="javascript:c_email();" class="email">Email</a></li>
         <li><a id='full_story' href="#" class="full_story"></a></li>
         <li><a href="javascript:call_directlink(escape(window.location.href));" class="out_link">Link</a></li>
         
