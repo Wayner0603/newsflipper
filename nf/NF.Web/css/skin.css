@@ -48,18 +48,11 @@ h3
     padding: 0;
 }
 
-.jcarousel-list li, .jcarousel-item
-{
-    float: left;
-    list-style: none;
-    width: 65px;
-    height: 75px;
-}
 
 .jcarousel-skin-ie7 .jcarousel-container-horizontal
 {
     width: 845px;
-    padding: 10px 50px;
+    padding: 10px 50px 0px 40px ;
 }
 
 .jcarousel-skin-ie7 .jcarousel-clip-horizontal
@@ -80,24 +73,30 @@ h3
 {
     position: absolute;
     top: 20px;
-    width: 100px;
+    left:935px;
+    width: 35px;
     height: 600px;
     cursor: pointer;
-    background: transparent url(../images/next.gif) no-repeat 0 0;
+    background: transparent url(../images/sprites.png) ;
+    background-position:  -35px -40px;
+    background-repeat: no-repeat;
+    cursor:pointer;
 }
 
 .jcarousel-skin-ie7 .jcarousel-prev-horizontal
 {
     position: absolute;
     top: 20px;
-    width: 200px;
+    width: 35px;
     height: 600px;
     cursor: pointer;
-    background: transparent url(../images/prev.gif) no-repeat 0 0;
+     background: transparent url(../images/sprites.png) ;
+     background-position:  -0px -40px;
+    background-repeat: no-repeat;
 }
 #page
 {
-    width: 1000px;
+    width: 990px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -105,6 +104,7 @@ h3
 #mcar.jcarousel-container-horizontal, #mcar .jcarousel-clip-horizontal, #mcar .jcarousel-item, #mcar .jcarousel_itm_p
 {
     width: 880px;
+    margin-right:0px;
     height: 800px;
 }
 
@@ -122,6 +122,7 @@ h3
     -webkit-border-bottom-left-radius: 5px;
     text-align: center;
     display: none;
+    font-size:12px;
 }
 
 .msg_suc
@@ -264,7 +265,7 @@ div#container_middle
 	display:none;
 }
 
-.modal_outer
+#modal_outer
 {
     padding: 0px;
     border: 1px solid #336699;
@@ -273,9 +274,10 @@ div#container_middle
     top: 100px;
 }
 
-.modal_frame
+#modal_frame
 {
     border: 9px solid #AAC6FF;
+z-index:2px;
 }
 
 .modal_close {
@@ -284,7 +286,7 @@ div#container_middle
     padding:4px;
 }
 
-.modal_title
+#modal_title
 {
     float: left;
     padding: 12px;
@@ -296,6 +298,7 @@ div#container_middle
     border-bottom-width: 1px;
     border-bottom-color: #D8DFF3;
 }
+	
 
 .nav_item {
     padding:3px;
@@ -390,6 +393,7 @@ a.nav_text:visited {
 
 #login_box {
     padding:30px;
+    font-size:16px;
 }
 
 .list_image {
@@ -415,16 +419,22 @@ a.nav_text:visited {
 }
 
 .next{
-     background: transparent url(../images/right.png) no-repeat 0 0;
-     width:75px;
+     background: transparent url(../images/sprites.png) ;
+    background-position:  -35px -40px;
+    background-repeat: no-repeat;
+    width:36px;
      height:75px;
+     margin-left:4px;
      cursor:pointer;
 }
 
 .prev{
-    background: transparent url(../images/left.png) no-repeat 0 0;
-    width:75px;
+    background: transparent url(../images/sprites.png) ;
+     background-position:  -0px -40px;
+    background-repeat: no-repeat;
+    width:36px;
      height:75px;
+     margin-left:4px;
      cursor:pointer;
 }
 
@@ -454,22 +464,57 @@ a.nav_text:visited {
 }
 
 .star {
-    background-image: url('../images/sprite.png');
-    background-position: -150px -46px;
+    background-image: url('../images/sprites.png');
+    background-position:  -70px -16px;
     background-repeat: no-repeat;
-    width:16px;
+    margin-left:5px;
+    padding-left:20px;width:16px;
     height:16px;
     cursor:pointer;
 }
 
 .unstar {
-    background-image: url('../images/sprite.png');
-    background-position: -150px -30px;
+    background-image: url('../images/sprites.png');
+    background-position: -70px -0px;
     background-repeat: no-repeat;
-    width:16px;
+    padding-left:20px;width:16px;
+    margin-left:5px;
     height:16px;
     cursor:pointer;
 }
+.full_story 
+{
+    background-image: url('../images/sprites.png');
+    background-position: -70px -58px;
+    background-repeat: no-repeat;
+    padding-left:20px;width:16px;
+    margin-left:5px;
+    height:16px;
+    cursor:pointer;
+    }
+    
+    .out_link 
+    {
+         background-image: url('../images/sprites.png');
+    background-position: -70px -30px;
+    background-repeat: no-repeat;
+    margin-left:5px;
+    padding-left:20px;width:16px;
+    height:10px;
+    cursor:pointer;
+        }
+        
+          .email 
+    {
+         background-image: url('../images/sprites.png');
+    background-position: -70px -42px;
+    background-repeat: no-repeat;
+    margin-left:5px;
+    padding-left:20px;
+    width:16px;
+    height:16px;
+    cursor:pointer;
+        }
 
 #toolbar {}
 #toolbar ul {
@@ -482,3 +527,8 @@ display:inline;
 margin:0;
 padding:0;
 }
+
+.wrapper 
+{
+        padding:10px;
+    }
