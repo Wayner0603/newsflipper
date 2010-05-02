@@ -7,6 +7,4 @@
         ImageUrl="~/images/logo.png" /></a> &nbsp;&nbsp;
     </div><div id="search"><uc1:search_uc ID="search_uc1" runat="server" /></div>
     </div>
-<uc2:msg_ctrl ID="msg_ctrl1" runat="server" />
-
 <%--<div id="titlebar">Alpha Version</div>--%>

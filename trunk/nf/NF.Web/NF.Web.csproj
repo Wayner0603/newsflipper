@@ -44,6 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\RELEASES\IWT_Releases\Infonex.dll</HintPath>
     </Reference>
+    <Reference Include="Infonex.Web.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="skmRss, Version=1.9.3.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\rssspider\Rss.Spider\bin\Debug\skmRss.dll</HintPath>
@@ -75,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\sprites.png" />
+    <Content Include="js\hp.js" />
     <Content Include="js\jquery-1.4.2.min.js" />
     <Content Include="js\jquery.jcarousel.min.js" />
     <Content Include="loading.htm" />

@@ -47,5 +47,14 @@ namespace newsflippers.uc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hpSingOut;
+        
+        /// <summary>
+        /// ModalDialog1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infonex.Web.UI.ModalDialog ModalDialog1;
     }
 }

@@ -6,104 +6,27 @@
 <%@ Register Src="uc/TopBar.ascx" TagName="TopBar" TagPrefix="uc4" %>
 <%@ Register Src="uc/modal_dialog.ascx" TagName="modal_dialog" TagPrefix="uc3" %>
 <%@ Register src="uc/msg_ctrl.ascx" tagname="msg_ctrl" tagprefix="uc5" %>
+<%@ Register assembly="Infonex.Web.UI" namespace="Infonex.Web.UI" tagprefix="iwt" %>
 <head id="Head1" runat="server">
     <title></title>
 
-    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-
-    <script type="text/javascript" src="js/car.js"></script>
-
-    <script type="text/javascript" src="js/jquery.mousewheel.pack.js"></script>
-
-    <script type="text/javascript" src="js/g.js"></script>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            load_thumb('top');
-            var t = '<b>This is a very earrrrrrrrrrrly preview of the site. Also note that the data is not up-to-date.</b><br>So please <a href="javascript:call_issues();"><b>report</b></a> any issues or suggestions.';
-            if (jQuery.browser.msie == true) {
-                t += '<br>BTW, please use a faster browser like <a href="http://www.google.com/chrome">Google Chrome </a> for better experience.';
-            }
-            msg.html(t, 15000);
-        });
-       
-      
-
-       var load='';
-       var lst = 'top;bus;sci;ent;sta';
-       
-       function set_links(type) {
-            var l = lst.split(';');
-            for (i = 0; i < l.length; i++) {
-                if (l[i] != type) {
-                    jQuery('#d_' + l[i]).hide();
-                    $("#" + l[i] + '_l').removeClass('menu_selected');
-                }
-            }
-            jQuery('#d_' + type).show();
-            $("#" + type + '_l').addClass('menu_selected');
-        }
-        
-        function showHide() {
-            jQuery('#c_top').hide();
-        }
-        
-         function showj() {
-            jQuery('#c_top').show();
-        }
-
-        var blocked = false;
-        function load_thumb(t) {
-            if (!blocked) {
-                blocked = true;
-                if (load.indexOf(t) == -1 && t != 'sta') {
-                    $("#loading").text('Loading...');
-
-                    $.ajax({
-                        type: "POST",
-                        url: '/services/SourceService.asmx/GetResponse',
-                        data: "{'type':'section:top+stories'}",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        success: function (text) {
-                            blocked = false;
-                            $("#loading").text('');
-
-                            $("#prev_" + t).show();
-                            $("#next_" + t).show();
-
-                            $("#c_" + t).html(text.d);
-                            $("#c_" + t).jCarouselLite({
-                                btnNext: "#next_" + t,
-                                btnPrev: "#prev_" + t,
-                                mouseWheel: true,
-                                visible: 3,
-                                scroll: 3
-                            });
-                        },
-
-                        error: function (text) {
-                            blocked = false;
-                            alert(text.d);
-                        }
-                    });
-                    load += t + ',';
-                } else {
-                blocked = false;
-                }
-                set_links(t);
-            }
-        }
-        
-    </script>
+<%--    <script type="text/javascript" src="js/jquery.mousewheel.pack.js"></script>--%>
 
     <link href="css/skin.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
     <form id="form1" runat="server">
+    <iwt:MessageControl ID="MessageControl1" runat="server" />
+    <iwt:ModalDialog ID="ModalDialog1" runat="server" />
     <uc4:TopBar ID="TopBar1" runat="server" />
-    <uc5:msg_ctrl ID="msg_ctrl1" runat="server" />
+    <iwt:PageManager ID="PageManager1" runat="server" EnableCDN="True">
+        <Scripts>
+            <iwt:ScriptFile Enable="True" File="~/js/hp.js" />
+            <iwt:ScriptFile Enable="True" File="~/js/car.js" />
+            <iwt:ScriptFile Enable="True" File="~/js/jquery.mousewheel.pack.js" />
+        </Scripts>
+    </iwt:PageManager>
     <uc1:HeaderUc ID="HeaderUc1" runat="server" />
         <div class="menu_bar">
             <span id="top_l" class="menu_item" onclick="load_thumb('top');">Top Stories</span>&nbsp;&nbsp;&nbsp;<span
@@ -220,8 +143,83 @@
             </div>
         </div></div>
     <uc2:FooterUc ID="FooterUc1" runat="server" />
-    <uc3:modal_dialog ID="modal_dialog1" runat="server" />
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            load_thumb('top');
+            var t = '<b>This is a very earrrrrrrrrrrly preview of the site. Also note that the data is not up-to-date.</b><br>So please <a href="javascript:call_issues();"><b>report</b></a> any issues or suggestions.';
+            if (jQuery.browser.msie == true) {
+                t += '<br>BTW, please use a faster browser like <a href="http://www.google.com/chrome">Google Chrome </a> for better experience.';
+            }
+            msg.html(t,'', 15000);
+        });
 
+        var load = '';
+        var lst = 'top;bus;sci;ent;sta';
+
+        function set_links(type) {
+            var l = lst.split(';');
+            for (i = 0; i < l.length; i++) {
+                if (l[i] != type) {
+                    jQuery('#d_' + l[i]).hide();
+                    $("#" + l[i] + '_l').removeClass('menu_selected');
+                }
+            }
+            jQuery('#d_' + type).show();
+            $("#" + type + '_l').addClass('menu_selected');
+        }
+
+        function showHide() {
+            jQuery('#c_top').hide();
+        }
+
+        function showj() {
+            jQuery('#c_top').show();
+        }
+
+        var blocked = false;
+        function load_thumb(t) {
+            if (!blocked) {
+                blocked = true;
+                if (load.indexOf(t) == -1 && t != 'sta') {
+                    $("#loading").text('Loading...');
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/services/SourceService.asmx/GetResponse',
+                        data: "{'type':'section:top+stories'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (text) {
+                            blocked = false;
+                            $("#loading").text('');
+
+                            $("#prev_" + t).show();
+                            $("#next_" + t).show();
+
+                            $("#c_" + t).html(text.d);
+                            $("#c_" + t).jCarouselLite({
+                                btnNext: "#next_" + t,
+                                btnPrev: "#prev_" + t,
+                                mouseWheel: true,
+                                visible: 3,
+                                scroll: 3
+                            });
+                        },
+
+                        error: function (text) {
+                            blocked = false;
+                            alert(text.d);
+                        }
+                    });
+                    load += t + ',';
+                } else {
+                    blocked = false;
+                }
+                set_links(t);
+            }
+        }
+        
+    </script>
     </form>
 </body>
 </html> 

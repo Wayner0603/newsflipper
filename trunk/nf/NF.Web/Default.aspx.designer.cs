@@ -31,6 +31,24 @@ namespace newsflippers {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// MessageControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infonex.Web.UI.MessageControl MessageControl1;
+        
+        /// <summary>
+        /// ModalDialog1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infonex.Web.UI.ModalDialog ModalDialog1;
+        
+        /// <summary>
         /// TopBar1 control.
         /// </summary>
         /// <remarks>
@@ -40,13 +58,13 @@ namespace newsflippers {
         protected global::newsflippers.uc.TopBar TopBar1;
         
         /// <summary>
-        /// msg_ctrl1 control.
+        /// PageManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::newsflippers.uc.msg_ctrl msg_ctrl1;
+        protected global::Infonex.Web.UI.PageManager PageManager1;
         
         /// <summary>
         /// HeaderUc1 control.
@@ -65,14 +83,5 @@ namespace newsflippers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::newsflippers.uc.FooterUc FooterUc1;
-        
-        /// <summary>
-        /// modal_dialog1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::newsflippers.uc.modal_dialog modal_dialog1;
     }
 }
