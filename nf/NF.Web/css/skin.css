@@ -216,23 +216,23 @@ div#container_middle
 
 .search_box
 {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 
 .search_btn
 {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .txt
 {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .btn    
 {
-    font-size:16px;
+    font-size:12px;
 }
 
 .menu_bar
@@ -408,7 +408,7 @@ a.nav_text:visited {
 
 #login_box {
     padding:30px;
-    font-size:16px;
+    font-size:12px;
 }
 
 .list_image {

@@ -22,12 +22,12 @@ namespace newsflippers.uc {
         protected global::System.Web.UI.WebControls.TextBox txtKeyword;
         
         /// <summary>
-        /// Button1 control.
+        /// ButtonControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::Infonex.Web.UI.ButtonControl ButtonControl1;
     }
 }

@@ -5,16 +5,45 @@
 <%@ Register Src="../uc/TopBar.ascx" TagName="TopBar" TagPrefix="uc4" %>
 <%@ Register Src="../uc/modal_dialog.ascx" TagName="modal_dialog" TagPrefix="uc5" %>
 
+<%@ Register assembly="Infonex.Web.UI" namespace="Infonex.Web.UI" tagprefix="iwt" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head id="Head1" runat="server">
     <title>Fastest way to read news online</title>
     <meta name="keywords" content="news,srilanka,online news,fastflip,news flipper" />
     <meta name="description" content="Fastest way to read online news." />
-    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="../js/g.js"></script>
-    <script type="text/javascript" src="../js/c.js"></script>
+    
+    <link href="../css/skin.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <uc4:TopBar ID="TopBar1" runat="server" />
+    <iwt:PageManager ID="PageManager1" runat="server">
+        <Scripts>
+            <iwt:ScriptFile Enable="True" File="~/js/jquery.jcarousel.min.js" />
+            <iwt:ScriptFile Enable="True" File="~/js/hp.js" />
+        </Scripts>
+    </iwt:PageManager>
+    <iwt:ModalDialog ID="ModalDialog1" runat="server" />
+    <uc1:HeaderUc ID="HeaderUc1" runat="server" />
+    <div id="toolbar">
+        <li><a  id='star' href="javascript:setStar();" class="unstar" >Add Star</a></li>
+        <li><a id='email' href="javascript:c_email();" class="email">Email</a></li>
+        <li><a id='full_story' href="#" class="full_story"></a></li>
+        <li><a href="javascript:call_directlink(escape(window.location.href));" class="out_link">Link</a></li>
+        
+    </div>
+    
+    <div id="page">
+        <div id="carousel">
+            <div id="mcar" class="jcarousel-skin-ie7">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <uc2:FooterUc ID="FooterUc1" runat="server" />
     <script type="text/javascript">
         var _titles = new Array();
         var _uniqId = '';
@@ -108,17 +137,12 @@
 
         function setStar() {
             var star = '';
-            var uu = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
             if ($("#star").hasClass("star")) {
                 star = 'false';
-                $("#star").removeClass("star");
-                $("#star").addClass("unstar");
             } else {
                 star = 'true';
-                $("#star").removeClass("unstar");
-                $("#star").addClass("star");
             }
-
+            var uu = location.href.substring(location.href.indexOf('#') + 1, location.href.length);
             $.ajax({
                 type: "POST",
                 url: "/services/SourceService.asmx/DoStarred",
@@ -130,6 +154,12 @@
                         msg.html("Please <a href='javascript:call_signin();'>Sign in</a> to star items.");
                         $("#star").removeClass("star").addClass("unstar");
                     } else {
+                        if (star == 'false') {
+                            $("#star").removeClass("star").addClass("unstar");
+
+                        } else {
+                            $("#star").removeClass("unstar").addClass("star");
+                        }
                         msg.text('Saved!');
                     }
                 },
@@ -142,33 +172,9 @@
         }
 
         function c_email() {
-            call_email( _title.replace(':','').replace("'",""), escape(window.location.href));
+            call_email(_title.replace(':', '').replace("'", ""), escape(window.location.href));
         }
     </script>
-    <link href="../css/skin.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <form id="form1" runat="server">
-    <uc4:TopBar ID="TopBar1" runat="server" />
-    <uc1:HeaderUc ID="HeaderUc1" runat="server" />
-    <div id="toolbar">
-        <li><a  id='star' href="javascript:setStar();" class="unstar" >Add Star</a></li>
-        <li><a id='email' href="javascript:c_email();" class="email">Email</a></li>
-        <li><a id='full_story' href="#" class="full_story"></a></li>
-        <li><a href="javascript:call_directlink(escape(window.location.href));" class="out_link">Link</a></li>
-        
-    </div>
-    
-    <div id="page">
-        <div id="carousel">
-            <div id="mcar" class="jcarousel-skin-ie7">
-                <ul>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <uc2:FooterUc ID="FooterUc1" runat="server" />
-    <uc5:modal_dialog ID="modal_dialog1" runat="server" />
     </form>
 </body>
 </html>
