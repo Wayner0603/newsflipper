@@ -7,30 +7,24 @@ using NF.Engine;
 using Infonex;
 using System.Drawing;
 
-namespace webshotex_csharp
-{
-    public class program
-    {
+namespace webshotex_csharp {
+    public class program {
         [STAThread] // [STAThread] REQUIRED!
-        static void Main(string[] args)
-        {
+        static void Main(string[] args) {
             DataTable dt = SourceFacade.GetSourceItems();
             CaptureScreenshot(ref dt);
         }
 
-        public static void CaptureScreenshot(ref DataTable dt)
-        {
+        public static void CaptureScreenshot(ref DataTable dt) {
             WebShot.OleInitialize(IntPtr.Zero);
 
-            for (int i = 0; i < dt.Rows.Count ; i++)
-            {
+            for (int i = 0; i < dt.Rows.Count; i++) {
                 string imgName = string.Format("{0}.gif", ShortGuid.NewGuid().ToString());
                 string imgNameThumb = string.Format("t__{0}.gif", ShortGuid.NewGuid().ToString());
                 string path = string.Format(@"{0}{1}", Util.GetImageFolder(), imgName);
                 string pathTo = string.Format(@"{0}{1}", Util.GetImageFolder(), imgNameThumb);
-                try
-                {
-                    CaptureScreenshot(dt.Rows[i]["ITM_URL"].ToString(), path );
+                try {
+                    CaptureScreenshot(dt.Rows[i]["ITM_URL"].ToString(), path);
                     //ImageManager.ResizeImageFile(PhotoSize.Medium, path, pathTo);
                     Bitmap b = ImageManager.ResizeImage(System.Drawing.Image.FromFile(path), 320, 340);
                     ImageManager.SaveJpeg(pathTo, b, 60);
@@ -39,9 +33,7 @@ namespace webshotex_csharp
                     dt.Rows[i]["ITM_IMGTHUMB"] = imgNameThumb;
                     dt.Rows[i]["ITM_IMAGE"] = true;
                     dt.Rows[i]["ITM_FAILED"] = 0;
-                }
-                catch 
-                {
+                } catch {
                     dt.Rows[i]["ITM_FAILED"] = 1;
 
                 }
@@ -50,8 +42,7 @@ namespace webshotex_csharp
             SourceFacade.InsertSourceItems(dt);
         }
 
-        public static void CaptureScreenshot(string Url, string ImageFilename)
-        {
+        public static void CaptureScreenshot(string Url, string ImageFilename) {
             int WebShotHandle = 0;
 
             WebShot.DllInit("debug.log", WebShot.DEBUG_FLAGWINDOW | WebShot.DEBUG_FLAGFILE);

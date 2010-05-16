@@ -13,7 +13,7 @@ namespace NF.Engine
         public string ThumbImageName { get; set; }
         public string Src { get; set; }
         public string FullThumbnailImagePath {
-            get { 
+            get {
                 return string.Format("{2}{0}/{1}", Util.GetRelativeImageFolder(), ThumbImageName, Util.GetBaseURL());
             }
         }
